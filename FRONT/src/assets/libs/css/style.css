@@ -160,8 +160,7 @@ body {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    color: #71748d;
-    background-color: #efeff6;
+    background-color: white;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -171,7 +170,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #3d405c;
+    color: black;
     margin: 0px 0px 15px 0px;
     font-family: 'Circular Std Medium';
 }
@@ -998,7 +997,7 @@ Borders
 }
 
 .text-muted {
-    color: #7171a6 !important;
+    color: black;
 }
 
 .rating-color {
@@ -1011,7 +1010,7 @@ Borders
 -------------------------*/
 
 .border-top-primary {
-    border-top-color: #5969ff !important;
+    border-top-color: rgb(185, 185, 185) !important;
 }
 
 .border-3 {
@@ -1260,7 +1259,7 @@ Top Header
     padding: 13px 20px;
     font-size: 16px;
     line-height: 2;
-    color: #82849f;
+    color: black;
 }
 
 
@@ -1469,7 +1468,7 @@ Top Header
 .nav-user-name {}
 
 .nav-user-info {
-    background-color: #5969ff;
+    background-color: #FF4080;
     line-height: 1.4;
     padding: 12px;
     color: #fff;
@@ -1584,7 +1583,6 @@ Top Header
     padding: 10px 14px;
     line-height: 30px;
     font-weight: 600;
-    text-transform: uppercase;
     font-size: 12px;
 }
 
@@ -1604,7 +1602,7 @@ Top Header
 
 .navigation-horizontal .navbar-nav .nav-link:focus,
 .navigation-horizontal .navbar-nav .nav-link.active {
-    background-color: #e2e2eb;
+    background-color: #FF4080;
     color: #3d405c;
     border-radius: 2px;
 }
@@ -1690,10 +1688,10 @@ Left Navigation Sidebar
 .nav-left-sidebar .navbar-nav .nav-item {}
 
 .nav-left-sidebar .navbar-nav .nav-link {
-    font-size: 14px;
+    font-size: 18px;
     padding: 12px;
     /* margin-bottom: 2px; */
-    color: #71789e;
+    color: black;
     transition: 0.3s;
 }
 
@@ -1708,9 +1706,8 @@ Left Navigation Sidebar
 .nav-divider {
     padding: 10px 14px;
     line-height: 30px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 12px;
+    font-weight: 200;
+    font-size: 18px;
 }
 
 .nav-left-sidebar .submenu {
@@ -1728,15 +1725,15 @@ Left Navigation Sidebar
 
 .nav-left-sidebar .navbar-nav .nav-link:focus,
 .nav-left-sidebar .navbar-nav .nav-link.active {
-    background-color: #e2e2eb;
-    color: #3d405c;
+    background-color: #FF4080;
+    color: white;
     border-radius: 2px;
 }
 
 .nav-left-sidebar .navbar-nav .nav-link:focus,
 .nav-left-sidebar .navbar-nav .nav-link:hover {
-    background-color: #e2e2eb;
-    color: #3d405c;
+    background-color: whitesmoke;
+    color: #FF4080;
     border-radius: 2px;
 }
 
@@ -1830,13 +1827,13 @@ Leftsidebar - dark
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:focus,
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:hover {
     color: #fff;
-    background-color: #242849;
+    background-color: #FF4080;
     border-radius: 2px;
 }
 
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link:focus,
 .sidebar-dark.nav-left-sidebar .navbar-nav .nav-link.active {
-    background-color: #242849;
+    background-color: #FF4080;
     color: #fff;
     border-radius: 2px;
 }

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group marginRech">
+          <input type="search"  (keyup)=search($event.target.value) class="inputRech">
+        </div>
+  
+      </div>
+      <div class="col-7"></div>
+      <div class="col-2">
+        <a [routerLink]="['/collaborateur/add']">
+          <!-- <input type="submit" value="Ajout Collaborateur" class="btn btn-primary"> -->
+          <div class="col-1"><img src="assets/plus.png" width="50" height="50" alt=""></div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4" >
+        <div class="card" style="width: 16rem;">
+            <a class="liencarte" [routerLink]="['/collaborateur/detail']">
+
+            <img class="card-img-top" src="assets/avatarh.png"  alt="Card image cap">
+            <div class="info">
+                <div class="title">
+                  <strong class="strong">ELhadji Mbacke Mbaye</strong>
+                </div>
+                <div class="desc">Développeur Web/Mobile</div>
+                <div class="desc">Team Tech & Digital</div>
+              </div>
+            </a>
+          </div>
+        
+  
+        <!-- <div class="card hovercard">
+          <div class="cardheader">
+  
+          </div>
+          <a [routerLink]="['/collaborateur/detail',item.id]">
+          <div class="avatar">
+            <img alt="" src="assets/avatarh.png">
+          </div>
+          <div class="info">
+            <div class="title">
+              <strong class="strong">ELhadji Mbacke Mbaye</strong>
+            </div>
+            <div class="desc">Développeur Web/MObile</div>
+            <div class="desc">Team Tech & Digital</div>
+          </div>
+          </a>
+        </div> -->
+  
+      </div>
+    </div>
+  </div>
