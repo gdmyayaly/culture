@@ -13,6 +13,7 @@ import { AjoutcollaborateurComponent } from './pages/admin/collaborateur/ajoutco
 import { DetailcollaborateurComponent } from './pages/admin/collaborateur/detailcollaborateur/detailcollaborateur.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TeamComponent } from './pages/admin/team/team.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { TeamComponent } from './pages/admin/team/team.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

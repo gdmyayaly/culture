@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
   selector: 'app-listecollaborateur',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listecollaborateur.component.scss']
 })
 export class ListecollaborateurComponent implements OnInit {
-
-  constructor() { }
+  public user:any;
+  constructor(private admin:AdminService) { }
 
   ngOnInit() {
+    this.admin.usergrow().subscribe(
+      res=>{console.log(res);
+        this.user=res.body
+      },
+      error=>{console.log(error);
+      }
+    )
   }
 
 }

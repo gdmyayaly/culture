@@ -250,4 +250,99 @@ class AdminController extends AbstractController
     //         }
     //     }
     // }
+    /**
+     * @Route("/lastevaluationdumois")
+     */
+    public function lastevaluationdumois(SerializerInterface $serializer,Request $request,EvalluationRepository $evaluationRepository,AllsessionRepository $allsessionRepository){
+        //$data=$request->request->all();
+        $data = json_decode($request->getContent(),true);//Récupère une chaîne encodée JSON et la convertit en une variable PHP
+        if(!$data){//s il n'existe pas donc on recupere directement le tableau via la request
+            $data=$request->request->all();
+        }
+        $id=$data['id'];
+       // $id=403;
+        $anne=date('Y');
+        $moisd=["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Décembre"];
+        $mois=["01","02","03","04","05","06","07","08","09","10","11","12"];
+        $moyenneperseverance=[];
+        $moyenneconfiance=[];
+        $moyennecollaboration=[];
+        $moyenneautonomie=[];
+        $moyenneproblemsolving=[];
+        $moyennetransmission=[];
+        $moyenneperformance=[];
+        $perseverance=0;
+        $confiance=0;
+        $collaboration=0;
+        $autonomie=0;
+        $problemsolving=0;
+        $transmission=0;
+        $performance=0;
+        $allsessiononmouth=[];
+        for ($i=0; $i <count($mois) ; $i++) {
+            $nombreevaluateur=0;
+            $sessiondumois=$allsessionRepository->findBy(['annee'=>$anne,'mois'=>$mois[$i]]);
+            for ($j=0; $j <count($sessiondumois) ; $j++) { 
+                $evaluation=$evaluationRepository->findBy(['evaluer'=>$id,'session'=>$sessiondumois[$j]->getId()]);
+                for ($k=0; $k < count($evaluation) ; $k++) { 
+                    $perseverance=$perseverance+$evaluation[$k]->getPerseverance();
+                    $confiance=$confiance+$evaluation[$k]->getConfiance();
+                    $collaboration=$collaboration+$evaluation[$k]->getCollaboration();
+                    $autonomie=$autonomie+$evaluation[$k]->getAutonomie();
+                    $problemsolving=$problemsolving+$evaluation[$k]->getProblemsolving();
+                    $transmission=$transmission+$evaluation[$k]->getTransmission();
+                    $performance=$performance+$evaluation[$k]->getPerformance();
+                    $nombreevaluateur++;
+                }
+
+            }
+            if ($nombreevaluateur==0) {
+                $perseverance=0;
+                $confiance=0;
+                $collaboration=0;
+                $autonomie=0;
+                $problemsolving=0;
+                $transmission=0;
+                $performance=0;
+            }
+            else{
+                $perseverance=$perseverance/($nombreevaluateur);
+                $confiance=$confiance/($nombreevaluateur);
+                $collaboration=$collaboration/($nombreevaluateur);
+                $autonomie=$autonomie/($nombreevaluateur);
+                $problemsolving=$problemsolving/($nombreevaluateur);
+                $transmission=$transmission/($nombreevaluateur);
+                $performance=$performance/($nombreevaluateur);
+            }
+
+            array_push($moyenneperseverance,$perseverance);
+            array_push($moyenneconfiance,$confiance);
+            array_push($moyennecollaboration,$collaboration);
+            array_push($moyenneautonomie,$autonomie);
+            array_push($moyenneproblemsolving,$problemsolving);
+            array_push($moyennetransmission,$transmission);
+            array_push($moyenneperformance,$performance);
+            $perseverance=0;
+            $confiance=0;
+            $collaboration=0;
+            $autonomie=0;
+            $problemsolving=0;
+            $transmission=0;
+            $performance=0;
+
+            
+        }
+        return $this->json([
+            'date'=>$moisd,
+            'perseverance'=>$moyenneperseverance,
+            'confiance'=>$moyenneconfiance,
+            'collaboration'=>$moyennecollaboration,
+            'autonomie'=>$moyenneautonomie,
+            'problemsolving'=>$moyenneproblemsolving,
+            'transmission'=>$moyennetransmission,
+            'performance'=>$moyenneperformance
+        ]);
+
+
+    }
 }

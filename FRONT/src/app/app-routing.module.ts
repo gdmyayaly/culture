@@ -10,7 +10,7 @@ import { TeamComponent } from './pages/admin/team/team.component';
 const routes: Routes = [
   {path:'',component:ListecollaborateurComponent},
   {path:'collaborateur/add',component:AjoutcollaborateurComponent},
-  {path:'collaborateur/detail',component:DetailcollaborateurComponent},
+  {path:'collaborateur/detail/:id',component:DetailcollaborateurComponent},
   {path:'team',component:TeamComponent}
 
 ];

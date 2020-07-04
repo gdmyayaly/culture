@@ -15,40 +15,20 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4" >
+      <div class="col-lg-4"*ngFor="let item of user" >
         <div class="card" style="width: 16rem;">
-            <a class="liencarte" [routerLink]="['/collaborateur/detail']">
+            <a class="liencarte" [routerLink]="['/collaborateur/detail',item.id]">
 
             <img class="card-img-top" src="assets/avatarh.png"  alt="Card image cap">
             <div class="info">
                 <div class="title">
-                  <strong class="strong">ELhadji Mbacke Mbaye</strong>
+                  <strong class="strong">{{item.prenom}} {{item.nom}}</strong>
                 </div>
-                <div class="desc">Développeur Web/Mobile</div>
-                <div class="desc">Team Tech & Digital</div>
+                <div class="desc">{{item.poste}}</div>
+                <!-- <div class="desc">Team Tech & Digital</div> -->
               </div>
             </a>
           </div>
-        
-  
-        <!-- <div class="card hovercard">
-          <div class="cardheader">
-  
-          </div>
-          <a [routerLink]="['/collaborateur/detail',item.id]">
-          <div class="avatar">
-            <img alt="" src="assets/avatarh.png">
-          </div>
-          <div class="info">
-            <div class="title">
-              <strong class="strong">ELhadji Mbacke Mbaye</strong>
-            </div>
-            <div class="desc">Développeur Web/MObile</div>
-            <div class="desc">Team Tech & Digital</div>
-          </div>
-          </a>
-        </div> -->
-  
       </div>
     </div>
   </div>
