@@ -4,12 +4,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListecollaborateurComponent } from './pages/admin/collaborateur/listecollaborateur/listecollaborateur.component';
 import { AjoutcollaborateurComponent } from './pages/admin/collaborateur/ajoutcollaborateur/ajoutcollaborateur.component';
 import { DetailcollaborateurComponent } from './pages/admin/collaborateur/detailcollaborateur/detailcollaborateur.component';
+import { TeamComponent } from './pages/admin/team/team.component';
 
 
 const routes: Routes = [
   {path:'',component:ListecollaborateurComponent},
   {path:'collaborateur/add',component:AjoutcollaborateurComponent},
-  {path:'collaborateur/detail',component:DetailcollaborateurComponent}
+  {path:'collaborateur/detail',component:DetailcollaborateurComponent},
+  {path:'team',component:TeamComponent}
+
 ];
 
 @NgModule({

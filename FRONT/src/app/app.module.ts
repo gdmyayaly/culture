@@ -12,6 +12,7 @@ import { ListecollaborateurComponent } from './pages/admin/collaborateur/listeco
 import { AjoutcollaborateurComponent } from './pages/admin/collaborateur/ajoutcollaborateur/ajoutcollaborateur.component';
 import { DetailcollaborateurComponent } from './pages/admin/collaborateur/detailcollaborateur/detailcollaborateur.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TeamComponent } from './pages/admin/team/team.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ListecollaborateurComponent,
     AjoutcollaborateurComponent,
-    DetailcollaborateurComponent
+    DetailcollaborateurComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,336 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="form-group marginRech">
+          <input type="search"  (keyup)=search($event.target.value) class="inputRech">
+        </div>
+  
+      </div>
+      <div class="col-7"></div>
+      <div class="col-2">
+        <a [routerLink]="['/collaborateur/add']">
+          <!-- <input type="submit" value="Ajout Collaborateur" class="btn btn-primary"> -->
+          <div class="col-1"><img src="assets/plus.png" width="50" height="50" alt=""></div>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4" >
+        <div class="card" style="width: 16rem;">
+            <a class="liencarte" [routerLink]="['/collaborateur/detail']">
+
+            <img class="card-img-top" src="assets/avatarh.png"  alt="Card image cap">
+            <div class="info">
+                <div class="title">
+                  <strong class="strong">Team Tech et Digital </strong>
+                </div>
+            
+              </div>
+            </a>
+          </div>
+        
+  
+        <!-- <div class="card hovercard">
+          <div class="cardheader">
+  
+          </div>
+          <a [routerLink]="['/collaborateur/detail',item.id]">
+          <div class="avatar">
+            <img alt="" src="assets/avatarh.png">
+          </div>
+          <div class="info">
+            <div class="title">
+              <strong class="strong">ELhadji Mbacke Mbaye</strong>
+            </div>
+            <div class="desc">Développeur Web/MObile</div>
+            <div class="desc">Team Tech & Digital</div>
+          </div>
+          </a>
+        </div> -->
+  
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+           <div class="container-fluid">
+               <ul class="nav nav-tabs" id="myTab" role="tablist">
+                   <li class="nav-item">
+                     <a class="nav-link active" id="seven-tab" data-toggle="tab" href="#seven" role="tab" aria-controls="seven" aria-selected="true">7 last day</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" id="mois-tab" data-toggle="tab" href="#mois" role="tab" aria-controls="mois" aria-selected="false">Mois</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link" id="annee-tab" data-toggle="tab" href="#annee" role="tab" aria-controls="annee" aria-selected="false">Année</a>
+                   </li>
+                   <li class="nav-item">
+                       <a class="nav-link" id="date-tab" data-toggle="tab" href="#date" role="tab" aria-controls="date" aria-selected="false">Date</a>
+                     </li>
+                     <li class="nav-item">
+                       <a class="nav-link" id="evaluateur-tab" data-toggle="tab" href="#evaluateur" role="tab" aria-controls="evaluateur" aria-selected="false">Evaluateur/Evaluer</a>
+                     </li>
+                 </ul>
+                 <div class="tab-content" id="myTabContent">
+                   <div class="tab-pane fade show active" id="seven" role="tabpanel" aria-labelledby="seven-tab">
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Perseverance</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Confiance en soi</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Collaboration</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Autonomie</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Problem Solving</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Transmission</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Performance</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                         
+                       </div>
+                 
+                       
+                   </div>
+                   <div class="tab-pane fade" id="mois" role="tabpanel" aria-labelledby="mois-tab">
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Perseverance</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Confiance en soi</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Collaboration</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Autonomie</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Problem Solving</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Transmission</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Performance</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                         
+                       </div>
+                 
+                   </div>
+                   <div class="tab-pane fade" id="annee" role="tabpanel" aria-labelledby="annee-tab">
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Perseverance</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Confiance en soi</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Collaboration</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Autonomie</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Problem Solving</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Transmission</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                               <div class="card">
+                                   <h5 class="card-header">Performance</h5>
+                                   <div class="card-body">
+                                   </div>
+                               </div>
+                           </div>
+                         
+                       </div>
+                                 </div>
+                   <div class="tab-pane fade" id="date" role="tabpanel" aria-labelledby="date-tab">
+                       <p>Part4</p>
+                   </div>
+                   <div class="tab-pane fade" id="evaluateur" role="tabpanel" aria-labelledby="evaluateur-tab">
+                       <p>Part5</p>
+                   </div>
+                 </div>
+               <!-- <div class="card">
+                 <div class="card-header tab-regular">
+                     <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                         <li class="nav-item">
+                             <a class="nav-link active" id="card-tab-1" data-toggle="tab" href="#card-1" role="tab" aria-controls="card-1" aria-selected="true">(1) En cours</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" id="card-tab-2" data-toggle="tab" href="#card-2" role="tab" aria-controls="card-2" aria-selected="false">(0) Terminé</a>
+                         </li>
+                     </ul>
+                 </div> -->
+             </div>
+        </div>
+   
+        <div class="col-md-4">
+           <div class="card">
+               <h5 class="card-header">Performance Team</h5>
+               <div class="card-body p-0">
+                   <div class="table-responsive">
+                       <table class="table no-wrap p-table">
+                           <thead class="bg-light">
+                               <tr class="border-0">
+                                   <th class="border-0">Nom </th>
+                                   <th class="border-0">General</th>
+                                   <th class="border-0">Progression</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+        
+                               <tr>
+                                   <td><span class="td">Tech</span></td>
+                                   <td>35% </td>
+                                   <td>
+                                       <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class="td">Academy</span></td>
+                                   <td>35% </td>
+                                   <td>
+                                       <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class="td">Créa</span></td>
+                                   <td>35% </td>
+                                   <td>
+                                       <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td><span class="td">Business</span> </td>
+                                   <td>35% </td>
+                                   <td>
+                                       <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
+   
+                                   </td>
+                               </tr>
+                         
+                               <tr>
+                                   <td colspan="3">
+                                       <a href="#" class="btn btn-outline-light float-right">Details</a>
+                                   </td>
+                               </tr>
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div> 
+  </div>
