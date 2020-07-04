@@ -14,6 +14,10 @@ import { DetailcollaborateurComponent } from './pages/admin/collaborateur/detail
 import { HttpClientModule } from '@angular/common/http';
 import { TeamComponent } from './pages/admin/team/team.component';
 import { ChartsModule } from 'ng2-charts';
+import { SevenlastdayComponent } from './diagramme/sevenlastday/sevenlastday.component';
+import { MoisComponent } from './diagramme/mois/mois.component';
+import { AnneeComponent } from './diagramme/annee/annee.component';
+import { CardpresentationComponent } from './diagramme/cardpresentation/cardpresentation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { ChartsModule } from 'ng2-charts';
     ListecollaborateurComponent,
     AjoutcollaborateurComponent,
     DetailcollaborateurComponent,
-    TeamComponent
+    TeamComponent,
+    SevenlastdayComponent,
+    MoisComponent,
+    AnneeComponent,
+    CardpresentationComponent
   ],
   imports: [
     BrowserModule,

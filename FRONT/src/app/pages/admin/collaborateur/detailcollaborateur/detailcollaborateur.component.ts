@@ -40,12 +40,15 @@ export class DetailcollaborateurComponent implements OnInit {
   userproblemsolving: number
   usertransmission: number;
   public data:any;
+
+  
   constructor(private activeroute:ActivatedRoute,private admin:AdminService) { }
 
   ngOnInit() {
     this.id=this.activeroute.snapshot.paramMap.get('id');
     //alert(this.id)
     let a={id:this.id};
+    this.admin.iduser.id=this.id;
     this.admin.detailuser(a).subscribe(
       res=>{console.log(res);
         this.data=res.body;
@@ -85,13 +88,9 @@ export class DetailcollaborateurComponent implements OnInit {
         
       }
     )
-    this.admin.lastevaluationdumois(a).subscribe(
-      res=>{console.log(res.body);
-      },
-      error=>{console.log(error);
-      }
-    )
+    
 
   }
+ 
 
 }
