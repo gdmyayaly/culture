@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -70,6 +72,22 @@ class User implements UserInterface
      * @Groups({"grow"})
      */
     private $image;
+
+    /**
+     * @ORM\OneToMany(targetEntity=UserTeam::class, mappedBy="user")
+     */
+    private $userTeams;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Evalluation::class, mappedBy="evaluer")
+     */
+    private $evalluations;
+
+    public function __construct()
+    {
+        $this->userTeams = new ArrayCollection();
+        $this->evalluations = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -212,6 +230,68 @@ class User implements UserInterface
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UserTeam[]
+     */
+    public function getUserTeams(): Collection
+    {
+        return $this->userTeams;
+    }
+
+    public function addUserTeam(UserTeam $userTeam): self
+    {
+        if (!$this->userTeams->contains($userTeam)) {
+            $this->userTeams[] = $userTeam;
+            $userTeam->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserTeam(UserTeam $userTeam): self
+    {
+        if ($this->userTeams->contains($userTeam)) {
+            $this->userTeams->removeElement($userTeam);
+            // set the owning side to null (unless already changed)
+            if ($userTeam->getUser() === $this) {
+                $userTeam->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Evalluation[]
+     */
+    public function getEvalluations(): Collection
+    {
+        return $this->evalluations;
+    }
+
+    public function addEvalluation(Evalluation $evalluation): self
+    {
+        if (!$this->evalluations->contains($evalluation)) {
+            $this->evalluations[] = $evalluation;
+            $evalluation->setEvaluer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEvalluation(Evalluation $evalluation): self
+    {
+        if ($this->evalluations->contains($evalluation)) {
+            $this->evalluations->removeElement($evalluation);
+            // set the owning side to null (unless already changed)
+            if ($evalluation->getEvaluer() === $this) {
+                $evalluation->setEvaluer(null);
+            }
+        }
 
         return $this;
     }
