@@ -1,0 +1,84 @@
+.carte{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 15px;
+    box-shadow: 5px 10px 18px #dbdbdb;
+}
+
+
+.avatar{
+    width: 120px;
+    height: 17vh;
+    margin-left: auto;
+    margin-right: auto ;
+    background-color: white;
+    border: none;
+}
+
+// select {
+//     background: blue;
+//   }
+  
+  
+  main {
+    width: 550px;
+    margin: auto;
+  }
+  label {
+    width: 100px;
+    display: block;
+    float: left;
+  }
+  
+  input, select {
+      box-sizing: border-box;
+      display: block;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      margin: 0;
+      color: #555;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 5px 5px 5px  rgba(0,0,0,.075);
+    width: 300px;
+  }
+  
+  input:focus, select:focus {
+    background: #ffffff;
+  }
+  
+  
+  .button {
+margin-left: 20px;
+      width: 100px;
+      margin:auto;
+  }
+
+
+  .boutton{
+      vertical-align: middle;
+  }
+  
+  button[type="submit"]:hover {
+      background-color: #286090;
+      border-color: #204d74;
+  }
+ 
+
+  .form_group {
+    padding: 5px;
+  }
+  .form_group::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  .form{
+      margin-left: 30px;
+  }
+  
+
+  

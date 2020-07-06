@@ -5,13 +5,18 @@ import { ListecollaborateurComponent } from './pages/admin/collaborateur/listeco
 import { AjoutcollaborateurComponent } from './pages/admin/collaborateur/ajoutcollaborateur/ajoutcollaborateur.component';
 import { DetailcollaborateurComponent } from './pages/admin/collaborateur/detailcollaborateur/detailcollaborateur.component';
 import { TeamComponent } from './pages/admin/team/team.component';
+import { AddteamComponent } from './pages/admin/team/addteam/addteam.component';
+import { QuestionComponent } from './pages/question/question.component';
 
 
 const routes: Routes = [
   {path:'',component:ListecollaborateurComponent},
   {path:'collaborateur/add',component:AjoutcollaborateurComponent},
   {path:'collaborateur/detail/:id',component:DetailcollaborateurComponent},
-  {path:'team',component:TeamComponent}
+  {path:'team',component:TeamComponent},
+  {path:'addteam',component:AddteamComponent},
+  {path:'question',component:QuestionComponent}
+
 
 ];
 

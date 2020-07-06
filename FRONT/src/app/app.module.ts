@@ -18,6 +18,8 @@ import { SevenlastdayComponent } from './diagramme/sevenlastday/sevenlastday.com
 import { MoisComponent } from './diagramme/mois/mois.component';
 import { AnneeComponent } from './diagramme/annee/annee.component';
 import { CardpresentationComponent } from './diagramme/cardpresentation/cardpresentation.component';
+import { AddteamComponent } from './pages/admin/team/addteam/addteam.component';
+import { QuestionComponent } from './pages/question/question.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { CardpresentationComponent } from './diagramme/cardpresentation/cardpres
     SevenlastdayComponent,
     MoisComponent,
     AnneeComponent,
-    CardpresentationComponent
+    CardpresentationComponent,
+    AddteamComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
