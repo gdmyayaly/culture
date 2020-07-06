@@ -48,29 +48,45 @@ class AllsessionRepository extends ServiceEntityRepository
     }
     */
 
-     /**
-      * @return Allsession[] Returns an array of Allsession objects
-      */
+    //  /**
+    //   * @return Allsession[] Returns an array of Allsession objects
+    //   */
     
-    public function findByExampleField($date1)
+    // public function findByExampleField($date1)
+    // {
+    //     return $this->createQueryBuilder('a')
+    //         ->andWhere('a.date >= :val')
+    //         ->setParameter('val', $date1)
+    //         ->orderBy('a.id', 'ASC')
+    //         ->setMaxResults(10)
+    //         ->getQuery()
+    //         ->getResult()
+    //     ;
+    // }
+    
+    // public function samadate($value): ?Allsession
+    // {
+    //     return $this->createQueryBuilder('a')
+    //         ->andWhere('a.date = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
+
+    /**
+     * @return Allsession[] Returns an array of Allsession objects
+     */
+    
+    public function sevenlastevaluation()
     {
         return $this->createQueryBuilder('a')
-            ->andWhere('a.date >= :val')
-            ->setParameter('val', $date1)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
+            // ->andWhere('a.exampleField = :val')
+            // ->setParameter('val', $value)
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(7)
             ->getQuery()
             ->getResult()
-        ;
-    }
-    
-    public function samadate($value): ?Allsession
-    {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.date = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
         ;
     }
     

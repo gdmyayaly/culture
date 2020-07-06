@@ -68,4 +68,7 @@ class AuthentificationController extends AbstractController
         }
 
     }
+    public function bordeldemerde(){
+        return ['Message'=>'DARA BAKHOUL'];
+    }
 }
