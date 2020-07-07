@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AdminService {
     public iduser={id:null};
+    public userdetail:any;
     private url = "http://127.0.0.1:8000/admin/";
     private urls="http://127.0.0.1:8000/infos/";
     public urlimage:string="http://127.0.0.1:8000/";
@@ -13,8 +14,10 @@ export class AdminService {
     // private urls="http://www.culture.telectronsenegal.com/infos/";
     // public urlimage:string="http://www.culture.telectronsenegal.com/";
   private urlusergrow = "usergrow";
-  private urldetailuser="detailuser";
+  private urldetailuser="datacarduser";
   private urllastevaluationdumois="lastevaluationdumois";
+  private urldatacarduser="datacarduser";
+  private urlnotesevenlastdays="notesevenlastdays";
   constructor(private http: HttpClient) { }
   
   usergrow() {
@@ -25,5 +28,11 @@ export class AdminService {
   }
   lastevaluationdumois(data){
     return this.http.post(this.url + this.urllastevaluationdumois,data, { observe: 'response' })
+  }
+  datacarduser(data){
+    return this.http.post(this.url + this.urldatacarduser,data, { observe: 'response' })
+  }
+  notesevenlastdays(data){
+    return this.http.post(this.url + this.urlnotesevenlastdays,data, { observe: 'response' })
   }
 }

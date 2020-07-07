@@ -19,5 +19,7 @@ export class ListecollaborateurComponent implements OnInit {
       }
     )
   }
-
+  choix(user){
+    this.admin.userdetail=user;
+  }
 }

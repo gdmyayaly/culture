@@ -16,6 +16,13 @@ export class SevenlastdayComponent implements OnInit {
   public problemsolving:any;
   public transmission:any;
   public performance:any;
+  public teamperseverance:any;
+  public teamconfiance:any;
+  public teamcollaboration:any;
+  public teamautonomie:any;
+  public teamproblemsolving:any;
+  public teamtransmission:any;
+  public teamperformance:any;
   public barChartOptionsperseverance = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -200,7 +207,7 @@ export class SevenlastdayComponent implements OnInit {
 
   ngOnInit() {
     this.initialisationchart();
-    this.admin.lastevaluationdumois(this.admin.iduser).subscribe(
+    this.admin.notesevenlastdays(this.admin.iduser).subscribe(
       res=>{console.log(res.body);
         this.datart=res.body;
          console.log("rt");
@@ -208,18 +215,25 @@ export class SevenlastdayComponent implements OnInit {
          
          this.date=this.datart.date;
          this.perseverance=this.datart.perseverance;
+         this.teamperseverance=this.datart.teamperseverance;
          this.chartPerseverance();
          this.confiance=this.datart.confiance;
+         this.teamconfiance=this.datart.teamconfiance;
          this.chartConfiance();
          this.collaboration=this.datart.collaboration;
+         this.teamcollaboration=this.datart.teamcollaboration;
          this.chartCollaboration();
          this.autonomie=this.datart.autonomie;
+         this.teamautonomie=this.datart.teamautonomie;
          this.chartAutonomie();
          this.problemsolving=this.datart.problemsolving;
+         this.teamproblemsolving=this.datart.teamproblemsolving;
          this.chartProblemsolving();
          this.transmission=this.datart.transmission;
+         this.teamtransmission=this.datart.teamtransmission;
          this.chartTransmission();
          this.performance=this.datart.performance;
+         this.teamperformance=this.datart.teamperformance;
          this.chartPerformance();
       },
       error=>{console.log(error);
@@ -228,11 +242,14 @@ export class SevenlastdayComponent implements OnInit {
     
   }
   chartPerseverance(){
+    console.log(this.perseverance);
+    console.log(this.teamperseverance);
     this.barChartLabelsperseverance = this.date;
     this.barChartTypeperseverance = 'bar';
     this.barChartLegendperseverance = true;
     this.barChartDataperseverance = [
-     {data: this.perseverance, label: 'Perseverance',backgroundColor: "#FF4080"}
+     {data: this.perseverance, label: 'User',backgroundColor: "#FF4080"},
+     {data: this.teamperseverance, label: 'Team',backgroundColor: "grey"}
    ];
   }
 
@@ -241,7 +258,8 @@ export class SevenlastdayComponent implements OnInit {
     this.barChartTypeconfiance = 'bar';
     this.barChartLegendconfiance = true;
     this.barChartDataconfiance = [
-     {data: this.confiance, label: 'Confiance',backgroundColor: "#FF4080"}
+     {data: this.confiance, label: 'User',backgroundColor: "#FF4080"},
+     {data: this.teamconfiance, label: 'Team',backgroundColor: "grey"}
    ];
   }
  
@@ -250,7 +268,8 @@ export class SevenlastdayComponent implements OnInit {
     this.barChartTypecollaboration = 'bar';
     this.barChartLegendcollaboration = true;
     this.barChartDatacollaboration = [
-     {data: this.collaboration, label: 'Collaboration',backgroundColor: "#FF4080"}
+     {data: this.collaboration, label: 'User',backgroundColor: "#FF4080"},
+     {data: this.teamcollaboration, label: 'Team',backgroundColor: "grey"}
    ];
  }
 
@@ -259,7 +278,8 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartTypeautonomie = 'bar';
   this.barChartLegendautonomie = true;
   this.barChartDataautonomie = [
-   {data: this.autonomie, label: 'Autonomie',backgroundColor: "#FF4080"}
+   {data: this.autonomie, label: 'User',backgroundColor: "#FF4080"},
+   {data: this.teamautonomie, label: 'Team',backgroundColor: "grey"}
  ];
  }
 
@@ -268,7 +288,8 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartTypeproblemsolving = 'bar';
   this.barChartLegendproblemsolving = true;
   this.barChartDataproblemsolving = [
-   {data: this.problemsolving, label: 'problem solving',backgroundColor: "#FF4080"}
+   {data: this.problemsolving, label: 'User',backgroundColor: "#FF4080"},
+   {data: this.teamproblemsolving, label: 'Team',backgroundColor: "grey"}
  ];
  }
 
@@ -277,7 +298,8 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartTypetransmission = 'bar';
   this.barChartLegendtransmission = true;
   this.barChartDatatransmission = [
-   {data: this.transmission, label: 'Transmission',backgroundColor: "#FF4080"}
+   {data: this.transmission, label: 'User',backgroundColor: "#FF4080"},
+   {data: this.teamtransmission, label: 'Team',backgroundColor: "grey"}
  ];
  }
  chartPerformance(){
@@ -285,7 +307,8 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartTypeperformance = 'bar';
   this.barChartLegendperformance = true;
   this.barChartDataperformance = [
-   {data: this.performance, label: 'performance',backgroundColor: "#FF4080"}
+   {data: this.performance, label: 'User',backgroundColor: "#FF4080"},
+   {data: this.teamperformance, label: 'Team',backgroundColor: "grey"}
  ];
   }
 
@@ -294,7 +317,8 @@ export class SevenlastdayComponent implements OnInit {
     this.barChartTypeperseverance = 'bar';
     this.barChartLegendperseverance = true;
     this.barChartDataperseverance = [
-     {data: [0, 0, 0, 0, 0, 0, 0], label: 'P',backgroundColor: "#FF4080"}
+     {data: [0, 0, 0, 0, 0, 0, 0], label: 'P',backgroundColor: "#FF4080"},
+     {data: [0, 0, 0, 0, 0, 0, 0], label: 'P',backgroundColor: "grey"}
     ];
   
     this.barChartLabelsconfiance = ["2020", "2020", "2020", "2020", "2020", "2020", "2020"];

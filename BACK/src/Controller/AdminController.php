@@ -217,7 +217,7 @@ class AdminController extends AbstractController
         $moyenneuserproblemsolving=(($datamoispasser['userproblemsolving']*100)/($datamoispasser['nbruser']*5))-(($datamoisactuel['userproblemsolving']*100)/($datamoisactuel['nbruser']*5));
         $moyenneusertransmission=(($datamoispasser['usertransmission']*100)/($datamoispasser['nbruser']*5))-(($datamoisactuel['usertransmission']*100)/($datamoisactuel['nbruser']*5));
         $moyenneuserperformance=(($datamoispasser['userperformance']*100)/($datamoispasser['nbruser']*5))-(($datamoisactuel['userperformance']*100)/($datamoisactuel['nbruser']*5));
-        $moyenneteamperseverance=(($datamoispasser['teamperseverance']*100)/($datamoispasser['nbruser']*5))-(($datamoisactuel['teamperseverance']*100)/($datamoisactuel['nbruser']*5));
+        $moyenneteamperseverance=(($datamoispasser['teamperseverance']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamperseverance']*100)/($datamoisactuel['nbrteam']*5));
         $moyenneteamconfiance=(($datamoispasser['teamconfiance']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamconfiance']*100)/($datamoisactuel['nbrteam']*5));
         $moyenneteamcollaboration=(($datamoispasser['teamcollaboration']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamcollaboration']*100)/($datamoisactuel['nbrteam']*5));
         $moyenneteamautonomie=(($datamoispasser['teamautonomie']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamautonomie']*100)/($datamoisactuel['nbrteam']*5));
