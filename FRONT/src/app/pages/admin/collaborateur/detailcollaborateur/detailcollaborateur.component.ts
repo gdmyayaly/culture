@@ -10,6 +10,7 @@ import { AdminService } from 'src/app/service/admin.service';
 export class DetailcollaborateurComponent implements OnInit {
   public id:any;
   public personne:any;
+  public classification:any;
   constructor(private activeroute:ActivatedRoute,private admin:AdminService) { }
 
   ngOnInit() {
@@ -18,6 +19,13 @@ export class DetailcollaborateurComponent implements OnInit {
     let a={id:this.id};
     this.admin.iduser.id=this.id;
     this.personne=this.admin.userdetail;
+    this.admin.performaceteam().subscribe(
+      res=>{console.log(res);
+        this.classification=res;
+      },
+      error=>{console.log(error);
+      }
+    )
   }
  
 

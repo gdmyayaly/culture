@@ -139,15 +139,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><span class="td">Mah</span></td>
-                                <td>35% </td>
+                            <tr *ngFor="let item of classification">
+                                <td><span class="td">{{item.username}}</span></td>
+                                <td>{{item.general}}% </td>
                                 <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
+                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">{{item.progression}}%</span>
 
                                 </td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td><span class="td">Mbacke</span> </td>
                                 <td>35% </td>
                                 <td>
@@ -235,7 +235,7 @@
                                     <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
 
                                 </td>
-                            </tr>
+                            </tr> -->
                       
                             <tr>
                                 <td colspan="3">

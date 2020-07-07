@@ -26,6 +26,7 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionsperseverance = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -51,6 +52,8 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionsconfiance = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
+
     scales: {
       yAxes: [{
           ticks: {
@@ -77,6 +80,8 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionscollaboration = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
+
     scales: {
       yAxes: [{
           ticks: {
@@ -103,6 +108,8 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionsautonomie = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
+
     scales: {
       yAxes: [{
           ticks: {
@@ -129,6 +136,8 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionsproblemsolving = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
+
     scales: {
       yAxes: [{
           ticks: {
@@ -155,6 +164,8 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionstransmission = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
+
     scales: {
       yAxes: [{
           ticks: {
@@ -181,6 +192,8 @@ export class SevenlastdayComponent implements OnInit {
   public barChartOptionsperformance = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
+
     scales: {
       yAxes: [{
           ticks: {
@@ -249,7 +262,8 @@ export class SevenlastdayComponent implements OnInit {
     this.barChartLegendperseverance = true;
     this.barChartDataperseverance = [
      {data: this.perseverance, label: 'User',backgroundColor: "#FF4080"},
-     {data: this.teamperseverance, label: 'Team',backgroundColor: "grey"}
+     {data: this.teamperseverance, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"},
+     
    ];
   }
 
@@ -259,7 +273,7 @@ export class SevenlastdayComponent implements OnInit {
     this.barChartLegendconfiance = true;
     this.barChartDataconfiance = [
      {data: this.confiance, label: 'User',backgroundColor: "#FF4080"},
-     {data: this.teamconfiance, label: 'Team',backgroundColor: "grey"}
+     {data: this.teamconfiance, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
    ];
   }
  
@@ -269,7 +283,7 @@ export class SevenlastdayComponent implements OnInit {
     this.barChartLegendcollaboration = true;
     this.barChartDatacollaboration = [
      {data: this.collaboration, label: 'User',backgroundColor: "#FF4080"},
-     {data: this.teamcollaboration, label: 'Team',backgroundColor: "grey"}
+     {data: this.teamcollaboration, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
    ];
  }
 
@@ -279,7 +293,7 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartLegendautonomie = true;
   this.barChartDataautonomie = [
    {data: this.autonomie, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamautonomie, label: 'Team',backgroundColor: "grey"}
+   {data: this.teamautonomie, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
  ];
  }
 
@@ -289,7 +303,7 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartLegendproblemsolving = true;
   this.barChartDataproblemsolving = [
    {data: this.problemsolving, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamproblemsolving, label: 'Team',backgroundColor: "grey"}
+   {data: this.teamproblemsolving, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
  ];
  }
 
@@ -308,7 +322,7 @@ export class SevenlastdayComponent implements OnInit {
   this.barChartLegendperformance = true;
   this.barChartDataperformance = [
    {data: this.performance, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamperformance, label: 'Team',backgroundColor: "grey"}
+   {data: this.teamperformance, label: 'Team',backgroundColor: "grey",hoverBackgroundColor:"grey"}
  ];
   }
 

@@ -280,7 +280,7 @@ class AdminController extends AbstractController
         for ($i=0; $i <count($lastevaluation) ; $i++) { 
             $a=$this->userdataday($id,$lastevaluation[$i]->getDate(),2020);
             //dump($a);
-            array_push($date,date_format($lastevaluation[$i]->getDate(),'d-m-Y'));
+            array_push($date,date_format($lastevaluation[$i]->getDate(),'j F'));
             if ($a['nbruser']==0) {
                 array_push($moyenneuserperseverance,0);
                 array_push($moyenneuserconfiance,0);
@@ -390,9 +390,38 @@ class AdminController extends AbstractController
         /**
          * @Route("/performaceteam")
          */
-        public function performaceteam(UserRepository $userRepository){
+        public function performaceteam(UserRepository $userRepository,SerializerInterface $serializer){
             $allusers=$userRepository->testreq("ROLE_COLLABORATEUR");
-            
+            $mois="03";
+            //$mois=date('m');
+            $moispasser=(int)$mois;
+            $moispasser--;
+            $moispasser=(string)$moispasser;
+            $data=[];
+            for ($i=0; $i <count($allusers) ; $i++) { 
+                $totalactuel=0;
+                $totalpasser=0;
+                $donneractuel=$this->userdatamois($allusers[$i]->getId(),$mois,2020);
+                $donnerpasser=$this->userdatamois($allusers[$i]->getId(),$moispasser,2020);
+                if ($donneractuel['nbruser']==0) {
+                    $totalactuel=0;
+                }
+                else{
+                    $totalactuel=((($donneractuel['totalnote'])*100)/($donneractuel['nbruser']*30));
+                }
+                if ($donneractuel['nbruser']==0) {
+                    $totalpasser=0;
+                }
+                else{
+                    $totalpasser=((($donnerpasser['totalnote'])*100)/($donnerpasser['nbruser']*30));
+                }
+                $a=['username'=>$allusers[$i]->getUsername(),'general'=>round($totalactuel,2),'progression'=>round(round($totalpasser,2)-round($totalactuel,2),2)];
+                array_push($data,$a);
+            }
+            $dataa = $serializer->serialize($data, 'json');
+            return new Response($dataa, 200, [
+                'Content-Type' => 'application/json'
+            ]);
             
         }
 

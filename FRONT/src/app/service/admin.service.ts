@@ -18,6 +18,7 @@ export class AdminService {
   private urllastevaluationdumois="lastevaluationdumois";
   private urldatacarduser="datacarduser";
   private urlnotesevenlastdays="notesevenlastdays";
+  private urlperformaceteam="performaceteam";
   constructor(private http: HttpClient) { }
   
   usergrow() {
@@ -34,5 +35,8 @@ export class AdminService {
   }
   notesevenlastdays(data){
     return this.http.post(this.url + this.urlnotesevenlastdays,data, { observe: 'response' })
+  }
+  performaceteam(){
+    return this.http.post(this.url + this.urlperformaceteam, { observe: 'response' })
   }
 }
