@@ -7,6 +7,7 @@ import { DetailcollaborateurComponent } from './pages/admin/collaborateur/detail
 import { TeamComponent } from './pages/admin/team/team.component';
 import { AddteamComponent } from './pages/admin/team/addteam/addteam.component';
 import { QuestionComponent } from './pages/question/question.component';
+import { SessionComponent } from './pages/admin/session/session.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,9 @@ const routes: Routes = [
   {path:'collaborateur/detail/:id',component:DetailcollaborateurComponent},
   {path:'team',component:TeamComponent},
   {path:'addteam',component:AddteamComponent},
-  {path:'question',component:QuestionComponent}
+  {path:'question',component:QuestionComponent},
+  {path:'session',component:SessionComponent}
+
 
 
 ];
