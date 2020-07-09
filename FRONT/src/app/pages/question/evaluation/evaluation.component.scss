@@ -1,6 +1,6 @@
 .card{
     border-top: 2px solid grey;
-    margin-right: 10px;
+    padding: 10px;
 }
 
 h3{
@@ -10,8 +10,68 @@ h3{
 .b{
     margin-top: 5px;
     margin-bottom: 15px;
+    margin-left: -15px;
+    
 }
 
-.a{
-    margin-right: 15px;
+// .a{
+//     margin-right: 25px;
+// }
+
+
+.asterix{
+    color: red;
+}
+
+h1{
+    margin-bottom: 35px;
+    margin-top: 20px;
+}
+
+
+.btn-primary{
+    background-color: #FF4080;
+    border-color: #FF4080;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.etoile{
+    width: 100px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+/*resolution d'ecran à 640px*/
+
+@media screen and (max-width: 640px){
+    .body{
+       width: auto;
+       margin: 0;
+       padding: 0;
+    }
+    .b{
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .etoile{
+        width: 100px;
+        height: 50px;
+        margin-right: 10px;
+        display: inline-block;
+    }
+
+
+    h1{
+        margin-bottom: 35px;
+        margin-top: 20px;
+        font-size: 26px;
+    }
+
+ 
+    .col-md-2{
+        width: 17%;
+    }
 }

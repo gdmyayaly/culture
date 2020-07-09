@@ -168,7 +168,19 @@
 
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
         <div class="card">
-            <h5 class="card-header">Performance</h5>
+            <h5 class="card-header">Performance
+                <span class="mb-1"> 
+                    <span class="titre">User : {{moyenneperformance | number:'2.1-2'}}%
+                       <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                   </span> 
+                      
+                   <span class="titre2">Team : {{moyenneteamperformance | number:'2.1-2'}}%
+                       <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                   </span>
+                       
+                   </span>
+            </h5>
+
             <div class="card-body">
                 <div class="diagramme" style="display: block">
                     <canvas baseChart
