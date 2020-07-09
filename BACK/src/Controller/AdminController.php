@@ -415,7 +415,7 @@ class AdminController extends AbstractController
                 else{
                     $totalpasser=((($donnerpasser['totalnote'])*100)/($donnerpasser['nbruser']*30));
                 }
-                $a=['username'=>$allusers[$i]->getUsername(),'general'=>round($totalactuel,2),'progression'=>round(round($totalpasser,2)-round($totalactuel,2),2)];
+                $a=['id'=>$allusers[$i]->getId(),'username'=>$allusers[$i]->getUsername(),'general'=>round($totalactuel,2),'progression'=>round(round($totalpasser,2)-round($totalactuel,2),2)];
                 array_push($data,$a);
             }
             $dataa = $serializer->serialize($data, 'json');

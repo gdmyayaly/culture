@@ -140,7 +140,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let item of classification">
-                                <td><span class="td">{{item.username}}</span></td>
+                                <td [ngClass]="{good: item.id==id}"><span class="td">{{item.username}}</span></td>
                                 <td>{{item.general}}% </td>
                                 <td>
                                     <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">{{item.progression}}%</span>
