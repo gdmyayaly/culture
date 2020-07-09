@@ -8,6 +8,7 @@ import { TeamComponent } from './pages/admin/team/team.component';
 import { AddteamComponent } from './pages/admin/team/addteam/addteam.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SessionComponent } from './pages/admin/session/session.component';
+import { EvaluationComponent } from './pages/question/evaluation/evaluation.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,9 @@ const routes: Routes = [
   {path:'team',component:TeamComponent},
   {path:'addteam',component:AddteamComponent},
   {path:'question',component:QuestionComponent},
-  {path:'session',component:SessionComponent}
+  {path:'session',component:SessionComponent},
+  {path:'evaluation',component:EvaluationComponent}
+
 
 
 

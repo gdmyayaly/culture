@@ -20,8 +20,8 @@ import { AnneeComponent } from './diagramme/annee/annee.component';
 import { CardpresentationComponent } from './diagramme/cardpresentation/cardpresentation.component';
 import { AddteamComponent } from './pages/admin/team/addteam/addteam.component';
 import { QuestionComponent } from './pages/question/question.component';
-import { AddsessionComponent } from './pages/session/addsession/addsession.component';
 import { SessionComponent } from './pages/admin/session/session.component';
+import { EvaluationComponent } from './pages/question/evaluation/evaluation.component';
 
 @NgModule({
   declarations: [
@@ -41,8 +41,8 @@ import { SessionComponent } from './pages/admin/session/session.component';
     CardpresentationComponent,
     AddteamComponent,
     QuestionComponent,
-    AddsessionComponent,
-    SessionComponent
+    SessionComponent,
+    EvaluationComponent
   ],
   imports: [
     BrowserModule,
