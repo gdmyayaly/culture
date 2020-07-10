@@ -26,6 +26,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionsperseverance = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -51,6 +52,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionsconfiance = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -77,6 +79,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionscollaboration = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -103,6 +106,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionsautonomie = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -129,6 +133,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionsproblemsolving = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -155,6 +160,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionstransmission = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
@@ -181,6 +187,7 @@ export class MoisComponent implements OnInit {
   public barChartOptionsperformance = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio:false,
     scales: {
       yAxes: [{
           ticks: {
