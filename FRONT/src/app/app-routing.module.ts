@@ -10,6 +10,7 @@ import { QuestionComponent } from './pages/question/question.component';
 import { SessionComponent } from './pages/admin/session/session.component';
 import { EvaluationComponent } from './pages/question/evaluation/evaluation.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,11 @@ const routes: Routes = [
   {path:'question',component:QuestionComponent},
   {path:'session',component:SessionComponent},
   {path:'evaluation',component:EvaluationComponent},
-  {path:'login',component:LoginComponent}
+  {path:'login',component:LoginComponent},
+  {path:'listeam',component:ListeamComponent},
+
+
+
 
 
 

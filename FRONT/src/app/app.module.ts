@@ -22,6 +22,7 @@ import { AddteamComponent } from './pages/admin/team/addteam/addteam.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SessionComponent } from './pages/admin/session/session.component';
 import { EvaluationComponent } from './pages/question/evaluation/evaluation.component';
+import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EvaluationComponent } from './pages/question/evaluation/evaluation.comp
     AddteamComponent,
     QuestionComponent,
     SessionComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    ListeamComponent,
   ],
   imports: [
     BrowserModule,
