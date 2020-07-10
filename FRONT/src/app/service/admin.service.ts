@@ -39,4 +39,9 @@ export class AdminService {
   performaceteam(){
     return this.http.post(this.url + this.urlperformaceteam, { observe: 'response' })
   }
+  reloadpage(){
+    if (localStorage.getItem('user')) {
+      this.userdetail=JSON.parse(localStorage.getItem('user'));
+    }
+  }
 }

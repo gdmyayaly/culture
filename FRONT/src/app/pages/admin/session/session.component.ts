@@ -27,7 +27,7 @@ export class SessionComponent implements OnInit {
     }
   }
 
-  cocheonce(){
+  cocheonce(data){
     if(this.all=true && this.academy==false || this.tech==false || this.business==false || this.crea==false ){
       this.all=false;
     }

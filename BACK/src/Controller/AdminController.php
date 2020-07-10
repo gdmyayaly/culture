@@ -32,6 +32,23 @@ class AdminController extends AbstractController
             'Content-Type' => 'application/json'
         ]);
     }
+    /**
+     * @Route("/detailuser")
+     */
+    public function detailuser(Request $request,UserRepository $userRepository,SerializerInterface $serializer){
+        
+        $data = json_decode($request->getContent(),true);//Récupère une chaîne encodée JSON et la convertit en une variable PHP
+        if(!$data){//s il n'existe pas donc on recupere directement le tableau via la request
+            $data=$request->request->all();
+        }
+        $user= $userRepository->find($data['id']);
+        $data = $serializer->serialize($user, 'json', [
+            'groups' => ['grow']
+        ]);
+        return new Response($data, 200, [
+            'Content-Type' => 'application/json'
+        ]);
+    }
     
     /**
      * @Route("/usergrow", methods={"GET"})

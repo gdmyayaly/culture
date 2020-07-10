@@ -16,25 +16,25 @@
 
 
           <div class="row">
-              <div class="col-md-2 check">
-                  <label for="vehicle1"> All teams</label><br> 
-                  <input type="checkbox" id="vehicle1" (click)="cochertout()" name="vehicle1" [checked]="all" class="inputcheck" value="Bike">
+              <div class="col-md-2 check" (click)="cochertout()">
+                  <label for="vehicle1" > All teams</label><br> 
+                  <input type="checkbox" id="vehicle1"  name="vehicle1" [checked]="all" class="inputcheck" value="Bike">
               </div>
-              <div class="col-md-2 check">
+              <div class="col-md-2 check"(click)="cocheonce('crea')">
                 <label for="vehicle1">  Créa</label><br> 
-                <input type="checkbox" id="vehicle1" (click)="cocheonce() " name="vehicle1" [checked]="crea"  class="inputcheck" value="Bike">
+                <input type="checkbox" id="vehicle1"  name="vehicle1" [checked]="crea"  class="inputcheck" value="Bike">
             </div>
             <div class="col-md-2 check">
-                <label for="vehicle1">  Tech</label><br> 
-                <input type="checkbox" id="vehicle1" (click)="cocheonce()" name="vehicle1"  [checked]="tech" class="inputcheck" value="Bike">
+                <label for="vehicle1" (click)="cocheonce('tech')">  Tech</label><br> 
+                <input type="checkbox" id="vehicle1" name="vehicle1"  [checked]="tech" class="inputcheck" value="Bike">
             </div>
-            <div class="col-md-2 check">
+            <div class="col-md-2 check" (click)="cocheonce('academy')">
                 <label for="vehicle1">  Academy</label><br> 
-                <input type="checkbox" id="vehicle1" (click)="cocheonce()" name="vehicle1" [checked]="academy"  class="inputcheck" value="Bike">
+                <input type="checkbox" id="vehicle1" name="vehicle1" [checked]="academy"  class="inputcheck" value="Bike">
             </div>
-            <div class="col-md-2 check">
+            <div class="col-md-2 check" (click)="cocheonce('business')">
                 <label for="vehicle1">  Business</label><br> 
-                <input type="checkbox" id="vehicle1" (click)="cocheonce()" name="vehicle1" [checked]="business"  class="inputcheck" value="Bike">
+                <input type="checkbox" id="vehicle1" name="vehicle1" [checked]="business"  class="inputcheck" value="Bike">
             </div>
           </div>
        <button type="submit"  class="btn btn-primary">Valider</button>
