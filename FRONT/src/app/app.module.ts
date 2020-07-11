@@ -30,6 +30,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 export function tokenGetter() {
   return localStorage.getItem("token");
 }
+import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,8 @@ export function tokenGetter() {
     AddteamComponent,
     QuestionComponent,
     SessionComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    ListeamComponent,
   ],
   imports: [
     BrowserModule,
