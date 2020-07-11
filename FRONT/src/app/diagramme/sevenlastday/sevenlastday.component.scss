@@ -4,16 +4,17 @@ float: right;
 
 .user{
     margin-right: 40px;
+    color: #FF4080;
 }
 
 .titre{
     margin-right: 10px;
-    color: grey;
+    color: black;
 }
 
 .titre2{
     margin-right: 10px;
-    color: #FF4080;
+    color: grey;
 }
 
 
@@ -96,13 +97,17 @@ float: right;
     font-size: 20px;
 }
 
+.ml-11{
+    margin-left: 5px;
+}
+
 // .mb-12{
 //     color: #6b6b6b;
 //     font-size: 20px;
 // }
 
 .bg-success-light{
-background-color: grey !important;
+background-color: #FF4080 !important;
 color: white !important;
 }
 
@@ -154,19 +159,18 @@ span{
 }
 .titre{
     margin-right: 2PX;
-    color: grey;
+    color: black;
 }
 
 .titre2{
     margin-right: 2PX;
-    color: #FF4080;
+    color: grey;
 }
 .user{
     margin-right: 50px;
 }
-
 .bg-success-light{
-    background-color: grey !important;
+    background-color: #FF4080 !important;
     color: white !important;
     }
     
