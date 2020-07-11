@@ -13,7 +13,8 @@ import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [
-  {path:'',component:ListecollaborateurComponent},
+  {path:'',component:LoginComponent},
+  {path:'collaborateur',component:ListecollaborateurComponent},
   {path:'collaborateur/add',component:AjoutcollaborateurComponent},
   {path:'collaborateur/detail/:id',component:DetailcollaborateurComponent},
   {path:'team',component:TeamComponent},
@@ -21,9 +22,7 @@ const routes: Routes = [
   {path:'question',component:QuestionComponent},
   {path:'session',component:SessionComponent},
   {path:'evaluation',component:EvaluationComponent},
-  {path:'login',component:LoginComponent}
-
-
+  // {path:'login',component:LoginComponent}
 
 
 

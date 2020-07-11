@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router,private auth:AuthService) { }
 
   ngOnInit() {
   }
-
+  utilisateur= new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl('')
+  })
+  login(donner){
+    console.log(donner);
+    this.auth.logger(donner).subscribe(
+      res=>{console.log(res);
+        let a=res.body;
+        this.auth.enregistrementToken(a.token)      
+      },
+      error=>{console.log(error);
+      }
+    )
+    // if (donner.username=="director") {
+    //   this.auth.connecter=true;
+    //   this.auth.isadmin=true;
+    //   localStorage.setItem('connecter',"good");
+    //   localStorage.setItem('isadmin',"good");
+    //   this.router.navigate(['collaborateur']);
+    // }
+    // else{
+    //   this.auth.connecter=true;
+    //   this.auth.isuser=true;
+    //   localStorage.setItem('connecter',"good");
+    //   localStorage.setItem('isadmin',"false");
+    //   this.router.navigate(['collaborateur/detail',403]);
+    // }
+  }
 }
