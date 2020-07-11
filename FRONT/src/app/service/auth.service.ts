@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-   public url:string="http://127.0.0.1:8000/";
-  //public url:string="http://www.culture.telectronsenegal.com/";
+  // public url:string="http://127.0.0.1:8000/";
+  public url:string="http://www.culture.telectronsenegal.com/";
   
   private urllogin:string="login";
   private urlInfos:string="infos/user";

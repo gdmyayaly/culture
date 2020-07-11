@@ -49,6 +49,11 @@ class Allsession
      */
     private $concerner;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $nombre;
+
     public function __construct()
     {
         $this->evalluations = new ArrayCollection();
@@ -146,6 +151,18 @@ class Allsession
     public function setConcerner(string $concerner): self
     {
         $this->concerner = $concerner;
+
+        return $this;
+    }
+
+    public function getNombre(): ?int
+    {
+        return $this->nombre;
+    }
+
+    public function setNombre(int $nombre): self
+    {
+        $this->nombre = $nombre;
 
         return $this;
     }

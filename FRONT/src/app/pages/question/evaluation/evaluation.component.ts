@@ -13,6 +13,7 @@ export class EvaluationComponent implements OnInit {
   public teamtech=[
     {username:'mbacke',prenom:"Elhadji Mbacke",nom:'Mbaye'},
     {username:'yaya',prenom:"El Hadji Yaya",nom:'Ly'},
+    {username:'anta',prenom:"Adji Anta",nom:'Dabo'},
   ];
   public teamgrowacademy=[
     {username:'aissata',prenom:"Aissata",nom:'Déme'},
@@ -103,7 +104,10 @@ export class EvaluationComponent implements OnInit {
 
       console.log(this.note.status);
       if (this.note.status=="VALID") {
-        this.admin.note().subscribe(
+        this.note.get('evaluer').setValue(this.user.get('nom').value);
+        console.log(this.note.value);
+        
+        this.admin.note(this.note.value).subscribe(
           res=>{console.log(res);
             Swal.fire({
               position: 'top-end',

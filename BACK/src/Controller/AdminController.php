@@ -8,6 +8,8 @@ use App\Entity\User;
 use App\Repository\AllsessionRepository;
 use App\Repository\EvalluationRepository;
 use App\Repository\UserRepository;
+use DateTime;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -52,12 +54,32 @@ class AdminController extends AbstractController
     /**
      * @Route("/note")
      */
-    public function note(Request $request,SerializerInterface $serializer){
+    public function note(Request $request,SerializerInterface $serializer,AllsessionRepository $allsessionRepository,EntityManagerInterface $entityManagerInterface,UserRepository $userRepository){
         $user=$this->getUser();
-        $data = $serializer->serialize($user, 'json', [
+        $session= $allsessionRepository->findOneBy(['nombre'=>10]);
+        $data = json_decode($request->getContent(),true);//Récupère une chaîne encodée JSON et la convertit en une variable PHP
+        if(!$data){//s il n'existe pas donc on recupere directement le tableau via la request
+            $data=$request->request->all();
+        }
+        $evaluation= new Evalluation();
+        $evaluation->setPerseverance($data['perseverance']);
+        $evaluation->setConfiance($data['confiance']);
+        $evaluation->setCollaboration($data['collaboration']);
+        $evaluation->setAutonomie($data['autonomie']);
+        $evaluation->setProblemsolving($data['problemsolving']);
+        $evaluation->setTransmission($data['transmission']);
+        $evaluation->setPerformance($data['performance']);
+        $evaluation->setEvaluateur($user);
+        $a=$userRepository->findOneBy(['username'=>$data['evaluer']]);
+        $evaluation->setEvaluer($a);
+        $evaluation->setDate(new DateTime());
+        $evaluation->setSession($session);
+        $entityManagerInterface->persist($evaluation);
+        $entityManagerInterface->flush();
+        $date = $serializer->serialize($user, 'json', [
             'groups' => ['grow']
         ]);
-        return new Response($data, 200, [
+        return new Response($date, 200, [
             'Content-Type' => 'application/json'
         ]);
     }
@@ -84,8 +106,8 @@ class AdminController extends AbstractController
         if(!$data){//s il n'existe pas donc on recupere directement le tableau via la request
             $data=$request->request->all();
         }
-       //$id=$data['id'];
-        $id=403;
+       $id=$data['id'];
+        //$id=403;
         $anne=date('Y');
         $userperseverance=[];
         $userconfiance=[];

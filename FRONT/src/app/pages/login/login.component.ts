@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  public data:any;
   constructor(private router:Router,private auth:AuthService) { }
 
   ngOnInit() {
@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     console.log(donner);
     this.auth.logger(donner).subscribe(
       res=>{console.log(res);
-        let a=res.body;
-        this.auth.enregistrementToken(a.token)      
+        this.data=res.body;
+        this.auth.enregistrementToken(this.data.token)      
       },
       error=>{console.log(error);
       }

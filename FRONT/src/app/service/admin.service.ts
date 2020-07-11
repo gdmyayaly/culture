@@ -13,12 +13,12 @@ export class AdminService {
   ];
     public iduser={id:null};
     public userdetail:any;
-    private url = "http://127.0.0.1:8000/admin/";
-    private urls="http://127.0.0.1:8000/infos/";
-    public urlimage:string="http://127.0.0.1:8000/";
-    // private url = "http://www.culture.telectronsenegal.com/admin/";
-    // private urls="http://www.culture.telectronsenegal.com/infos/";
-    // public urlimage:string="http://www.culture.telectronsenegal.com/";
+    // private url = "http://127.0.0.1:8000/admin/";
+    // private urls="http://127.0.0.1:8000/infos/";
+    // public urlimage:string="http://127.0.0.1:8000/";
+    private url = "http://www.culture.telectronsenegal.com/admin/";
+    private urls="http://www.culture.telectronsenegal.com/infos/";
+    public urlimage:string="http://www.culture.telectronsenegal.com/";
   private urlusergrow = "usergrow";
   private urldetailuser="datacarduser";
   private urllastevaluationdumois="lastevaluationdumois";
@@ -51,7 +51,7 @@ export class AdminService {
       this.userdetail=JSON.parse(localStorage.getItem('user'));
     }
   }
-  note(){
-    return this.http.post(this.url + this.urlnote, { observe: 'response' })
+  note(data){
+    return this.http.post(this.url + this.urlnote,data, { observe: 'response' })
   }
 }

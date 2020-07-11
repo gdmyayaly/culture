@@ -15,8 +15,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-4"*ngFor="let item of user" >
-        <div class="card" style="width: 16rem;">
+      <div class="col-12 col-lg-4"*ngFor="let item of user" >
+        <div class="card">
             <a class="liencarte" [routerLink]="['/collaborateur/detail',item.id]" (click)="choix(item)">
 
             <img class="card-img-top" src="assets/avatarh.png"  alt="Card image cap">

@@ -140,7 +140,7 @@
                                 <td [ngClass]="{good: item.id==id}"><span class="td">{{item.username}}</span></td>
                                 <td>{{item.general}}% </td>
                                 <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">{{item.progression}}%</span>
+                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': item.progression>=0,'fa-arrow-down': item.progression<0}"></i></span><span  [ngClass]="{'ml-1': item.progression>=0,'ml-12': item.progression<0}">{{item.progression}}%</span>
 
                                 </td>
                             </tr>

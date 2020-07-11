@@ -11,21 +11,22 @@ import { SessionComponent } from './pages/admin/session/session.component';
 import { EvaluationComponent } from './pages/question/evaluation/evaluation.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
+import { AuthGuardService } from './service/auth-guard.service';
 
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
-  {path:'collaborateur',component:ListecollaborateurComponent},
-  {path:'collaborateur/add',component:AjoutcollaborateurComponent},
-  {path:'collaborateur/detail/:id',component:DetailcollaborateurComponent},
-  {path:'team',component:TeamComponent},
-  {path:'addteam',component:AddteamComponent},
-  {path:'question',component:QuestionComponent},
-  {path:'session',component:SessionComponent},
-  {path:'evaluation/:id',component:EvaluationComponent},
+  {path:'collaborateur',component:ListecollaborateurComponent,canActivate: [AuthGuardService] },
+  {path:'collaborateur/add',component:AjoutcollaborateurComponent,canActivate: [AuthGuardService] },
+  {path:'collaborateur/detail/:id',component:DetailcollaborateurComponent,canActivate: [AuthGuardService] },
+  {path:'team',component:TeamComponent,canActivate: [AuthGuardService] },
+  {path:'addteam',component:AddteamComponent,canActivate: [AuthGuardService] },
+  {path:'question',component:QuestionComponent,canActivate: [AuthGuardService] },
+  {path:'session',component:SessionComponent,canActivate: [AuthGuardService] },
+  {path:'evaluation/:id',component:EvaluationComponent,canActivate: [AuthGuardService] },
   // {path:'login',component:LoginComponent}
-  {path:'login',component:LoginComponent},
-  {path:'listeam',component:ListeamComponent},
+  {path:'login',component:LoginComponent,canActivate: [AuthGuardService] },
+  {path:'listeam',component:ListeamComponent,canActivate: [AuthGuardService] },
 
 
 
