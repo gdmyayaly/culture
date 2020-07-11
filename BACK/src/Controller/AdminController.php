@@ -49,6 +49,18 @@ class AdminController extends AbstractController
             'Content-Type' => 'application/json'
         ]);
     }
+    /**
+     * @Route("/note")
+     */
+    public function note(Request $request,SerializerInterface $serializer){
+        $user=$this->getUser();
+        $data = $serializer->serialize($user, 'json', [
+            'groups' => ['grow']
+        ]);
+        return new Response($data, 200, [
+            'Content-Type' => 'application/json'
+        ]);
+    }
     
     /**
      * @Route("/usergrow", methods={"GET"})

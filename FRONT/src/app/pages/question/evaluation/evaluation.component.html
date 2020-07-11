@@ -1,13 +1,14 @@
 <div class="container-fluid">
-    <h1>Team Tech & Digital <span class="asterix">*</span> </h1>
+    <h1>{{nomteam}} <span class="asterix">*</span> </h1>
     <div class="evaluer">
         <p class="nom"> Nom de la personne à évaluer <span class="asterix">*</span></p> 
     </div>
 
-    <form action="">
+    <form [formGroup]="user">
 
-        <select class="select form-control" name="" id="" style="width:335px; height:50px;">
-            <option value="Mbacke Mbaye">Mbacke Mbaye</option>
+        <select class="select form-control" formControlName="nom" name="" id="" style="width:335px; height:50px;">
+            <option value="">Personne à evaluer</option>
+            <option value="{{item.username}}" *ngFor="let item of teamevaluation">{{item.prenom}} {{item.nom}}</option>
         </select>
     </form>
 

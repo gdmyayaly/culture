@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'addteam',component:AddteamComponent},
   {path:'question',component:QuestionComponent},
   {path:'session',component:SessionComponent},
-  {path:'evaluation',component:EvaluationComponent},
+  {path:'evaluation/:id',component:EvaluationComponent},
   // {path:'login',component:LoginComponent}
   {path:'login',component:LoginComponent},
   {path:'listeam',component:ListeamComponent},

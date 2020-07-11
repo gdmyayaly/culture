@@ -10,7 +10,6 @@ export class AdminService {
     {id:2,nom:'grow academy'},
     {id:3,nom:'Team Créa'},
     {id:4,nom:'Team Tech&Digital'},
-    {id:5,nom:'Team Funding'},
   ];
     public iduser={id:null};
     public userdetail:any;
@@ -26,6 +25,7 @@ export class AdminService {
   private urldatacarduser="datacarduser";
   private urlnotesevenlastdays="notesevenlastdays";
   private urlperformaceteam="performaceteam";
+  private urlnote="note";
   constructor(private http: HttpClient) { }
   
   usergrow() {
@@ -50,5 +50,8 @@ export class AdminService {
     if (localStorage.getItem('user')) {
       this.userdetail=JSON.parse(localStorage.getItem('user'));
     }
+  }
+  note(){
+    return this.http.post(this.url + this.urlnote, { observe: 'response' })
   }
 }
