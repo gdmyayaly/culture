@@ -275,7 +275,8 @@ class AdminController extends AbstractController
         $moyenneteamproblemsolving=(($datamoispasser['teamproblemsolving']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamproblemsolving']*100)/($datamoisactuel['nbrteam']*5));
         $moyenneteamtransmission=(($datamoispasser['teamtransmission']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamtransmission']*100)/($datamoisactuel['nbrteam']*5));
         $moyenneteamperformance=(($datamoispasser['teamperformance']*100)/($datamoispasser['nbrteam']*5))-(($datamoisactuel['teamperformance']*100)/($datamoisactuel['nbrteam']*5));
-        $general=((($datamoisactuel['totalnote'])*100)/($datamoisactuel['nbruser']*30));
+        $general=(round($userperseverance,2)+round($usertransmission,2)+round($userconfiance,2)+round($usercollaboration,2)+round($userautonomie,2)+round($userproblemsolving,2)+round($userperformance,2))/(7);
+        //((($datamoisactuel['totalnote'])*100)/($datamoisactuel['nbruser']*30));
         $moyennegeneral=(($datamoispasser['totalnote'])*100)/($datamoispasser['nbruser']*30)-(($datamoisactuel['totalnote'])*100)/($datamoisactuel['nbruser']*30);
         return $this->json([
             'userperseverance'=>round($userperseverance,2),
@@ -458,15 +459,31 @@ class AdminController extends AbstractController
                     $totalactuel=0;
                 }
                 else{
-                    $totalactuel=((($donneractuel['totalnote'])*100)/($donneractuel['nbruser']*30));
+                    //$totalactuel=((($donneractuel['totalnote'])*100)/($donneractuel['nbruser']*30));
+                    $userperseverance=($donneractuel['userperseverance']*100)/($donneractuel['nbruser']*5);
+                    $userconfiance=($donneractuel['userconfiance']*100)/($donneractuel['nbruser']*5);
+                    $usercollaboration=($donneractuel['usercollaboration']*100)/($donneractuel['nbruser']*5);
+                    $userautonomie=($donneractuel['userautonomie']*100)/($donneractuel['nbruser']*5);
+                    $userproblemsolving=($donneractuel['userproblemsolving']*100)/($donneractuel['nbruser']*5);
+                    $usertransmission=($donneractuel['usertransmission']*100)/($donneractuel['nbruser']*5);
+                    $userperformance=($donneractuel['userperformance']*100)/($donneractuel['nbruser']*5);
+                    $totalactuel=(round($userperseverance,2)+round($usertransmission,2)+round($userconfiance,2)+round($usercollaboration,2)+round($userautonomie,2)+round($userproblemsolving,2)+round($userperformance,2))/(7);
                 }
                 if ($donneractuel['nbruser']==0) {
                     $totalpasser=0;
                 }
                 else{
-                    $totalpasser=((($donnerpasser['totalnote'])*100)/($donnerpasser['nbruser']*30));
+                    //$totalpasser=((($donnerpasser['totalnote'])*100)/($donnerpasser['nbruser']*30));
+                    $userperseverance=($donnerpasser['userperseverance']*100)/($donnerpasser['nbruser']*5);
+                    $userconfiance=($donnerpasser['userconfiance']*100)/($donnerpasser['nbruser']*5);
+                    $usercollaboration=($donnerpasser['usercollaboration']*100)/($donnerpasser['nbruser']*5);
+                    $userautonomie=($donnerpasser['userautonomie']*100)/($donnerpasser['nbruser']*5);
+                    $userproblemsolving=($donnerpasser['userproblemsolving']*100)/($donnerpasser['nbruser']*5);
+                    $usertransmission=($donnerpasser['usertransmission']*100)/($donnerpasser['nbruser']*5);
+                    $userperformance=($donnerpasser['userperformance']*100)/($donnerpasser['nbruser']*5);
+                    $totalpasser=(round($userperseverance,2)+round($usertransmission,2)+round($userconfiance,2)+round($usercollaboration,2)+round($userautonomie,2)+round($userproblemsolving,2)+round($userperformance,2))/(7);
                 }
-                $a=['id'=>$allusers[$i]->getId(),'username'=>$allusers[$i]->getUsername(),'general'=>round($totalactuel,2),'progression'=>round(round($totalpasser,2)-round($totalactuel,2),2)];
+                $a=['poste'=>$allusers[$i]->getPoste(),'prenom'=>$allusers[$i]->getPrenom(),'nom'=>$allusers[$i]->getNom(),'telephone'=>$allusers[$i]->getTelephone(),'id'=>$allusers[$i]->getId(),'username'=>$allusers[$i]->getUsername(),'general'=>round($totalactuel,2),'progression'=>round(round($totalpasser,2)-round($totalactuel,2),2)];
                 array_push($data,$a);
             }
             $dataa = $serializer->serialize($data, 'json');
@@ -576,5 +593,14 @@ class AdminController extends AbstractController
             'userperformance'=>$userperformance,
             'nbruser'=>$nbruser,
         ];
+    }
+    /**
+     * @Route("/thiat")
+     */
+    public function thiat(AllsessionRepository $allsessionRepository,EvalluationRepository $evalluationRepository){
+       // $session=$allsessionRepository->findOneBy(['mois'=>7]);
+       // $evaluation=$evalluationRepository->findBy(['session'=>$session->getId()]);
+        //dump($evaluation);die();
+
     }
 }

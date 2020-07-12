@@ -31,6 +31,8 @@ export function tokenGetter() {
   return localStorage.getItem("token");
 }
 import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
     HttpClientModule,
     ChartsModule,
     ReactiveFormsModule,
+    MaterialModule,
     FormsModule,
     JwtModule.forRoot({
       config: {
@@ -68,6 +71,7 @@ import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
        // blacklistedRoutes: ["http://example.com/examplebadroute/"],
       },
     }),
+    BrowserAnimationsModule,
   ],
   providers: [AuthGuardService,AuthService,
     {

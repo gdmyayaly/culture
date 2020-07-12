@@ -133,3 +133,17 @@ color: #FF4080 !important;
 .active{
     color: #FF4080 !important;
 }
+
+
+    .diagramme{
+        height: 50vh;
+    }
+    
+    @media screen and (max-width: 640px){
+        .diagramme{
+            height: 30vh;
+        }
+    }
+    .survol{
+        cursor: pointer;
+    }

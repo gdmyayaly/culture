@@ -13,8 +13,136 @@
       </div>
     </div>
   <!-- POURCENTAGE DE CHAQUE CRITERE-->
-<app-cardpresentation></app-cardpresentation>
+<!-- <app-cardpresentation></app-cardpresentation> -->
+<div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Perseverance</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{userperseverance | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneuserperseverance>=0,'bg-danger-light': moyenneuserperseverance<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneuserperseverance>0,'fa-arrow-down': moyenneuserperseverance<0}"></i></span><span class="ml-1">{{moyenneuserperseverance| number:'2.1-2'}}%</span>
 
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamperseverance | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamperseverance>=0,'bg-danger-light': moyenneteamperseverance<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamperseverance>0,'fa-arrow-down': moyenneteamperseverance<0}"></i></span><span class="ml-1">{{moyenneteamperseverance| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Confiance en soi</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{userconfiance | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneuserconfiance>=0,'bg-danger-light': moyenneuserconfiance<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneuserconfiance>0,'fa-arrow-down': moyenneuserconfiance<0}"></i></span><span class="ml-1">{{moyenneuserconfiance| number:'2.1-2'}}%</span>
+
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamconfiance | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamconfiance>=0,'bg-danger-light': moyenneteamconfiance<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamconfiance>0,'fa-arrow-down': moyenneteamconfiance<0}"></i></span><span class="ml-1">{{moyenneteamconfiance| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Collaboration</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{usercollaboration | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneusercollaboration>=0,'bg-danger-light': moyenneusercollaboration<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneusercollaboration>0,'fa-arrow-down': moyenneusercollaboration<0}"></i></span><span class="ml-1">{{moyenneusercollaboration| number:'2.1-2'}}%</span>
+
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamcollaboration | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamcollaboration>=0,'bg-danger-light': moyenneteamcollaboration<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamcollaboration>0,'fa-arrow-down': moyenneteamcollaboration<0}"></i></span><span class="ml-1">{{moyenneteamcollaboration| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Autonomie</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{userautonomie | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneuserautonomie>=0,'bg-danger-light': moyenneuserautonomie<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneuserautonomie>0,'fa-arrow-down': moyenneuserautonomie<0}"></i></span><span class="ml-1">{{moyenneuserautonomie| number:'2.1-2'}}%</span>
+
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamautonomie | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamautonomie>=0,'bg-danger-light': moyenneteamautonomie<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamautonomie>0,'fa-arrow-down': moyenneteamautonomie<0}"></i></span><span class="ml-1">{{moyenneteamautonomie| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Problem Solving</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{userproblemsolving | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneuserproblemsolving>=0,'bg-danger-light': moyenneuserproblemsolving<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneuserproblemsolving>0,'fa-arrow-down': moyenneuserproblemsolving<0}"></i></span><span class="ml-1">{{moyenneuserproblemsolving| number:'2.1-2'}}%</span>
+
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamproblemsolving | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamproblemsolving>=0,'bg-danger-light': moyenneteamproblemsolving<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamproblemsolving>0,'fa-arrow-down': moyenneteamproblemsolving<0}"></i></span><span class="ml-1">{{moyenneteamproblemsolving| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Transmission</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{usertransmission | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneusertransmission>=0,'bg-danger-light': moyenneusertransmission<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneusertransmission>0,'fa-arrow-down': moyenneusertransmission<0}"></i></span><span class="ml-1">{{moyenneusertransmission| number:'2.1-2'}}%</span>
+
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamtransmission | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamtransmission>=0,'bg-danger-light': moyenneteamtransmission<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamtransmission>0,'fa-arrow-down': moyenneteamtransmission<0}"></i></span><span class="ml-1">{{moyenneteamtransmission| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class="card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text">Performance</h5>
+                <div class="metric-value d-inline-block">
+                    <h1 class="mb-1">{{userperformance | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneuserperformance>=0,'bg-danger-light': moyenneuserperformance<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneuserperformance>0,'fa-arrow-down': moyenneuserperformance<0}"></i></span><span class="ml-1">{{moyenneuserperformance| number:'2.1-2'}}%</span>
+
+                </div>
+                <div class="metric-label d-inline-block float-right text-danger font-weight-bold">
+                    <h1 class="mb-12">{{teamperformance | number:'2.1-2'}}%</h1>
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyenneteamperformance>=0,'bg-danger-light': moyenneteamperformance<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyenneteamperformance>0,'fa-arrow-down': moyenneteamperformance<0}"></i></span><span class="ml-1">{{moyenneteamperformance| number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+        <div class=" general card border-3 border-top border-top-primary">
+            <div class="card-body">
+                <h5 class="text1">Général</h5>
+                <div class="metric-values d-inline-block">
+                    <h1 class="mb-11">{{general | number:'2.1-2'}}%</h1>
+
+                </div>
+                <div class="metric-labels d-inline-block float-right text-danger font-weight-bold">
+                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': moyennegeneral>=0,'bg-danger-light': moyennegeneral<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': moyennegeneral>0,'fa-arrow-down': moyennegeneral<0}"></i></span><span class="ml-12">{{moyennegeneral | number:'2.1-2'}}%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
   
   <!-- FIN POURCENTAGE DE CHAQUE CRITERE-->
  <div class="row">
@@ -36,7 +164,204 @@
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="seven" role="tabpanel" aria-labelledby="seven-tab">
-                    <app-sevenlastday></app-sevenlastday>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Perseverance 
+                                  
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                    
+                                </h5>
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDataperseverance"
+                                                [labels]="barChartLabelsperseverance"
+                                                [options]="barChartOptionsperseverance"
+                                                [legend]="barChartLegendperseverance"
+                                                [chartType]="barChartTypeperseverance">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Confiance en soi
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDataconfiance"
+                                                [labels]="barChartLabelsconfiance"
+                                                [options]="barChartOptionsconfiance"
+                                                [legend]="barChartLegendconfiance"
+                                                [chartType]="barChartTypeconfiance">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Collaboration
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDatacollaboration"
+                                                [labels]="barChartLabelscollaboration"
+                                                [options]="barChartOptionscollaboration"
+                                                [legend]="barChartLegendcollaboration"
+                                                [chartType]="barChartTypecollaboration">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Autonomie
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDataautonomie"
+                                                [labels]="barChartLabelsautonomie"
+                                                [options]="barChartOptionsautonomie"
+                                                [legend]="barChartLegendautonomie"
+                                                [chartType]="barChartTypeautonomie">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Problem Solving
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDataproblemsolving"
+                                                [labels]="barChartLabelsproblemsolving"
+                                                [options]="barChartOptionsproblemsolving"
+                                                [legend]="barChartLegendproblemsolving"
+                                                [chartType]="barChartTypeproblemsolving">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Transmission
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                                </h5>
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDatatransmission"
+                                                [labels]="barChartLabelstransmission"
+                                                [options]="barChartOptionstransmission"
+                                                [legend]="barChartLegendtransmission"
+                                                [chartType]="barChartTypetransmission">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Performance
+                                    <span class="mb-1"> 
+                                        <span class="titre">User : 43%
+                                           <span class=" icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-11 user">4%</span>
+                                       </span> 
+                                          
+                                       <span class="titre2">Team : 52%
+                                           <span class="icon-circle-small icon-box-xs text-success bg-danger-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">4%</span>
+                                       </span>
+                                           
+                                       </span>
+                                </h5>
+                    
+                                <div class="card-body">
+                                    <div class="diagramme" style="display: block">
+                                        <canvas baseChart
+                                                [datasets]="barChartDataperformance"
+                                                [labels]="barChartLabelsperformance"
+                                                [options]="barChartOptionsperformance"
+                                                [legend]="barChartLegendperformance"
+                                                [chartType]="barChartTypeperformance">
+                                        </canvas>
+                                      </div>
+                                </div>
+                            </div>
+                    </div>
+                      
+                    </div>
                 </div>
                 <div class="tab-pane fade" id="mois" role="tabpanel" aria-labelledby="mois-tab">
 <app-mois></app-mois>
@@ -108,17 +433,6 @@
                     <p>Part5</p>
                 </div>
               </div>
-            <!-- <div class="card">
-              <div class="card-header tab-regular">
-                  <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                      <li class="nav-item">
-                          <a class="nav-link active" id="card-tab-1" data-toggle="tab" href="#card-1" role="tab" aria-controls="card-1" aria-selected="true">(1) En cours</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" id="card-tab-2" data-toggle="tab" href="#card-2" role="tab" aria-controls="card-2" aria-selected="false">(0) Terminé</a>
-                      </li>
-                  </ul>
-              </div> -->
           </div>
      </div>
 
@@ -127,7 +441,7 @@
             <h5 class="card-header">Performance Team</h5>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table no-wrap p-table">
+                    <!-- <table class="table no-wrap p-table">
                         <thead class="bg-light">
                             <tr class="border-0">
                                 <th class="border-0">Nom </th>
@@ -136,107 +450,42 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let item of classification">
+                            <tr *ngFor="let item of classification" (click)="retour(item)">
                                 <td [ngClass]="{good: item.id==id}"><span class="td">{{item.username}}</span></td>
                                 <td>{{item.general}}% </td>
                                 <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': item.progression>=0,'fa-arrow-down': item.progression<0}"></i></span><span  [ngClass]="{'ml-1': item.progression>=0,'ml-12': item.progression<0}">{{item.progression}}%</span>
-
+                                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': item.progression>=0,'bg-danger-light': item.progression<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': item.progression>=0,'fa-arrow-down': item.progression<0}"></i></span><span class="ml-1" >{{item.progression}}%</span>
                                 </td>
                             </tr>
-                            <!-- <tr>
-                                <td><span class="td">Mbacke</span> </td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Yaya</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Anta</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Aissata</span></td>
-                                <td>35% </td>
-                                <td>   
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Fatou</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Yacine</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Ngone</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Glory</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Laye</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Abdoulaye</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Faustin</span></td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="td">Abraham</span> </td>
-                                <td>35% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger bg-danger-light bg-danger-light "><i class="fa fa-fw fa-arrow-down"></i></span><span class="ml-1">4%</span>
-
-                                </td>
-                            </tr> -->
-                      
                           
                         </tbody>
-                    </table>
+                    </table> -->
+                    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+                        <!-- Position Column -->
+                        <ng-container matColumnDef="nom">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
+                          <td mat-cell *matCellDef="let element" class="survol" (click)="retour(element)" [ngClass]="{good: element.id==id}"> {{element.username}} </td>
+                        </ng-container>
+                      
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="general">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> General </th>
+                          <td mat-cell *matCellDef="let element"> {{element.general}} % </td>
+                        </ng-container>
+                      
+                        <!-- Weight Column -->
+                        <ng-container matColumnDef="progression">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Progression </th>
+                          <td mat-cell *matCellDef="let element">
+                            <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': element.progression>=0,'bg-danger-light': element.progression<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': element.progression>=0,'fa-arrow-down': element.progression<0}"></i></span><span class="ml-1" >{{element.progression}}%</span>      
+                        </td>
+                        </ng-container>
+                      
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+                      
                 </div>
             </div>
         </div>
