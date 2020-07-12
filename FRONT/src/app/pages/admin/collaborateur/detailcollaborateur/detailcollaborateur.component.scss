@@ -1,4 +1,27 @@
 
+.mb-1{
+    float: right;
+    }
+    
+    .user{
+        margin-right: 40px;
+        color: #FF4080;
+    }
+    
+    .titre{
+        margin-right: 10px;
+        color: black;
+    }
+    
+    .titre2{
+        margin-right: 10px;
+        color: grey;
+    }
+    
+.nomtab{
+    text-transform: capitalize;
+}
+
 .modif{
     margin-top: 10px;
     margin-bottom: 20px;
@@ -94,9 +117,15 @@ color: #FF4080 !important;
 
 .ml-1{
     color: #FF4080 !important;
+    margin-left: 5px;
+
 }
 .ml-12{
     color: white !important;
+    margin-left: 5px;
+}
+
+.ml-11{
     margin-left: 5px;
 }
 
@@ -143,6 +172,27 @@ color: #FF4080 !important;
         .diagramme{
             height: 30vh;
         }
+
+        .titre{
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        .titre2{
+            font-size: 15px;
+            
+        }
+
+
+        .mb-1{
+            float: none;;
+            }
+            
+            .user{
+                margin-right: 30px;
+                color: #FF4080;
+            }
+    
     }
     .survol{
         cursor: pointer;
