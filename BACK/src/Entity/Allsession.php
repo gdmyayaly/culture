@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Entity;
-
 use App\Repository\AllsessionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=AllsessionRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\AllsessionRepository")
  */
 class Allsession
 {
@@ -19,7 +18,7 @@ class Allsession
      */
     private $id;
 
-    /**
+  /**
      * @ORM\Column(type="date")
      */
     private $date;
@@ -35,9 +34,9 @@ class Allsession
     private $annee;
 
     /**
-     * @ORM\OneToMany(targetEntity=Evalluation::class, mappedBy="session")
+     * @ORM\OneToMany(targetEntity=Evaluation::class, mappedBy="session")
      */
-    private $evalluations;
+    private $evaluations;
 
     /**
      * @ORM\Column(type="json", nullable=true)
@@ -56,7 +55,7 @@ class Allsession
 
     public function __construct()
     {
-        $this->evalluations = new ArrayCollection();
+        $this->evaluations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -101,30 +100,30 @@ class Allsession
     }
 
     /**
-     * @return Collection|Evalluation[]
+     * @return Collection|Evaluation[]
      */
-    public function getEvalluations(): Collection
+    public function getEvaluations(): Collection
     {
-        return $this->evalluations;
+        return $this->evaluations;
     }
 
-    public function addEvalluation(Evalluation $evalluation): self
+    public function addEvaluation(Evaluation $evaluation): self
     {
-        if (!$this->evalluations->contains($evalluation)) {
-            $this->evalluations[] = $evalluation;
-            $evalluation->setSession($this);
+        if (!$this->evaluations->contains($evaluation)) {
+            $this->evaluations[] = $evaluation;
+            $evaluation->setSession($this);
         }
 
         return $this;
     }
 
-    public function removeEvalluation(Evalluation $evalluation): self
+    public function removeEvaluation(Evaluation $evaluation): self
     {
-        if ($this->evalluations->contains($evalluation)) {
-            $this->evalluations->removeElement($evalluation);
+        if ($this->evaluations->contains($evaluation)) {
+            $this->evaluations->removeElement($evaluation);
             // set the owning side to null (unless already changed)
-            if ($evalluation->getSession() === $this) {
-                $evalluation->setSession(null);
+            if ($evaluation->getSession() === $this) {
+                $evaluation->setSession(null);
             }
         }
 

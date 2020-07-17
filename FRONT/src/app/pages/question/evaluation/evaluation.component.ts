@@ -46,6 +46,7 @@ export class EvaluationComponent implements OnInit {
     {id:6,libelle:'performance',valeur:null,style:'#FF4080'},
   ];
   public good=false;
+  public load=false;
   constructor(private activeroute:ActivatedRoute,private admin:AdminService,private router:Router) { }
 
   ngOnInit() {
@@ -101,14 +102,15 @@ export class EvaluationComponent implements OnInit {
     }
   }
   validationdonner(){
-
       console.log(this.note.status);
       if (this.note.status=="VALID") {
+        this.load=true;
         this.note.get('evaluer').setValue(this.user.get('nom').value);
         console.log(this.note.value);
         
         this.admin.note(this.note.value).subscribe(
           res=>{console.log(res);
+            this.load=false;
             Swal.fire({
               position: 'top-end',
               icon: 'success',
@@ -116,9 +118,17 @@ export class EvaluationComponent implements OnInit {
               showConfirmButton: false,
               timer: 1500
             })
+            
             this.router.navigate(['/question']);
           },
-          error=>{console.log(error);
+          error=>{
+            console.log(error);
+            this.load=false;
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Evaluation nos prise en compte veuiller réessayer',
+            })
           }
         )
         console.log(this.user.value);

@@ -2,11 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\PosteRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=PosteRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\PosteRepository")
  */
 class Poste
 {
@@ -17,7 +16,7 @@ class Poste
      */
     private $id;
 
-    /**
+ /**
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
@@ -38,4 +37,5 @@ class Poste
 
         return $this;
     }
+    
 }

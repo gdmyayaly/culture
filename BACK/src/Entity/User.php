@@ -79,14 +79,14 @@ class User implements UserInterface
     private $userTeams;
 
     /**
-     * @ORM\OneToMany(targetEntity=Evalluation::class, mappedBy="evaluer")
+     * @ORM\OneToMany(targetEntity=Evaluation::class, mappedBy="evaluer")
      */
-    private $evalluations;
+    private $evaluations;
 
     public function __construct()
     {
         $this->userTeams = new ArrayCollection();
-        $this->evalluations = new ArrayCollection();
+        $this->evaluations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -266,30 +266,30 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Evalluation[]
+     * @return Collection|Evaluation[]
      */
-    public function getEvalluations(): Collection
+    public function getEvaluations(): Collection
     {
-        return $this->evalluations;
+        return $this->evaluations;
     }
 
-    public function addEvalluation(Evalluation $evalluation): self
+    public function addEvaluation(Evaluation $evaluation): self
     {
-        if (!$this->evalluations->contains($evalluation)) {
-            $this->evalluations[] = $evalluation;
-            $evalluation->setEvaluer($this);
+        if (!$this->evaluations->contains($evaluation)) {
+            $this->evaluations[] = $evaluation;
+            $evaluation->setEvaluer($this);
         }
 
         return $this;
     }
 
-    public function removeEvalluation(Evalluation $evalluation): self
+    public function removeEvaluation(Evaluation $evaluation): self
     {
-        if ($this->evalluations->contains($evalluation)) {
-            $this->evalluations->removeElement($evalluation);
+        if ($this->evaluations->contains($evaluation)) {
+            $this->evaluations->removeElement($evaluation);
             // set the owning side to null (unless already changed)
-            if ($evalluation->getEvaluer() === $this) {
-                $evalluation->setEvaluer(null);
+            if ($evaluation->getEvaluer() === $this) {
+                $evaluation->setEvaluer(null);
             }
         }
 

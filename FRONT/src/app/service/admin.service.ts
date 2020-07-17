@@ -14,11 +14,13 @@ export class AdminService {
     public iduser={id:null};
     public userdetail:any;
     private url = "http://127.0.0.1:8000/admin/";
-    private urls="http://127.0.0.1:8000/infos/";
     public urlimage:string="http://127.0.0.1:8000/";
     // private url = "http://www.culture.telectronsenegal.com/admin/";
-    // private urls="http://www.culture.telectronsenegal.com/infos/";
     // public urlimage:string="http://www.culture.telectronsenegal.com/";
+    private urlnote="note";
+    pri
   constructor(private http: HttpClient) { }
-  
+    public note(data){
+      return this.http.post(this.url + this.urlnote, data, { observe: 'response' })
+    }
 }

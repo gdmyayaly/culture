@@ -11,7 +11,6 @@ export class ListecollaborateurComponent implements OnInit {
   constructor(private admin:AdminService,private route:Router) { }
 
   ngOnInit() {
-    this.routeEvent(this.route);
     this.admin.usergrow().subscribe(
       res=>{console.log(res);
         this.user=res.body

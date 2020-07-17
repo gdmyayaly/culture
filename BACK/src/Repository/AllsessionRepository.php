@@ -4,7 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Allsession;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
  * @method Allsession|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +18,23 @@ class AllsessionRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Allsession::class);
     }
+
+        /**
+     * @return Allsession[] Returns an array of Allsession objects
+     */
+    
+    public function sevenlastevaluation()
+    {
+        return $this->createQueryBuilder('a')
+            // ->andWhere('a.exampleField = :val')
+            // ->setParameter('val', $value)
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(7)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 
     // /**
     //  * @return Allsession[] Returns an array of Allsession objects
@@ -47,48 +64,4 @@ class AllsessionRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    //  /**
-    //   * @return Allsession[] Returns an array of Allsession objects
-    //   */
-    
-    // public function findByExampleField($date1)
-    // {
-    //     return $this->createQueryBuilder('a')
-    //         ->andWhere('a.date >= :val')
-    //         ->setParameter('val', $date1)
-    //         ->orderBy('a.id', 'ASC')
-    //         ->setMaxResults(10)
-    //         ->getQuery()
-    //         ->getResult()
-    //     ;
-    // }
-    
-    // public function samadate($value): ?Allsession
-    // {
-    //     return $this->createQueryBuilder('a')
-    //         ->andWhere('a.date = :val')
-    //         ->setParameter('val', $value)
-    //         ->getQuery()
-    //         ->getOneOrNullResult()
-    //     ;
-    // }
-
-    /**
-     * @return Allsession[] Returns an array of Allsession objects
-     */
-    
-    public function sevenlastevaluation()
-    {
-        return $this->createQueryBuilder('a')
-            // ->andWhere('a.exampleField = :val')
-            // ->setParameter('val', $value)
-            ->orderBy('a.id', 'DESC')
-            ->setMaxResults(7)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    
-    
 }

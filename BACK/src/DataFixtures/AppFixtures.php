@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Allsession;
-use App\Entity\Evalluation;
+use App\Entity\Evaluation;
 use App\Entity\Team;
 use App\Entity\User;
 use App\Entity\Poste;
@@ -11,7 +11,7 @@ use App\Entity\UserTeam;
 use App\Repository\TeamRepository;
 use App\Repository\UserRepository;
 use App\Repository\AllsessionRepository;
-use App\Repository\EvalluationRepository;
+use App\Repository\EvaluationRepository;
 use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -22,7 +22,7 @@ class AppFixtures extends Fixture
 {
     private $encoder;
 
-    public function __construct(UserPasswordEncoderInterface $encoder,TeamRepository $teamRepository,UserRepository $userRepository,AllsessionRepository $allsessionRepository,EvalluationRepository $evaluationRepository)
+    public function __construct(UserPasswordEncoderInterface $encoder,TeamRepository $teamRepository,UserRepository $userRepository,AllsessionRepository $allsessionRepository,EvaluationRepository $evaluationRepository)
     {
         $this->encoder = $encoder;
         $this->teamRepository = $teamRepository;

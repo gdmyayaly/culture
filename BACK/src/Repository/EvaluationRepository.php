@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Evalluation;
+use App\Entity\Evaluation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Evalluation|null find($id, $lockMode = null, $lockVersion = null)
- * @method Evalluation|null findOneBy(array $criteria, array $orderBy = null)
- * @method Evalluation[]    findAll()
- * @method Evalluation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Evaluation|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Evaluation|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Evaluation[]    findAll()
+ * @method Evaluation[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class EvalluationRepository extends ServiceEntityRepository
+class EvaluationRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Evalluation::class);
+        parent::__construct($registry, Evaluation::class);
     }
 
     // /**
-    //  * @return Evalluation[] Returns an array of Evalluation objects
+    //  * @return Evaluation[] Returns an array of Evaluation objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class EvalluationRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Evalluation
+    public function findOneBySomeField($value): ?Evaluation
     {
         return $this->createQueryBuilder('e')
             ->andWhere('e.exampleField = :val')

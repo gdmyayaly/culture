@@ -2,13 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\EvalluationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=EvalluationRepository::class)
+ * @ORM\Entity(repositoryClass="App\Repository\EvaluationRepository")
  */
-class Evalluation
+class Evaluation
 {
     /**
      * @ORM\Id()
@@ -17,13 +16,13 @@ class Evalluation
      */
     private $id;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="evalluations")
+  /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="evaluations")
      */
     private $evaluer;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="evalluations")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="evaluations")
      */
     private $evaluateur;
 
@@ -63,7 +62,7 @@ class Evalluation
     private $performance;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Allsession::class, inversedBy="evalluations")
+     * @ORM\ManyToOne(targetEntity=Allsession::class, inversedBy="evaluations")
      */
     private $session;
 

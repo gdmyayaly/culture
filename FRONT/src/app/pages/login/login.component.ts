@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -25,26 +26,26 @@ export class LoginComponent implements OnInit {
       res=>{console.log(res);
         this.data=res.body;
         this.load=false;
-        this.auth.enregistrementToken(this.data.token);     
+        if (this.data.token) {
+          this.auth.enregistrementToken(this.data.token);    
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: this.data.message,
+          })
+        }
+         
       },
       error=>{console.log(error);
         this.load=false;
-        alert("bakhoul")
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Probleme Serveur',
+        })
       }
     )
-    // if (donner.username=="director") {
-    //   this.auth.connecter=true;
-    //   this.auth.isadmin=true;
-    //   localStorage.setItem('connecter',"good");
-    //   localStorage.setItem('isadmin',"good");
-    //   this.router.navigate(['collaborateur']);
-    // }
-    // else{
-    //   this.auth.connecter=true;
-    //   this.auth.isuser=true;
-    //   localStorage.setItem('connecter',"good");
-    //   localStorage.setItem('isadmin',"false");
-    //   this.router.navigate(['collaborateur/detail',403]);
-    // }
   }
 }

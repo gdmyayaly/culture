@@ -16,8 +16,8 @@ security:
             security: false
         # main:
         #     anonymous: true
-        infos:
-            pattern:   ^/infos
+        admin:
+            pattern:   ^/admin
             stateless: true
             guard:
                 authenticators:
