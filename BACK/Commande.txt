@@ -1,7 +1,5 @@
 composer create-project symfony/skeleton neldale
 ./bin/console doctrine:database:create
-php bin/console make:migration
-php bin/console doctrine:database:create
 ./bin/console make:user
 ./bin/console make:form
 ./bin/console make:entity

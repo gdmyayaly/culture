@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class LoginComponent implements OnInit {
   public data:any;
+  public load=false;
   constructor(private router:Router,private auth:AuthService) { }
 
   ngOnInit() {
@@ -19,12 +20,16 @@ export class LoginComponent implements OnInit {
   })
   login(donner){
     console.log(donner);
+    this.load=true;
     this.auth.logger(donner).subscribe(
       res=>{console.log(res);
         this.data=res.body;
-        this.auth.enregistrementToken(this.data.token)      
+        this.load=false;
+        this.auth.enregistrementToken(this.data.token);     
       },
       error=>{console.log(error);
+        this.load=false;
+        alert("bakhoul")
       }
     )
     // if (donner.username=="director") {

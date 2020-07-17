@@ -33,6 +33,7 @@ export function tokenGetter() {
 import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { LoaderComponent } from './layout/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MaterialModule } from './material/material.module';
     SessionComponent,
     EvaluationComponent,
     ListeamComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
