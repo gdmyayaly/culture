@@ -56,16 +56,42 @@ margin-left: 20px;
       margin:auto;
   }
 
+  
+  .cancelbtn {
+    margin-left: 20px;
+    width: 100px;
+    margin:auto;
+    background-color: #EFEFEF;
+    border: 1px solid #EFEFEF;
+    color: black;
+    border-radius: 5px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
+       
 
+      }
+  
+      .savebtn {
+        margin-left: 20px;
+              width: 100px;
+              margin:auto;
+              background-color: #FF4080;
+              border: 1px solid #FF4080;
+              color: white;
+              border-radius: 5px;
+              font-size: 20px;
+          }
+            
   .boutton{
       vertical-align: middle;
   }
   
-  button[type="submit"]:hover {
-      background-color: #286090;
-      border-color: #204d74;
-  }
- 
+ h1{
+   border-bottom: 3px solid #FF4080;
+   border-radius: 5px;
+   margin-bottom:50px;
+ }
 
   .form_group {
     padding: 5px;
