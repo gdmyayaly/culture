@@ -16,14 +16,14 @@
     </div>
     <div class="row">
         
-      <div class="col-md-3" >
+      <div class="col-md-3" *ngFor="let item of adminservice.listteam">
         <div class="card" style="width: 16rem;">
-            <a class="liencarte" [routerLink]="['/listeam']">
+            <a class="liencarte" [routerLink]="['/team/detail',item.id]">
 
             <img class="card-img-top" src="assets/avatarh.png"  alt="Card image cap">
             <div class="info">
                 <div class="title">
-                  <strong class="strong">Team Tech et Digital </strong>
+                  <strong class="strong">{{item.nom}} </strong>
                 </div>
             
               </div>
@@ -31,10 +31,8 @@
             
             </a>
           </div>
-        
-  
       </div>
-      <div class="col-md-3" >
+      <!-- <div class="col-md-3" >
         <div class="card" style="width: 16rem;">
             <a class="liencarte" [routerLink]="['/listeam']">
 
@@ -84,7 +82,7 @@
           </div>
         
   
-      </div>
+      </div> -->
     </div>
 
   
