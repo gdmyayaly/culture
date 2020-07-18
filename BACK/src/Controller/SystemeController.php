@@ -543,7 +543,7 @@ class SystemeController extends AbstractController
             for ($i=0; $i < count($userteam); $i++) { 
                 if ($userteam[$i]->getUser()->getStatut()=="actif") {
                     $user=$this->userdatamois($userteam[$i]->getUser()->getId(),$mois,2020);
-                   // dump($user);
+                    dump($user);
                     $userperseverance=($user['userperseverance']/$user['nbruser'])+$userperseverance;
                     $userconfiance=($user['userconfiance']/$user['nbruser'])+$userconfiance;
                     $usercollaboration=($user['usercollaboration']/$user['nbruser'])+$usercollaboration;
