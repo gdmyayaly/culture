@@ -15,7 +15,7 @@
 
     <div class="row">
 
-        <div class="col-md-3 ">
+        <div class="col-md-4 ">
           <div class="card">
             <h3>Perseverance<span class="asterix">*</span></h3>
           
@@ -29,7 +29,7 @@
           </div>
 
         </div>
-        <div class=" col-md-3">
+        <div class=" col-md-4">
             <div class="card">
                 <h3>Confiance en soi<span class="asterix">*</span></h3>
               
@@ -45,7 +45,7 @@
               </div>
 
         </div>
-        <div class=" col-md-3">
+        <div class=" col-md-4">
             <div class="card">
                 <h3>Collaboration<span class="asterix">*</span></h3>
                 <div class="b">
@@ -60,7 +60,7 @@
               </div>
 
         </div>
-        <div class=" col-md-3">
+        <div class=" col-md-4">
             <div class="card">
                 <h3>Autonomie <span class="asterix">*</span></h3>
               
@@ -76,62 +76,63 @@
               </div>
 
         </div>
-    </div>
-    <div class="row">
-
-        <div class="col-md-3 ">
-          <div class="card">
-            <h3>Problem Solving<span class="asterix">*</span></h3>
-          
-            <div class="b">
-                <div class="row">
-                    <div *ngFor="let item of barrem"  class="col-md-2">
-                        <b (click)="reponse('problemsolving',item.id)"> <a  href="javascript:void(0);" class="a"><img class="etoile" id="problemsolving{{item.id}}" src="assets/etoileg.png" alt=""></a>  </b>
-                    </div>
-               
-    
-                </div>
-               
-            </div>
-          </div>
-
-        </div>
-        <div class=" col-md-3">
+        <div class="col-md-4 ">
             <div class="card">
-                <h3>Transmission<span class="asterix">*</span></h3>
-              
-                <div class="b">
-                    <div class="row">
-                        <div *ngFor="let item of barrem"  class="col-md-2">
-                            <b (click)="reponse('transmission',item.id)"> <a  href="javascript:void(0);" class="a"><img class="etoile" id="transmission{{item.id}}" src="assets/etoileg.png" alt=""></a>  </b>
-                        </div>
-                   
-        
-                    </div>
-                   
-                </div>
-              </div>
-
-        </div>
-        <div class=" col-md-3">
-            <div class="card">
-                <h3>Performance<span class="asterix">*</span></h3>
-              
-                <div class="b">
-                    <div  class="row">
-                        <div *ngFor="let item of barrem" class="col-md-2">
-                            <b (click)="reponse('performance',item.id)"> <a  href="javascript:void(0);" class="a"><img class="etoile" id="performance{{item.id}}" src="assets/etoileg.png" alt=""></a>  </b>
-                        </div>
-                      
-        
-                    </div>
-                   
-                </div>
-              </div>
-
-        </div>
+              <h3>Problem Solving<span class="asterix">*</span></h3>
+            
+              <div class="b">
+                  <div class="row">
+                      <div *ngFor="let item of barrem"  class="col-md-2">
+                          <b (click)="reponse('problemsolving',item.id)"> <a  href="javascript:void(0);" class="a"><img class="etoile" id="problemsolving{{item.id}}" src="assets/etoileg.png" alt=""></a>  </b>
+                      </div>
+                 
       
+                  </div>
+                 
+              </div>
+            </div>
+  
+          </div>
+          <div class=" col-md-4">
+              <div class="card">
+                  <h3>Transmission<span class="asterix">*</span></h3>
+                
+                  <div class="b">
+                      <div class="row">
+                          <div *ngFor="let item of barrem"  class="col-md-2">
+                              <b (click)="reponse('transmission',item.id)"> <a  href="javascript:void(0);" class="a"><img class="etoile" id="transmission{{item.id}}" src="assets/etoileg.png" alt=""></a>  </b>
+                          </div>
+                     
+          
+                      </div>
+                     
+                  </div>
+                </div>
+  
+          </div>
+          <div class=" col-md-4">
+              <div class="card">
+                  <h3>Performance<span class="asterix">*</span></h3>
+                
+                  <div class="b">
+                      <div  class="row">
+                          <div *ngFor="let item of barrem" class="col-md-2">
+                              <b (click)="reponse('performance',item.id)"> <a  href="javascript:void(0);" class="a"><img class="etoile" id="performance{{item.id}}" src="assets/etoileg.png" alt=""></a>  </b>
+                          </div>
+                        
+          
+                      </div>
+                     
+                  </div>
+                </div>
+  
+          </div>
     </div>
+ 
+
+      
+      
+    
 
 
 
