@@ -34,6 +34,8 @@ import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { LoaderComponent } from './layout/loader/loader.component';
+import { AnneComponent } from './diagrammeteam/anne/anne.component';
+import { SevenComponent } from './diagrammeteam/seven/seven.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { LoaderComponent } from './layout/loader/loader.component';
     EvaluationComponent,
     ListeamComponent,
     LoaderComponent,
+    AnneComponent,
+    SevenComponent,
   ],
   imports: [
     BrowserModule,

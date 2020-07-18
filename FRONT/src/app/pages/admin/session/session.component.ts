@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
@@ -13,7 +14,7 @@ export class SessionComponent implements OnInit {
   academy=false;
   business=false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
@@ -32,7 +33,16 @@ export class SessionComponent implements OnInit {
       this.all=false;
     }
   }
-
+  valid(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Session creer avec success',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    this.router.navigate(['/collaborateur'])
+  }
 
 
 

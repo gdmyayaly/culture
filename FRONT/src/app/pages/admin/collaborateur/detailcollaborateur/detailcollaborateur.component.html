@@ -169,72 +169,12 @@
                 <div class="tab-pane fade" id="mois" role="tabpanel" aria-labelledby="mois-tab">
                 <app-mois></app-mois>
                 </div>
-                <!-- <div class="tab-pane fade" id="annee" role="tabpanel" aria-labelledby="annee-tab">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Perseverance</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Confiance en soi</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Collaboration</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Autonomie</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Problem Solving</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Transmission</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="card">
-                                <h5 class="card-header">Performance</h5>
-                                <div class="card-body">
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div>
-                </div> -->
-                <div class="tab-pane fade" id="date" role="tabpanel" aria-labelledby="date-tab">
+                <!-- <div class="tab-pane fade" id="date" role="tabpanel" aria-labelledby="date-tab">
                     <p>Part4</p>
                 </div>
                 <div class="tab-pane fade" id="evaluateur" role="tabpanel" aria-labelledby="evaluateur-tab">
                     <p>Part5</p>
-                </div>
+                </div> -->
               </div>
           </div>
      </div>
@@ -244,25 +184,6 @@
             <h5 class="card-header">Performance Team</h5>
             <div class="card-body p-0">
                 <div class="table-responsive">
-                    <!-- <table class="table no-wrap p-table">
-                        <thead class="bg-light">
-                            <tr class="border-0">
-                                <th class="border-0">Nom </th>
-                                <th class="border-0">General</th>
-                                <th class="border-0">Progression</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of classification" (click)="retour(item)">
-                                <td [ngClass]="{good: item.id==id}"><span class="td">{{item.username}}</span></td>
-                                <td>{{item.general}}% </td>
-                                <td>
-                                    <span class="icon-circle-small icon-box-xs text-danger" [ngClass]="{'bg-success-light': item.progression>=0,'bg-danger-light': item.progression<0}"><i class="fa fa-fw" [ngClass]="{'fa-arrow-up': item.progression>=0,'fa-arrow-down': item.progression<0}"></i></span><span class="ml-1" >{{item.progression}}%</span>
-                                </td>
-                            </tr>
-                          
-                        </tbody>
-                    </table> -->
                      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
                         <ng-container matColumnDef="nom">
                           <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>

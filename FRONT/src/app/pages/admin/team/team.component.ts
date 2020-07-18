@@ -8,22 +8,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {1
-
-public id:any;
-
-
-
-
-  constructor(public adminservice:AdminService,private activeroute:ActivatedRoute ) { }
-
+  constructor(public adminservice:AdminService, ) { }
   ngOnInit() {
-    this.id=this.activeroute.snapshot.paramMap.get('id');
-    console.log(this.id);
+
   }
-
-
-
-
-
-
 }
