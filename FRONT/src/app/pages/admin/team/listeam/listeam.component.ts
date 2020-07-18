@@ -59,21 +59,21 @@ export class ListeamComponent implements OnInit {
   public moyennetransmission:any;
   public moyenneperformance:any;
 
-  public teamperseverance:any;
-  public teamconfiance:any;
-  public teamcollaboration:any;
-  public teamautonomie:any;
-  public teamproblemsolving:any;
-  public teamtransmission:any;
-  public teamperformance:any;
+  public teamperseverances:any;
+  public teamconfiances:any;
+  public teamcollaborations:any;
+  public teamautonomies:any;
+  public teamproblemsolvings:any;
+  public teamtransmissions:any;
+  public teamperformances:any;
 
-  public moyenneteamperseverance:any;
-  public moyenneteamconfiance:any;
-  public moyenneteamcollaboration:any;
-  public moyenneteamautonomie:any;
-  public moyenneteamproblemsolving:any;
-  public moyenneteamtransmission:any;
-  public moyenneteamperformance:any;
+  public moyenneteamperseverances:any;
+  public moyenneteamconfiances:any;
+  public moyenneteamcollaborations:any;
+  public moyenneteamautonomies:any;
+  public moyenneteamproblemsolvings:any;
+  public moyenneteamtransmissions:any;
+  public moyenneteamperformances:any;
 
   public barChartOptionsperseverance = {
     scaleShowVerticalLines: false,
@@ -314,27 +314,27 @@ export class ListeamComponent implements OnInit {
           this.datart=res.body;
            this.date=this.datart.date;
            this.perseverance=this.datart.perseverance;
-           this.teamperseverance=this.datart.teamperseverance;
+           this.teamperseverances=this.datart.teamperseverance;
            this.chartPerseverance();
            this.confiance=this.datart.confiance;
-           this.teamconfiance=this.datart.teamconfiance;
+           this.teamconfiances=this.datart.teamconfiance;
            this.chartConfiance();
            this.collaboration=this.datart.collaboration;
-           this.teamcollaboration=this.datart.teamcollaboration;
+           this.teamcollaborations=this.datart.teamcollaboration;
            this.chartCollaboration();
            this.autonomie=this.datart.autonomie;
-           this.teamautonomie=this.datart.teamautonomie;
+           this.teamautonomies=this.datart.teamautonomie;
            this.chartAutonomie();
            this.problemsolving=this.datart.problemsolving;
-           this.teamproblemsolving=this.datart.teamproblemsolving;
+           this.teamproblemsolvings=this.datart.teamproblemsolving;
            this.chartProblemsolving();
            this.transmission=this.datart.transmission;
-           this.teamtransmission=this.datart.teamtransmission;
+           this.teamtransmissions=this.datart.teamtransmission;
            this.chartTransmission();
            this.performance=this.datart.performance;
-           this.teamperformance=this.datart.teamperformance;
+           this.teamperformances=this.datart.teamperformance;
            this.chartPerformance();
-           this.loadmoyenne();
+           
         },
         error=>{console.log(error);
         }
@@ -379,27 +379,27 @@ export class ListeamComponent implements OnInit {
           this.datart=res.body;
            this.date=this.datart.date;
            this.perseverance=this.datart.perseverance;
-           this.teamperseverance=this.datart.teamperseverance;
+           this.teamperseverances=this.datart.teamperseverance;
            this.chartPerseverance();
            this.confiance=this.datart.confiance;
-           this.teamconfiance=this.datart.teamconfiance;
+           this.teamconfiances=this.datart.teamconfiance;
            this.chartConfiance();
            this.collaboration=this.datart.collaboration;
-           this.teamcollaboration=this.datart.teamcollaboration;
+           this.teamcollaborations=this.datart.teamcollaboration;
            this.chartCollaboration();
            this.autonomie=this.datart.autonomie;
-           this.teamautonomie=this.datart.teamautonomie;
+           this.teamautonomies=this.datart.teamautonomie;
            this.chartAutonomie();
            this.problemsolving=this.datart.problemsolving;
-           this.teamproblemsolving=this.datart.teamproblemsolving;
+           this.teamproblemsolvings=this.datart.teamproblemsolving;
            this.chartProblemsolving();
            this.transmission=this.datart.transmission;
-           this.teamtransmission=this.datart.teamtransmission;
+           this.teamtransmissions=this.datart.teamtransmission;
            this.chartTransmission();
            this.performance=this.datart.performance;
-           this.teamperformance=this.datart.teamperformance;
+           this.teamperformances=this.datart.teamperformance;
            this.chartPerformance();
-           this.loadmoyenne();
+           
         },
         error=>{console.log(error);
         }
@@ -444,27 +444,27 @@ export class ListeamComponent implements OnInit {
           this.datart=res.body;
            this.date=this.datart.date;
            this.perseverance=this.datart.perseverance;
-           this.teamperseverance=this.datart.teamperseverance;
+           this.teamperseverances=this.datart.teamperseverance;
            this.chartPerseverance();
            this.confiance=this.datart.confiance;
-           this.teamconfiance=this.datart.teamconfiance;
+           this.teamconfiances=this.datart.teamconfiance;
            this.chartConfiance();
            this.collaboration=this.datart.collaboration;
-           this.teamcollaboration=this.datart.teamcollaboration;
+           this.teamcollaborations=this.datart.teamcollaboration;
            this.chartCollaboration();
            this.autonomie=this.datart.autonomie;
-           this.teamautonomie=this.datart.teamautonomie;
+           this.teamautonomies=this.datart.teamautonomie;
            this.chartAutonomie();
            this.problemsolving=this.datart.problemsolving;
-           this.teamproblemsolving=this.datart.teamproblemsolving;
+           this.teamproblemsolvings=this.datart.teamproblemsolving;
            this.chartProblemsolving();
            this.transmission=this.datart.transmission;
-           this.teamtransmission=this.datart.teamtransmission;
+           this.teamtransmissions=this.datart.teamtransmission;
            this.chartTransmission();
            this.performance=this.datart.performance;
-           this.teamperformance=this.datart.teamperformance;
+           this.teamperformances=this.datart.teamperformance;
            this.chartPerformance();
-           this.loadmoyenne();
+           
         },
         error=>{console.log(error);
         }
@@ -509,79 +509,79 @@ export class ListeamComponent implements OnInit {
           this.datart=res.body;
            this.date=this.datart.date;
            this.perseverance=this.datart.perseverance;
-           this.teamperseverance=this.datart.teamperseverance;
+           this.teamperseverances=this.datart.teamperseverance;
            this.chartPerseverance();
            this.confiance=this.datart.confiance;
-           this.teamconfiance=this.datart.teamconfiance;
+           this.teamconfiances=this.datart.teamconfiance;
            this.chartConfiance();
            this.collaboration=this.datart.collaboration;
-           this.teamcollaboration=this.datart.teamcollaboration;
+           this.teamcollaborations=this.datart.teamcollaboration;
            this.chartCollaboration();
            this.autonomie=this.datart.autonomie;
-           this.teamautonomie=this.datart.teamautonomie;
+           this.teamautonomies=this.datart.teamautonomie;
            this.chartAutonomie();
            this.problemsolving=this.datart.problemsolving;
-           this.teamproblemsolving=this.datart.teamproblemsolving;
+           this.teamproblemsolvings=this.datart.teamproblemsolving;
            this.chartProblemsolving();
            this.transmission=this.datart.transmission;
-           this.teamtransmission=this.datart.teamtransmission;
+           this.teamtransmissions=this.datart.teamtransmission;
            this.chartTransmission();
            this.performance=this.datart.performance;
-           this.teamperformance=this.datart.teamperformance;
+           this.teamperformances=this.datart.teamperformance;
            this.chartPerformance();
-           this.loadmoyenne();
+           //
         },
         error=>{console.log(error);
         }
       )
     }
   }
-  loadmoyenne(){
-    this.moyenneperseverance=0;
-    this.moyenneconfiance=0;
-    this.moyennecollaboration=0;
-    this.moyenneautonomie=0;
-    this.moyenneproblemsolving=0;
-    this.moyennetransmission=0;
-    this.moyenneperformance=0;
-    this.moyenneteamperseverance=0;
-    this.moyenneteamconfiance=0;
-    this.moyenneteamcollaboration=0;
-    this.moyenneteamautonomie=0;
-    this.moyenneteamproblemsolving=0;
-    this.moyenneteamtransmission=0;
-    this.moyenneteamperformance=0;
-    for (let index = 0; index < this.perseverance.length; index++) {
-      this.moyenneperseverance=this.moyenneperseverance+this.perseverance[index];
-      this.moyenneconfiance=this.moyenneconfiance+this.confiance[index];
-      this.moyennecollaboration=this.moyennecollaboration+this.collaboration[index];
-      this.moyenneautonomie=this.moyenneautonomie+this.autonomie[index];
-      this.moyenneproblemsolving=this.moyenneproblemsolving+this.problemsolving[index];
-      this.moyennetransmission=this.moyennetransmission+this.transmission[index];
-      this.moyenneperformance=this.moyenneperformance+this.performance[index];
-      this.moyenneteamperseverance=this.moyenneteamperseverance+this.teamperseverance[index];
-      this.moyenneteamconfiance=this.moyenneteamconfiance+this.teamconfiance[index];
-      this.moyenneteamcollaboration=this.moyenneteamcollaboration+this.teamcollaboration[index];
-      this.moyenneteamautonomie=this.moyenneteamautonomie+this.teamautonomie[index];
-      this.moyenneteamproblemsolving=this.moyenneteamproblemsolving+this.teamproblemsolving[index];
-      this.moyenneteamtransmission=this.moyenneteamtransmission+this.teamtransmission[index];
-      this.moyenneteamperformance=this.moyenneteamperformance+this.teamperformance[index];
-    }
-    this.moyenneperseverance=this.moyenneperseverance/7;
-    this.moyenneconfiance=this.moyenneconfiance/7;
-    this.moyennecollaboration=this.moyennecollaboration/7;
-    this.moyenneautonomie=this.moyenneautonomie/7;
-    this.moyenneproblemsolving=this.moyenneproblemsolving/7;
-    this.moyennetransmission=this.moyennetransmission/7;
-    this.moyenneperformance=this.moyenneperformance/7;
-    this.moyenneteamperseverance=this.moyenneteamperseverance/7;
-    this.moyenneteamconfiance=this.moyenneteamconfiance/7;
-    this.moyenneteamcollaboration=this.moyenneteamcollaboration/7;
-    this.moyenneteamautonomie=this.moyenneteamautonomie/7;
-    this.moyenneteamproblemsolving=this.moyenneteamproblemsolving/7;
-    this.moyenneteamtransmission=this.moyenneteamtransmission/7;
-    this.moyenneteamperformance=this.moyenneteamperformance/7;
-  }
+  // loadmoyenne(){
+  //   this.moyenneperseverance=0;
+  //   this.moyenneconfiance=0;
+  //   this.moyennecollaboration=0;
+  //   this.moyenneautonomie=0;
+  //   this.moyenneproblemsolving=0;
+  //   this.moyennetransmission=0;
+  //   this.moyenneperformance=0;
+  //   this.moyenneteamperseverance=0;
+  //   this.moyenneteamconfiance=0;
+  //   this.moyenneteamcollaboration=0;
+  //   this.moyenneteamautonomie=0;
+  //   this.moyenneteamproblemsolving=0;
+  //   this.moyenneteamtransmission=0;
+  //   this.moyenneteamperformance=0;
+  //   for (let index = 0; index < this.perseverance.length; index++) {
+  //     this.moyenneperseverance=this.moyenneperseverance+this.perseverance[index];
+  //     this.moyenneconfiance=this.moyenneconfiance+this.confiance[index];
+  //     this.moyennecollaboration=this.moyennecollaboration+this.collaboration[index];
+  //     this.moyenneautonomie=this.moyenneautonomie+this.autonomie[index];
+  //     this.moyenneproblemsolving=this.moyenneproblemsolving+this.problemsolving[index];
+  //     this.moyennetransmission=this.moyennetransmission+this.transmission[index];
+  //     this.moyenneperformance=this.moyenneperformance+this.performance[index];
+  //     this.moyenneteamperseverance=this.moyenneteamperseverance+this.teamperseverance[index];
+  //     this.moyenneteamconfiance=this.moyenneteamconfiance+this.teamconfiance[index];
+  //     this.moyenneteamcollaboration=this.moyenneteamcollaboration+this.teamcollaboration[index];
+  //     this.moyenneteamautonomie=this.moyenneteamautonomie+this.teamautonomie[index];
+  //     this.moyenneteamproblemsolving=this.moyenneteamproblemsolving+this.teamproblemsolving[index];
+  //     this.moyenneteamtransmission=this.moyenneteamtransmission+this.teamtransmission[index];
+  //     this.moyenneteamperformance=this.moyenneteamperformance+this.teamperformance[index];
+  //   }
+  //   this.moyenneperseverance=this.moyenneperseverance/7;
+  //   this.moyenneconfiance=this.moyenneconfiance/7;
+  //   this.moyennecollaboration=this.moyennecollaboration/7;
+  //   this.moyenneautonomie=this.moyenneautonomie/7;
+  //   this.moyenneproblemsolving=this.moyenneproblemsolving/7;
+  //   this.moyennetransmission=this.moyennetransmission/7;
+  //   this.moyenneperformance=this.moyenneperformance/7;
+  //   this.moyenneteamperseverance=this.moyenneteamperseverance/7;
+  //   this.moyenneteamconfiance=this.moyenneteamconfiance/7;
+  //   this.moyenneteamcollaboration=this.moyenneteamcollaboration/7;
+  //   this.moyenneteamautonomie=this.moyenneteamautonomie/7;
+  //   this.moyenneteamproblemsolving=this.moyenneteamproblemsolving/7;
+  //   this.moyenneteamtransmission=this.moyenneteamtransmission/7;
+  //   this.moyenneteamperformance=this.moyenneteamperformance/7;
+  // }
   chartPerseverance(){
     console.log(this.perseverance);
     console.log(this.teamperseverance);
