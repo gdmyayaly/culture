@@ -51,3 +51,85 @@
         text-decoration: none;
         color: black;
     }
+    @media screen and (max-width: 920px){
+
+      .card-img-top{
+        width: 100px;
+        height: 150px;
+        margin-left: 75px;
+        margin-top: -50px;
+        margin-bottom: 25px;
+   
+      }
+
+      .carte{
+        width: 150px;
+        margin-right: 185px;
+      }
+       
+        }
+    @media screen and (max-width: 890px){
+
+      .card-img-top{
+        width: 100px;
+        height: 150px;
+        margin-left: 75px;
+        margin-top: -50px;
+        margin-bottom: 25px;
+   
+      }
+
+      .carte{
+        width: 200px;
+        margin-right: 85px;
+      }
+       
+        }
+
+        @media screen and (max-width: 840px){
+
+          .card-img-top{
+            width: 100px;
+            height: 150px;
+            margin-left: 75px;
+            margin-top: -50px;
+            margin-bottom: 25px;
+       
+          }
+    
+          .carte{
+            width: 100px;
+            margin-right: 100px;
+          }
+           
+            }
+    @media screen and (max-width: 780px){
+
+      .card-img-top{
+        width: 100px;
+        height: 150px;
+        margin-left: 75px;
+        margin-top: -50px;
+        margin-bottom: 25px;
+   
+      }
+
+      .carte{
+        width: 300px;
+      }
+       
+        }
+
+    @media screen and (max-width: 640px){
+
+.carte{
+  margin-left: 100px;
+}
+.card-img-top{
+  width: 180px;
+  height: 250px;
+  margin-left: 35px;
+  margin-top: -50px;
+
+}
+  }
