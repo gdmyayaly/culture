@@ -19,24 +19,10 @@ export class ListecollaborateurComponent implements OnInit {
       }
     )
   }
-  routeEvent(router: Router){
-    router.events.subscribe(e => {
-      if(e instanceof NavigationEnd){
-        console.log(e)
-        console.log("good");
-        
-      }
-      else if(e instanceof NavigationStart){
-        console.log(e);
-        console.log("parfait");
-        
-        
-      }
-    });
-  }
+
   
   choix(user){
     this.admin.userdetail=user;
-    localStorage.setItem('user',JSON.stringify(this.admin.userdetail));
+    localStorage.setItem('userdetail',JSON.stringify(this.admin.userdetail));
   }
 }

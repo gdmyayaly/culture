@@ -7,7 +7,9 @@ use App\Entity\Evalluation;
 use App\Entity\User;
 use App\Repository\AllsessionRepository;
 use App\Repository\EvalluationRepository;
+use App\Repository\TeamRepository;
 use App\Repository\UserRepository;
+use App\Repository\UserTeamRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -101,9 +103,8 @@ class AdminController extends AbstractController
      * @Route("/lastevaluationdumois")
      */
     public function lastevaluationdumois(Request $request,UserRepository $userRepository){
-        //$data=$request->request->all();
-        $data = json_decode($request->getContent(),true);//Récupère une chaîne encodée JSON et la convertit en une variable PHP
-        if(!$data){//s il n'existe pas donc on recupere directement le tableau via la request
+        $data = json_decode($request->getContent(),true);
+        if(!$data){
             $data=$request->request->all();
         }
        $id=$data['id'];
@@ -492,7 +493,6 @@ class AdminController extends AbstractController
             ]);
             
         }
-
     public function userdatamois($id,$mois,$annee){
         $userperseverance=0;
         $userconfiance=0;

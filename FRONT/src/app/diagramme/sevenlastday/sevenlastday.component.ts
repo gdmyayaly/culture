@@ -240,10 +240,7 @@ export class SevenlastdayComponent implements OnInit {
     this.initialisationchart();
     this.admin.notesevenlastdays(this.admin.iduser).subscribe(
       res=>{
-        //console.log(res.body);
         this.datart=res.body;
-        //  console.log("rt");
-        //  console.log(res);
          this.date=this.datart.date;
          this.perseverance=this.datart.perseverance;
          this.teamperseverance=this.datart.teamperseverance;

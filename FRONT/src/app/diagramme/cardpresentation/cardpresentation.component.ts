@@ -41,47 +41,38 @@ export class CardpresentationComponent implements OnInit {
   constructor(private admin:AdminService) { }
 
   ngOnInit() {
-    console.log(this.admin.iduser);
-    
-    this.admin.detailuser(this.admin.iduser).subscribe(
-      res=>{console.log(res);
-        this.data=res.body;
-        this.general=this.data.general;
-        this.moyennegeneral=this.data.moyennegeneral
-        this.moyenneteamautonomie=this.data.moyenneteamautonomie
-        this.moyenneteamcollaboration=this.data.moyenneteamcollaboration
-        this.moyenneteamconfiance=this.data.moyenneteamconfiance
-        this.moyenneteamperformance=this.data.moyenneteamperformance
-        this.moyenneteamperseverance=this.data.moyenneteamperseverance
-        this.moyenneteamproblemsolving=this.data.moyenneteamproblemsolving
-        this.moyenneteamtransmission=this.data.moyenneteamtransmission
-        this.moyenneuserautonomie=this.data.moyenneuserautonomie
-        this.moyenneusercollaboration=this.data.moyenneusercollaboration
-        this.moyenneuserconfiance=this.data.moyenneuserconfiance
-        this.moyenneuserperformance=this.data.moyenneuserperformance
-        this.moyenneuserperseverance=this.data.moyenneuserperseverance
-        this.moyenneuserproblemsolving=this.data.moyenneuserproblemsolving
-        this.moyenneusertransmission=this.data.moyenneusertransmission
-        this.teamautonomie=this.data.teamautonomie
-        this.teamcollaboration=this.data.teamcollaboration
-        this.teamconfiance=this.data.teamconfiance
-        this.teamperformance=this.data.teamperformance
-        this.teamperseverance=this.data.teamperseverance
-        this.teamproblemsolving=this.data.teamproblemsolving
-        this.teamtransmission=this.data.teamtransmission
-        this.userautonomie=this.data.userautonomie
-        this.usercollaboration=this.data.usercollaboration
-        this.userconfiance=this.data.userconfiance
-        this.userperformance=this.data.userperformance
-        this.userperseverance=this.data.userperseverance
-        this.userproblemsolving=this.data.userproblemsolving
-        this.usertransmission=this.data.usertransmission
-      },
-      error=>{
-        console.log(error);
+         console.log(this.admin.iduser);
+        this.moyennegeneral=this.admin.donnerdatacarduser.moyennegeneral
+        this.moyenneteamautonomie=this.admin.donnerdatacarduser.moyenneteamautonomie
+        this.moyenneteamcollaboration=this.admin.donnerdatacarduser.moyenneteamcollaboration
+        this.moyenneteamconfiance=this.admin.donnerdatacarduser.moyenneteamconfiance
+        this.moyenneteamperformance=this.admin.donnerdatacarduser.moyenneteamperformance
+        this.moyenneteamperseverance=this.admin.donnerdatacarduser.moyenneteamperseverance
+        this.moyenneteamproblemsolving=this.admin.donnerdatacarduser.moyenneteamproblemsolving
+        this.moyenneteamtransmission=this.admin.donnerdatacarduser.moyenneteamtransmission
+        this.moyenneuserautonomie=this.admin.donnerdatacarduser.moyenneuserautonomie
+        this.moyenneusercollaboration=this.admin.donnerdatacarduser.moyenneusercollaboration
+        this.moyenneuserconfiance=this.admin.donnerdatacarduser.moyenneuserconfiance
+        this.moyenneuserperformance=this.admin.donnerdatacarduser.moyenneuserperformance
+        this.moyenneuserperseverance=this.admin.donnerdatacarduser.moyenneuserperseverance
+        this.moyenneuserproblemsolving=this.admin.donnerdatacarduser.moyenneuserproblemsolving
+        this.moyenneusertransmission=this.admin.donnerdatacarduser.moyenneusertransmission
+        this.teamautonomie=this.admin.donnerdatacarduser.teamautonomie
+        this.teamcollaboration=this.admin.donnerdatacarduser.teamcollaboration
+        this.teamconfiance=this.admin.donnerdatacarduser.teamconfiance
+        this.teamperformance=this.admin.donnerdatacarduser.teamperformance
+        this.teamperseverance=this.admin.donnerdatacarduser.teamperseverance
+        this.teamproblemsolving=this.admin.donnerdatacarduser.teamproblemsolving
+        this.teamtransmission=this.admin.donnerdatacarduser.teamtransmission
+        this.userautonomie=this.admin.donnerdatacarduser.userautonomie
+        this.usercollaboration=this.admin.donnerdatacarduser.usercollaboration
+        this.userconfiance=this.admin.donnerdatacarduser.userconfiance
+        this.userperformance=this.admin.donnerdatacarduser.userperformance
+        this.userperseverance=this.admin.donnerdatacarduser.userperseverance
+        this.userproblemsolving=this.admin.donnerdatacarduser.userproblemsolving
+        this.usertransmission=this.admin.donnerdatacarduser.usertransmission;
+        this.general=this.admin.donnerdatacarduser.general;
         
-      }
-    )
   }
 
 }

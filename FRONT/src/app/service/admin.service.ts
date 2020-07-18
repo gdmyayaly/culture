@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,9 +18,37 @@ export class AdminService {
     // private url = "http://www.culture.telectronsenegal.com/admin/";
     // public urlimage:string="http://www.culture.telectronsenegal.com/";
     private urlnote="note";
-    pri
+    private urldatacarduser="datacarduser";
+    public loadcard=false;
+    public urlnotesevenlastdays="notesevenlastdays";
+    public urllastevaluationdumois="lastevaluationdumois";
+    public urlperformaceteam="performaceteam";
+    public donnerdatacarduser={moyennegeneral:0,moyenneteamautonomie:0,moyenneteamcollaboration:0,moyenneteamconfiance:0,
+      moyenneteamperformance:0,moyenneteamperseverance:0,moyenneteamproblemsolving:0,moyenneteamtransmission:0,
+      moyenneuserautonomie:0,moyenneusercollaboration:0,moyenneuserconfiance:0,moyenneuserperformance:0,moyenneuserperseverance:0,
+      moyenneuserproblemsolving:0,moyenneusertransmission:0,teamautonomie:0,teamcollaboration:0,teamconfiance:0,
+      teamperformance:0,teamperseverance:0,teamproblemsolving:0,teamtransmission:0,userautonomie:0,
+      usercollaboration:0,userconfiance:0,userperformance:0,userperseverance:0,userproblemsolving:0,usertransmission:0,general:0
+    }
+    public urlusergrow="usergrow";
   constructor(private http: HttpClient) { }
     public note(data){
       return this.http.post(this.url + this.urlnote, data, { observe: 'response' })
+    }
+    public datacarduser(data): Observable<any>{
+      return this.http.post<any>(this.url + this.urldatacarduser, data, { observe: 'response' })
+    }
+    public usergrow(){
+      return this.http.get(this.url + this.urlusergrow, { observe: 'response' })
+    }
+    public notesevenlastdays(data){
+      return this.http.post(this.url + this.urlnotesevenlastdays,data, { observe: 'response' })
+    }
+    
+    public lastevaluationdumois(data){
+      return this.http.post(this.url + this.urllastevaluationdumois,data, { observe: 'response' })
+    }
+    public performaceteam(){
+      return this.http.post(this.url + this.urlperformaceteam, { observe: 'response' })
     }
 }
