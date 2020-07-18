@@ -27,6 +27,7 @@ const routes: Routes = [
   // {path:'login',component:LoginComponent}
   {path:'login',component:LoginComponent,canActivate: [AuthGuardService] },
   {path:'listeam',component:ListeamComponent,canActivate: [AuthGuardService] },
+  { path: '**', component: LoginComponent },
 
 
 

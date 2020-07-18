@@ -543,18 +543,26 @@ class SystemeController extends AbstractController
             for ($i=0; $i < count($userteam); $i++) { 
                 if ($userteam[$i]->getUser()->getStatut()=="actif") {
                     $user=$this->userdatamois($userteam[$i]->getUser()->getId(),$mois,2020);
-                    dump($user);
-                    $userperseverance=($user['userperseverance']/$user['nbruser'])+$userperseverance;
-                    $userconfiance=($user['userconfiance']/$user['nbruser'])+$userconfiance;
-                    $usercollaboration=($user['usercollaboration']/$user['nbruser'])+$usercollaboration;
-                    $userautonomie=($user['userautonomie']/$user['nbruser'])+$userautonomie;
-                    $userproblemsolving=($user['userproblemsolving']/$user['nbruser'])+$userproblemsolving;
-                    $usertransmission=($user['usertransmission']/$user['nbruser'])+$usertransmission;
-                    $userperformance=($user['userperformance']/$user['nbruser'])+$userperformance;                
+                   if ($user['nbruser']==0) {
+                    $userperseverance=0;
+                    $userconfiance=0;
+                    $usercollaboration=0;
+                    $userautonomie=0;
+                    $userproblemsolving=0;
+                    $usertransmission=0;
+                    $userperformance=0;
+                   }
+                   else{
+                    $userperseverance=(($user['userperseverance']/($user['nbruser']*5))*100)+$userperseverance;
+                    $userconfiance=(($user['userconfiance']/($user['nbruser']*5))*100)+$userconfiance;
+                    $usercollaboration=(($user['usercollaboration']/($user['nbruser']*5))*100)+$usercollaboration;
+                    $userautonomie=(($user['userautonomie']/($user['nbruser']*5))*100)+$userautonomie;
+                    $userproblemsolving=(($user['userproblemsolving']/($user['nbruser']*5))*100)+$userproblemsolving;
+                    $usertransmission=(($user['usertransmission']/($user['nbruser']*5))*100)+$usertransmission;
+                    $userperformance=(($user['userperformance']/($user['nbruser']*5))*100)+$userperformance; 
+                   }
                 }
-
             }
-            //die();
             return $this->json([
                 'userperseverance'=>($userperseverance/count($userteam)),
                 'userconfiance'=>($userconfiance/count($userteam)),
