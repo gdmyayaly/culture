@@ -31,7 +31,14 @@
     margin-top: 25px;
     margin-bottom: 25px;
 }
-
+.infodate{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+}
+.ladate{
+    float: right;
+}
 .card{
     background-color: white;
     // height: 120px;
@@ -201,4 +208,7 @@ color: #FF4080 !important;
     }
     .survol{
         cursor: pointer;
+    }
+    .btn-primary{
+        background-color: #FF4080 !important;
     }

@@ -11,6 +11,9 @@
         <span>{{personne.telephone}}</span> <br>
         <!-- <span>{{user.username}}</span> <br> -->
       </div>
+      <div class="info col-md-6">
+          <button type="submit" class="btn btn-primary ladate" (click)="choixdate()">{{ladate}}</button>
+      </div>
     </div>
   <!-- POURCENTAGE DE CHAQUE CRITERE-->
 <app-cardpresentation *ngIf="loadcard"></app-cardpresentation>
@@ -155,12 +158,12 @@
                 <li class="nav-item">
                   <a class="nav-link" id="mois-tab" data-toggle="tab" href="#mois" role="tab" aria-controls="mois" aria-selected="false">Année</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" id="date-tab" data-toggle="tab" href="#date" role="tab" aria-controls="date" aria-selected="false">Date</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" id="evaluateur-tab" data-toggle="tab" href="#evaluateur" role="tab" aria-controls="evaluateur" aria-selected="false">Evaluateur/Evaluer</a>
-                  </li>
+                  </li> -->
               </ul>
               <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="seven" role="tabpanel" aria-labelledby="seven-tab">

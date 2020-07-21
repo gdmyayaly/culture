@@ -79,6 +79,7 @@ class SystemeController extends AbstractController
             'Content-Type' => 'application/json'
         ]);
     }
+
     /**
      * @Route("/datacarduser")
      */
@@ -88,7 +89,7 @@ class SystemeController extends AbstractController
             $reception=$request->request->all();
         }
         $mois=date('m');
-        //$mois="04";
+        //$mois="03";
         $annee=date('Y');
         $id=$reception['id'];
         $a=$this->userdatamois($id,$mois,$annee);
@@ -131,21 +132,21 @@ class SystemeController extends AbstractController
             $general=(round($userperseverance,2)+round($usertransmission,2)+round($userconfiance,2)+round($usercollaboration,2)+round($userautonomie,2)+round($userproblemsolving,2)+round($userperformance,2))/(7);
         }
         if ($datamoispasser['nbruser']==0) {
-            $moyenneuserperseverance=0;
-            $moyenneuserconfiance=0;
-            $moyenneusercollaboration=0;
-            $moyenneuserautonomie=0;
-            $moyenneuserproblemsolving=0;
-            $moyenneusertransmission=0;
-            $moyenneuserperformance=0;
-            $moyenneteamperseverance=0;
-            $moyenneteamconfiance=0;
-            $moyenneteamcollaboration=0;
-            $moyenneteamautonomie=0;
-            $moyenneteamproblemsolving=0;
-            $moyenneteamtransmission=0;
-            $moyenneteamperformance=0;
-            $moyennegeneral=0;
+            $passeruserperseverance=0;
+            $passeruserconfiance=0;
+            $passerusercollaboration=0;
+            $passeruserautonomie=0;
+            $passeruserproblemsolving=0;
+            $passerusertransmission=0;
+            $passeruserperformance=0;
+            $passerteamperseverance=0;
+            $passerteamconfiance=0;
+            $passerteamcollaboration=0;
+            $passerteamautonomie=0;
+            $passerteamproblemsolving=0;
+            $passerteamtransmission=0;
+            $passerteamperformance=0;
+            $passergeneral=0;
         }
         else{
             $passeruserperseverance=($datamoispasser['userperseverance']*100)/($datamoispasser['nbruser']*5);
@@ -163,24 +164,23 @@ class SystemeController extends AbstractController
             $passerteamtransmission=($datamoispasser['teamtransmission']*100)/($datamoispasser['nbrteam']*5);
             $passerteamperformance=($datamoispasser['teamperformance']*100)/($datamoispasser['nbrteam']*5);
             $passergeneral=(round($passeruserperseverance,2)+round($passerusertransmission,2)+round($passeruserconfiance,2)+round($passerusercollaboration,2)+round($passeruserautonomie,2)+round($passeruserproblemsolving,2)+round($passeruserperformance,2))/(7);
-
-            $moyenneuserperseverance=$userperseverance-$passeruserperseverance;
-            $moyenneuserconfiance=$userconfiance-$passeruserconfiance;
-            $moyenneusercollaboration=$usercollaboration-$passerusercollaboration;
-            $moyenneuserautonomie=$userautonomie-$passeruserautonomie;
-            $moyenneuserproblemsolving=$userproblemsolving-$passeruserproblemsolving;
-            $moyenneusertransmission=$usertransmission-$passerusertransmission;
-            $moyenneuserperformance=$userperformance-$passeruserperformance;
-
-            $moyenneteamperseverance=$teamperseverance-$passerteamperseverance;
-            $moyenneteamconfiance=$teamconfiance-$passerteamconfiance;
-            $moyenneteamcollaboration=$teamcollaboration-$passerteamcollaboration;
-            $moyenneteamautonomie=$teamautonomie-$passerteamautonomie;
-            $moyenneteamproblemsolving=$teamproblemsolving-$passerteamproblemsolving;
-            $moyenneteamtransmission=$teamtransmission-$passerteamtransmission;
-            $moyenneteamperformance=$teamperformance-$passerteamperformance;
-            $moyennegeneral=$general-$passergeneral;
         }
+        $moyenneuserperseverance=$userperseverance-$passeruserperseverance;
+        $moyenneuserconfiance=$userconfiance-$passeruserconfiance;
+        $moyenneusercollaboration=$usercollaboration-$passerusercollaboration;
+        $moyenneuserautonomie=$userautonomie-$passeruserautonomie;
+        $moyenneuserproblemsolving=$userproblemsolving-$passeruserproblemsolving;
+        $moyenneusertransmission=$usertransmission-$passerusertransmission;
+        $moyenneuserperformance=$userperformance-$passeruserperformance;
+
+        $moyenneteamperseverance=$teamperseverance-$passerteamperseverance;
+        $moyenneteamconfiance=$teamconfiance-$passerteamconfiance;
+        $moyenneteamcollaboration=$teamcollaboration-$passerteamcollaboration;
+        $moyenneteamautonomie=$teamautonomie-$passerteamautonomie;
+        $moyenneteamproblemsolving=$teamproblemsolving-$passerteamproblemsolving;
+        $moyenneteamtransmission=$teamtransmission-$passerteamtransmission;
+        $moyenneteamperformance=$teamperformance-$passerteamperformance;
+        $moyennegeneral=$general-$passergeneral;
         return $this->json([
             'userperseverance'=>round($userperseverance,2),
             'userconfiance'=>round($userconfiance,2),
@@ -504,14 +504,14 @@ class SystemeController extends AbstractController
                     $totalpasser=0;
                 }
                 else{
-                    $userperseverance=($donnerpasser['userperseverance']*100)/($donnerpasser['nbruser']*5);
-                    $userconfiance=($donnerpasser['userconfiance']*100)/($donnerpasser['nbruser']*5);
-                    $usercollaboration=($donnerpasser['usercollaboration']*100)/($donnerpasser['nbruser']*5);
-                    $userautonomie=($donnerpasser['userautonomie']*100)/($donnerpasser['nbruser']*5);
-                    $userproblemsolving=($donnerpasser['userproblemsolving']*100)/($donnerpasser['nbruser']*5);
-                    $usertransmission=($donnerpasser['usertransmission']*100)/($donnerpasser['nbruser']*5);
-                    $userperformance=($donnerpasser['userperformance']*100)/($donnerpasser['nbruser']*5);
-                    $totalpasser=(round($userperseverance,2)+round($usertransmission,2)+round($userconfiance,2)+round($usercollaboration,2)+round($userautonomie,2)+round($userproblemsolving,2)+round($userperformance,2))/(7);
+                    $passeruserperseverance=($donnerpasser['userperseverance']*100)/($donnerpasser['nbruser']*5);
+                    $passeruserconfiance=($donnerpasser['userconfiance']*100)/($donnerpasser['nbruser']*5);
+                    $passerusercollaboration=($donnerpasser['usercollaboration']*100)/($donnerpasser['nbruser']*5);
+                    $passeruserautonomie=($donnerpasser['userautonomie']*100)/($donnerpasser['nbruser']*5);
+                    $passeruserproblemsolving=($donnerpasser['userproblemsolving']*100)/($donnerpasser['nbruser']*5);
+                    $passerusertransmission=($donnerpasser['usertransmission']*100)/($donnerpasser['nbruser']*5);
+                    $passeruserperformance=($donnerpasser['userperformance']*100)/($donnerpasser['nbruser']*5);
+                    $totalpasser=(round($passeruserperseverance,2)+round($passerusertransmission,2)+round($passeruserconfiance,2)+round($passerusercollaboration,2)+round($passeruserautonomie,2)+round($passeruserproblemsolving,2)+round($passeruserperformance,2))/(7);
                 }
                 $a=['poste'=>$allusers[$i]->getPoste(),'prenom'=>$allusers[$i]->getPrenom(),'nom'=>$allusers[$i]->getNom(),'telephone'=>$allusers[$i]->getTelephone(),'id'=>$allusers[$i]->getId(),'username'=>$allusers[$i]->getUsername(),'general'=>round($totalactuel,2),'progression'=>round(round($totalactuel,2)-round($totalpasser,2),2)];
                 array_push($data,$a);

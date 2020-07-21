@@ -4,6 +4,9 @@ import { AdminService } from 'src/app/service/admin.service';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import * as $ from 'jquery';
+import { MatDialog } from '@angular/material/dialog';
+import { ChoixdateComponent } from 'src/app/modal/choixdate/choixdate.component';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-detailcollaborateur',
   templateUrl: './detailcollaborateur.component.html',
@@ -11,7 +14,8 @@ import * as $ from 'jquery';
 })
 export class DetailcollaborateurComponent implements OnInit {
   displayedColumns: string[] = ['nom', 'general', 'progression'];
-  
+  public ladate:any;
+  public month = ["Janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   public id:any;
@@ -21,15 +25,16 @@ export class DetailcollaborateurComponent implements OnInit {
   public dataSource:any;
   public loadcard=false;
 
-  constructor(private activeroute:ActivatedRoute,private admin:AdminService) {
+  constructor(private activeroute:ActivatedRoute,private admin:AdminService,public dialog: MatDialog) {
     
    }
 
   ngOnInit() {
+    var date=new Date();
+    this.ladate=(this.month[date.getMonth()])+"/"+date.getFullYear();
     this.id=this.activeroute.snapshot.paramMap.get('id');
     let a={id:this.id};
     this.admin.iduser.id=this.id;
-    
     this.personne=this.admin.userdetail;
     var body = $("html, body");
     body.stop().animate({scrollTop:0}, 500, 'swing', function() { 
@@ -38,6 +43,7 @@ export class DetailcollaborateurComponent implements OnInit {
     this.loadtableau();
   }
   public datacarduserload(){
+    console.log(this.admin.iduser);
     this.admin.datacarduser(this.admin.iduser).subscribe(
       res=>{
         this.admin.donnerdatacarduser=res.body;
@@ -87,4 +93,34 @@ export class DetailcollaborateurComponent implements OnInit {
     body.stop().animate({scrollTop:0}, 500, 'swing', function() { 
     });
   }
+  donnerdate= new FormGroup({
+    taille: new FormControl('')
+  })
+  choixdate(){
+    const dialogRef = this.dialog.open(ChoixdateComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(this.admin.alldate);
+      let datatab=[];
+      for (let index = 0; index < this.admin.alldate.length; index++) {
+          if (this.admin.alldate[index].etat==true) {
+            datatab.push(this.admin.alldate[index].id)
+          }
+      }
+      console.log(datatab);
+      this.donnerdate.get('taille').setValue(datatab.length)
+      for (let index = 0; index < datatab.length; index++) {
+        let a="id"+index;
+        this.donnerdate.addControl(a,new FormControl(''))
+        this.donnerdate.get(a).setValue(datatab[index])
+      }
+      console.log(this.donnerdate.value);
+    });
+  }
+  loadnotesevenlastdays(){
+    
+  }
+
 }

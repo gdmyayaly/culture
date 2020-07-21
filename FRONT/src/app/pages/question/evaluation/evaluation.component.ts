@@ -14,20 +14,34 @@ export class EvaluationComponent implements OnInit {
     {username:'mbacke',prenom:"Elhadji Mbacke",nom:'Mbaye'},
     {username:'yaya',prenom:"El Hadji Yaya",nom:'Ly'},
     {username:'anta',prenom:"Adji Anta",nom:'Dabo'},
+    {username:'mah',prenom:"Mah Savane",nom:'Keita'},
   ];
   public teamgrowacademy=[
     {username:'aissata',prenom:"Aissata",nom:'Déme'},
     {username:'fatou',prenom:"Fatou",nom:'Ndaw'},
     {username:'anta',prenom:"Adji Anta",nom:'Dabo'},
+    {username:'mamadou',prenom:"Mamadou",nom:'Ba'},
+    {username:'mah',prenom:"Mah Savane",nom:'Keita'},
   ];
   public teamcrea=[
     {username:'abdoulaye',prenom:"Abdoulaye",nom:'Faye'},
     {username:'faustin',prenom:"Jean Jacques Faustin",nom:'Badji'},
     {username:'mbaye',prenom:"Mbaye",nom:'Sylla'},
+    {username:'mah',prenom:"Mah Savane",nom:'Keita'},
   ];
   public teambusiness=[
     {username:'mah',prenom:"Mah Savane",nom:'Keita'},
+    {username:'abdoulaye',prenom:"Abdoulaye",nom:'Faye'},
+    {username:'faustin',prenom:"Jean Jacques Faustin",nom:'Badji'},
+    {username:'mbaye',prenom:"Mbaye",nom:'Sylla'},
+    {username:'aissata',prenom:"Aissata",nom:'Déme'},
+    {username:'fatou',prenom:"Fatou",nom:'Ndaw'},
+    {username:'anta',prenom:"Adji Anta",nom:'Dabo'},
     {username:'mamadou',prenom:"Mamadou",nom:'Ba'},
+    {username:'mbacke',prenom:"Elhadji Mbacke",nom:'Mbaye'},
+    {username:'yaya',prenom:"El Hadji Yaya",nom:'Ly'},
+    {username:'anta',prenom:"Adji Anta",nom:'Dabo'},
+    
   ];
   public teamevaluation:any;
   public nomteam:any;

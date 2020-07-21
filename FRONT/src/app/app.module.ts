@@ -36,6 +36,7 @@ import { MaterialModule } from './material/material.module';
 import { LoaderComponent } from './layout/loader/loader.component';
 import { AnneComponent } from './diagrammeteam/anne/anne.component';
 import { SevenComponent } from './diagrammeteam/seven/seven.component';
+import { ChoixdateComponent } from './modal/choixdate/choixdate.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { SevenComponent } from './diagrammeteam/seven/seven.component';
     LoaderComponent,
     AnneComponent,
     SevenComponent,
+    ChoixdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,6 +88,7 @@ import { SevenComponent } from './diagrammeteam/seven/seven.component';
     multi:true
   }
 ],
+entryComponents:[ChoixdateComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

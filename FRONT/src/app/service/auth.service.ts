@@ -17,7 +17,7 @@ export class AuthService {
   public connecter = false;
   public utilisateur: any;
   public isadmin = false;
-  public isuser = false;
+  public isuser = false; 
 
   constructor(private http: HttpClient, private route: Router, public jwtHelper: JwtHelperService) { }
   logger(data) {
