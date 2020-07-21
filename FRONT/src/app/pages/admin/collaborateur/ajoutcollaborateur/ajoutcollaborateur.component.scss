@@ -107,4 +107,26 @@ margin-left: 20px;
   }
   
 
+  @media screen and (max-width: 640px){
+    .input{
+      width: 170px;
+    }
+    .select{
+      width: 170px;
+    }
+ .form_group{
+   padding-left: 0;
+   padding-right: 0;
+   margin-right: 0;
+   margin-left: 0;
+ }
+
+ 
+ .avatar{
+   width: 100px;
+   height: 150px;
+ }
+
+  }
+
   
