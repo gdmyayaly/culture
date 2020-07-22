@@ -13,14 +13,14 @@
           
               
                     <li class="nav-divider" *ngIf="auth.isadmin">
-                        <a class="nav-link "[routerLink]="['/collaborateur']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>grow</a>
+                        <a class="nav-link "[routerLink]="['/collaborateur']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Staff</a>
                     </li>
                     <li class="nav-divider" *ngIf="auth.isuser">
                         <a class="nav-link "[routerLink]="['/collaborateur/detail',403]"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Dashboard</a>
                     </li>
               
                      <li class="nav-divider" *ngIf="auth.isadmin">
-                        <a class="nav-link "[routerLink]="['/team']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Team</a>
+                        <a class="nav-link "[routerLink]="['/team']"  aria-expanded="false"><i class="fas fa-users"></i>Team</a>
                     </li>
                     <li class="nav-divider" *ngIf="auth.isadmin">
                         <a class="nav-link "[routerLink]="['/session']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Session</a>
@@ -29,7 +29,7 @@
                         <a class="nav-link "[routerLink]="['/question']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Evaluation</a>
                     </li>
                     <li class="nav-divider" >
-                        <a class="nav-link " href="#" (click)="out()" aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Deconnexion</a>
+                        <a class="nav-link " href="#" (click)="out()" aria-expanded="false"><i class="fas fa-power-off mr-2"></i>Logout</a>
                     </li>
                   
                   
