@@ -20,10 +20,10 @@ export class AdminService {
   ];
     public iduser={id:null};
     public userdetail:any;
-    private url = "http://127.0.0.1:8000/admin/";
-    public urlimage:string="http://127.0.0.1:8000/";
-    // private url = "http://www.culture.telectronsenegal.com/admin/";
-    // public urlimage:string="http://www.culture.telectronsenegal.com/";
+    // private url = "http://127.0.0.1:8000/admin/";
+    // public urlimage:string="http://127.0.0.1:8000/";
+    private url = "http://www.culture.telectronsenegal.com/admin/";
+    public urlimage:string="http://www.culture.telectronsenegal.com/";
     private urlnote="note";
     private urldatacarduser="datacarduser";
     public loadcard=false;

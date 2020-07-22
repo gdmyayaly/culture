@@ -1,0 +1,3 @@
+php bin/console cache:clear
+composer require symfony/apache-pack
+composer req cors

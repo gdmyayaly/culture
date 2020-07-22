@@ -2,61 +2,59 @@
   <h1>Création d'utilisateurs</h1>
 
     <div class="row">
-        <div class="col-md-3"></div>
-        <div class="carte col-md-6">
+        <div class="col-md-2"></div>
+        <div class="carte col-md-7">
 
             <div class="carteavatar row">
                 <img src="assets/avatarh.png" class="avatar" alt="">
             </div>
 
             <div class="form row">
-                <form>
+                <form [formGroup]="user" class="">
                   
-                      <div class="form_group">
+                      <div class="row form_group">
                         <label for="prenom">Prenom</label>
                         <input class="input" type="text" formControlName="prenom"  id="subscription_login"/>
                       </div>
-                      <div class="form_group">
+                      <div class="row form_group">
                         <label for="nom">Nom</label>
                         <input class="input" type="text" formControlName="nom" id="subscription_login"/>
                       </div>
-                      <div class="form_group">
+                      <div class="row form_group">
                         <label for="subscription_login">Téléphone</label>
                         <input class="input" type="text" formControlName="prenom" id="subscription_login"/>
                       </div>
-                      <div class="form_group">
+                      <div class="row form_group">
                         <label for="subscription_login">Email</label>
                         <input class="input" type="email" formControlName="prenom" id="subscription_login"/>
                       </div>
-                      <div class="form_group">
+                      <div class="row form_group">
                         <label>Profil</label>
                         <select class="select" name="lang">
                           <option value="">-- Sélectionnez --</option>
-                          <option value="fr">Français</option>
-                          <option value="en">English</option>
-                          <option value="de">Deutsch</option>
-                          <option value="es">Español</option>
+                          <option value="Colaborateur">Colaborateur</option>
+                          <option value="Administrateur">Administrateur</option>
+             
                         </select>
                       </div>
-                      <div class="form_group">
+                      <div class="row form_group" *ngFor="let item of listposte; let i=index">
                         <label>Poste</label>
-                        <select class="select" name="lang">
+                        <select class="select" name="lang" formControlName="poste{{i}}">
                           <option value="">-- Sélectionnez --</option>
-                          <option value="fr">Français</option>
-                          <option value="en">English</option>
-                          <option value="de">Deutsch</option>
-                          <option value="es">Español</option>
+                          <option   *ngFor="let item of job" value="{{item.nom}}">{{item.nom}}</option>
                         </select>
+                        <div (click)="plusposte()" *ngIf="(nbrFichierpost)==i" class="col-1"><img src="assets/croix.png" width="40" height="40" alt=""></div>
+
                       </div>
-                      <div class="form_group">
+                      <div class="row form_group"  *ngFor="let item of list; let i=index">
                         <label>Team</label>
-                        <select class="select" name="lang">
+                        <select class="select" name="lang"  formControlName="team{{i}}">
                           <option value="">-- Sélectionnez --</option>
-                          <option value="fr">Français</option>
-                          <option value="en">English</option>
-                          <option value="de">Deutsch</option>
-                          <option value="es">Español</option>
+                          <option *ngFor="let item of team" value="{{item.nom}}">{{item.nom}}</option>
+                        
                         </select>
+                        <div (click)="plusteam()" *ngIf="(nbrFichier)==i" class="col-1"><img src="assets/croix.png" width="40" height="40" alt=""></div>
+
                       </div>
                     <div class="boutton row">
                         <button class="savebtn" type="submit">Save</button>
