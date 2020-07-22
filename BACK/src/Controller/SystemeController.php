@@ -181,6 +181,8 @@ class SystemeController extends AbstractController
         $moyenneteamtransmission=$teamtransmission-$passerteamtransmission;
         $moyenneteamperformance=$teamperformance-$passerteamperformance;
         $moyennegeneral=$general-$passergeneral;
+
+
         return $this->json([
             'userperseverance'=>round($userperseverance,2),
             'userconfiance'=>round($userconfiance,2),
@@ -734,6 +736,7 @@ class SystemeController extends AbstractController
                 $actuelperformance=0;
                 for ($j=0; $j <count($userteam) ; $j++) { //yaya & mbacke
                     $a=$this->userdataday($userteam[$j]->getUser()->getId(),$lastevaluation[$i]->getDate());
+                   // dump($a);
                     if ($a['nbruser']==0) {
                         $actuelperseverance=$actuelperseverance+0;
                         $actuelconfiance=$actuelconfiance+0;
@@ -753,23 +756,101 @@ class SystemeController extends AbstractController
                         $actuelperformance=$actuelperformance+($a['userperformance']/$a['nbruser']); 
                     }
                 }
-                array_push($moyenneactuelperseverance,$actuelperseverance);
-                array_push($moyenneactuelconfiance,$actuelconfiance);
-                array_push($moyenneactuelcollaboration,$actuelcollaboration);
-                array_push($moyenneactuelautonomie,$actuelautonomie);
-                array_push($moyenneactuelproblemsolving,$actuelproblemsolving);
-                array_push($moyenneactueltransmission,$actueltransmission);
-                array_push($moyenneactuelperformance,$actuelperformance);
+                array_push($moyenneactuelperseverance,($actuelperseverance/count($userteam)));
+                array_push($moyenneactuelconfiance,($actuelconfiance/count($userteam)));
+                array_push($moyenneactuelcollaboration,($actuelcollaboration/count($userteam)));
+                array_push($moyenneactuelautonomie,($actuelautonomie/count($userteam)));
+                array_push($moyenneactuelproblemsolving,($actuelproblemsolving/count($userteam)));
+                array_push($moyenneactueltransmission,($actueltransmission/count($userteam)));
+                array_push($moyenneactuelperformance,($actuelperformance/count($userteam)));
             }
+
+
+
+            $user=$userRepository->testreq("ROLE_COLLABORATEUR");
+        $teamperseverance=[];
+        $teamconfiance=[];
+        $teamcollaboration=[];
+        $teamautonomie=[];
+        $teamproblemsolving=[];
+        $teamtransmission=[];
+        $teamperformance=[];
+
+        $userteamperseverance=0;
+        $userteamconfiance=0;
+        $userteamcollaboration=0;
+        $userteamautonomie=0;
+        $userteamproblemsolving=0;
+        $userteamtransmission=0;
+        $userteamperformance=0;
+        for ($i=0; $i <count($lastevaluation) ; $i++) { 
+            $userteamperseverance=0;
+            $userteamconfiance=0;
+            $userteamcollaboration=0;
+            $userteamautonomie=0;
+            $userteamproblemsolving=0;
+            $userteamtransmission=0;
+            $userteamperformance=0;
+            for ($j=0; $j < count($user); $j++) {
+            $rr=$this->userdataday($user[$j]->getId(),$lastevaluation[$i]->getDate(),2020);
+            if ($rr['nbruser']==0) {
+                $userteamperseverancetampon=0;
+                $userteamconfiancetampon=0;
+                $userteamcollaborationtampon=0;
+                $userteamautonomietampon=0;
+                $userteamproblemsolvingtampon=0;
+                $userteamtransmissiontampon=0;
+                $userteamperformancetampon=0;
+                $userteamperseverance=$userteamperseverance+$userteamperseverancetampon;
+                $userteamconfiance=$userteamconfiance+$userteamconfiancetampon;
+                $userteamcollaboration=$userteamcollaboration+$userteamcollaborationtampon;
+                $userteamautonomie=$userteamautonomie+$userteamautonomietampon;
+                $userteamproblemsolving=$userteamproblemsolving+$userteamproblemsolvingtampon;
+                $userteamtransmission=$userteamtransmission+$userteamtransmissiontampon;
+                $userteamperformance=$userteamperformance+$userteamperformancetampon;
+            }
+            else{
+                $userteamperseverancetampon=($rr['userperseverance'])/($rr['nbruser']);
+                $userteamconfiancetampon=($rr['userconfiance'])/($rr['nbruser']);
+                $userteamcollaborationtampon=($rr['usercollaboration'])/($rr['nbruser']);
+                $userteamautonomietampon=($rr['userautonomie'])/($rr['nbruser']);
+                $userteamproblemsolvingtampon=($rr['userproblemsolving'])/($rr['nbruser']);
+                $userteamtransmissiontampon=($rr['usertransmission'])/($rr['nbruser']);
+                $userteamperformancetampon=($rr['userperformance'])/($rr['nbruser']);
+                $userteamperseverance=$userteamperseverance+$userteamperseverancetampon;
+                $userteamconfiance=$userteamconfiance+$userteamconfiancetampon;
+                $userteamcollaboration=$userteamcollaboration+$userteamcollaborationtampon;
+                $userteamautonomie=$userteamautonomie+$userteamautonomietampon;
+                $userteamproblemsolving=$userteamproblemsolving+$userteamproblemsolvingtampon;
+                $userteamtransmission=$userteamtransmission+$userteamtransmissiontampon;
+                $userteamperformance=$userteamperformance+$userteamperformancetampon;
+            }
+        }
+        array_push($teamperseverance,round(($userteamperseverance)/(count($user)),2));
+        array_push($teamconfiance,round(($userteamconfiance)/(count($user)),2));
+        array_push($teamcollaboration,round(($userteamcollaboration)/(count($user)),2));
+        array_push($teamautonomie,round(($userteamautonomie)/(count($user)),2));
+        array_push($teamproblemsolving,round(($userteamproblemsolving)/(count($user)),2));
+        array_push($teamtransmission,round(($userteamtransmission)/(count($user)),2));
+        array_push($teamperformance,round(($userteamperformance)/(count($user)),2));
+        }
             return $this->json([
                 'date'=>$date,
-                'moyenneactuelperseverance'=>$moyenneactuelperseverance,
-                'moyenneactuelconfiance'=>$moyenneactuelconfiance,
-                'moyenneactuelcollaboration'=>$moyenneactuelcollaboration,
-                'moyenneactuelautonomie'=>$moyenneactuelautonomie,
-                'moyenneactuelproblemsolving'=>$moyenneactuelproblemsolving,
-                'moyenneactueltransmission'=>$moyenneactueltransmission,
-                'moyenneactuelperformance'=>$moyenneactuelperformance,
+                'perseverance'=>$moyenneactuelperseverance,
+                'confiance'=>$moyenneactuelconfiance,
+                'collaboration'=>$moyenneactuelcollaboration,
+                'autonomie'=>$moyenneactuelautonomie,
+                'problemsolving'=>$moyenneactuelproblemsolving,
+                'transmission'=>$moyenneactueltransmission,
+                'performance'=>$moyenneactuelperformance,
+
+                'teamperseverance'=>$teamperseverance,
+                'teamconfiance'=>$teamconfiance,
+                'teamcollaboration'=>$teamcollaboration,
+                'teamautonomie'=>$teamautonomie,
+                'teamproblemsolving'=>$teamproblemsolving,
+                'teamtransmission'=>$teamtransmission,
+                'teamperformance'=>$teamperformance,
             ]);
 
         }

@@ -10,6 +10,7 @@ import { AdminService } from 'src/app/service/admin.service';
 export class ListeamComponent implements OnInit {
   public id:any;
   public nomteam:any;
+  public datateam:any;
   general: number
   moyennegeneral: number
   moyenneteamautonomie: number
@@ -275,41 +276,55 @@ export class ListeamComponent implements OnInit {
   ngOnInit() {
     this.id=this.activeroute.snapshot.paramMap.get('id');
     console.log(this.id);
-    if (this.id==1) {
+    if (this.id==105) {
+      let idteam={id:this.id};
+      this.admin.datateam(idteam).subscribe(
+        res=>{
+          this.datateam=res.body;
+          console.log(this.datateam);
+          
+          
+          this.moyenneteamautonomie=1
+          this.moyenneteamcollaboration=3
+          this.moyenneteamconfiance=4
+          this.moyenneteamperformance=5
+          this.moyenneteamperseverance=6
+          this.moyenneteamproblemsolving=7
+          this.moyenneteamtransmission=8;
+          this.teamautonomie=17
+          this.teamcollaboration=18
+          this.teamconfiance=19
+          this.teamperformance=20
+          this.teamperseverance=21
+          this.teamproblemsolving=22
+          this.teamtransmission=23
+          this.userautonomie=this.datateam.actuelautonomie;
+          this.usercollaboration=this.datateam.actuelcollaboration;
+          this.userconfiance=this.datateam.actuelconfiance;
+          this.userperformance=this.datateam.actuelperformance;
+          this.userperseverance=this.datateam.actuelperseverance;
+          this.userproblemsolving=this.datateam.actuelproblemsolving;
+          this.usertransmission=this.datateam.actueltransmission;
+          this.general=this.datateam.actuelgeneral;
+
+          this.moyenneuserautonomie=this.datateam.passerautonomie;
+          this.moyenneusercollaboration=this.datateam.passercollaboration;
+          this.moyenneuserconfiance=this.datateam.passerconfiance;
+          this.moyenneuserperformance=this.datateam.passerperformance;
+          this.moyenneuserperseverance=this.datateam.passerperseverance;
+          this.moyenneuserproblemsolving=this.datateam.passerproblemsolving;
+          this.moyenneusertransmission=this.datateam.passertransmission;
+          this.moyennegeneral=this.datateam.passergeneral;
+        },
+        error=>{
+          console.log(error);
+          
+        }
+      )
       this.nomteam="Team Business";
-      this.moyennegeneral=0
-      this.moyenneteamautonomie=1
-      this.moyenneteamcollaboration=3
-      this.moyenneteamconfiance=4
-      this.moyenneteamperformance=5
-      this.moyenneteamperseverance=6
-      this.moyenneteamproblemsolving=7
-      this.moyenneteamtransmission=8
-      this.moyenneuserautonomie=10
-      this.moyenneusercollaboration=11
-      this.moyenneuserconfiance=12
-      this.moyenneuserperformance=13
-      this.moyenneuserperseverance=14
-      this.moyenneuserproblemsolving=15
-      this.moyenneusertransmission=16
-      this.teamautonomie=17
-      this.teamcollaboration=18
-      this.teamconfiance=19
-      this.teamperformance=20
-      this.teamperseverance=21
-      this.teamproblemsolving=22
-      this.teamtransmission=23
-      this.userautonomie=24
-      this.usercollaboration=25
-      this.userconfiance=26
-      this.userperformance=27
-      this.userperseverance=28
-      this.userproblemsolving=29
-      this.usertransmission=30
-      this.general=40;
+
       this.initialisationchart();
-      let a={id:407}
-      this.admin.notesevenlastdays(a).subscribe(
+      this.admin.sevenlastevaluationteam(idteam).subscribe(
         res=>{
           this.datart=res.body;
            this.date=this.datart.date;
@@ -340,43 +355,59 @@ export class ListeamComponent implements OnInit {
         }
       )
     }
-    else if(this.id==2){
+    else if(this.id==106){
       this.nomteam="grow academy";
-            this.moyennegeneral=0
-      this.moyenneteamautonomie=1
-      this.moyenneteamcollaboration=3
-      this.moyenneteamconfiance=4
-      this.moyenneteamperformance=5
-      this.moyenneteamperseverance=6
-      this.moyenneteamproblemsolving=7
-      this.moyenneteamtransmission=8
-      this.moyenneuserautonomie=10
-      this.moyenneusercollaboration=11
-      this.moyenneuserconfiance=12
-      this.moyenneuserperformance=13
-      this.moyenneuserperseverance=70
-      this.moyenneuserproblemsolving=15
-      this.moyenneusertransmission=16
-      this.teamautonomie=17
-      this.teamcollaboration=18
-      this.teamconfiance=19
-      this.teamperformance=20
-      this.teamperseverance=65
-      this.teamproblemsolving=22
-      this.teamtransmission=23
-      this.userautonomie=24
-      this.usercollaboration=25
-      this.userconfiance=26
-      this.userperformance=27
-      this.userperseverance=70
-      this.userproblemsolving=29
-      this.usertransmission=30
-      this.general=65
+      let idteam={id:this.id};
+      this.admin.datateam(idteam).subscribe(
+        res=>{
+          this.datateam=res.body;
+          console.log(this.datateam);
+          
+          
+          this.moyenneteamautonomie=1
+          this.moyenneteamcollaboration=3
+          this.moyenneteamconfiance=4
+          this.moyenneteamperformance=5
+          this.moyenneteamperseverance=6
+          this.moyenneteamproblemsolving=7
+          this.moyenneteamtransmission=8;
+          this.teamautonomie=17
+          this.teamcollaboration=18
+          this.teamconfiance=19
+          this.teamperformance=20
+          this.teamperseverance=21
+          this.teamproblemsolving=22
+          this.teamtransmission=23
+          this.userautonomie=this.datateam.actuelautonomie;
+          this.usercollaboration=this.datateam.actuelcollaboration;
+          this.userconfiance=this.datateam.actuelconfiance;
+          this.userperformance=this.datateam.actuelperformance;
+          this.userperseverance=this.datateam.actuelperseverance;
+          this.userproblemsolving=this.datateam.actuelproblemsolving;
+          this.usertransmission=this.datateam.actueltransmission;
+          this.general=this.datateam.actuelgeneral;
+
+          this.moyenneuserautonomie=this.datateam.passerautonomie;
+          this.moyenneusercollaboration=this.datateam.passercollaboration;
+          this.moyenneuserconfiance=this.datateam.passerconfiance;
+          this.moyenneuserperformance=this.datateam.passerperformance;
+          this.moyenneuserperseverance=this.datateam.passerperseverance;
+          this.moyenneuserproblemsolving=this.datateam.passerproblemsolving;
+          this.moyenneusertransmission=this.datateam.passertransmission;
+          this.moyennegeneral=this.datateam.passergeneral;
+        },
+        error=>{
+          console.log(error);
+          
+        }
+      )
       this.initialisationchart();
       let a={id:403}
-      this.admin.notesevenlastdays(a).subscribe(
+      this.admin.sevenlastevaluationteam(idteam).subscribe(
         res=>{
           this.datart=res.body;
+          console.log(res.body);
+          
            this.date=this.datart.date;
            this.perseverance=this.datart.perseverance;
            this.teamperseverances=this.datart.teamperseverance;
@@ -405,41 +436,55 @@ export class ListeamComponent implements OnInit {
         }
       )
     }
-    else if(this.id==3){
+    else if(this.id==107){
       this.nomteam="Team Créa";
-            this.moyennegeneral=0
-      this.moyenneteamautonomie=1
-      this.moyenneteamcollaboration=3
-      this.moyenneteamconfiance=4
-      this.moyenneteamperformance=5
-      this.moyenneteamperseverance=6
-      this.moyenneteamproblemsolving=7
-      this.moyenneteamtransmission=8
-      this.moyenneuserautonomie=10
-      this.moyenneusercollaboration=11
-      this.moyenneuserconfiance=12
-      this.moyenneuserperformance=13
-      this.moyenneuserperseverance=14
-      this.moyenneuserproblemsolving=15
-      this.moyenneusertransmission=16
-      this.teamautonomie=17
-      this.teamcollaboration=18
-      this.teamconfiance=19
-      this.teamperformance=20
-      this.teamperseverance=21
-      this.teamproblemsolving=22
-      this.teamtransmission=23
-      this.userautonomie=24
-      this.usercollaboration=25
-      this.userconfiance=26
-      this.userperformance=27
-      this.userperseverance=28
-      this.userproblemsolving=29
-      this.usertransmission=30
-      this.general=58
+      let idteam={id:this.id};
+      this.admin.datateam(idteam).subscribe(
+        res=>{
+          this.datateam=res.body;
+          console.log(this.datateam);
+          
+          
+          this.moyenneteamautonomie=1
+          this.moyenneteamcollaboration=3
+          this.moyenneteamconfiance=4
+          this.moyenneteamperformance=5
+          this.moyenneteamperseverance=6
+          this.moyenneteamproblemsolving=7
+          this.moyenneteamtransmission=8;
+          this.teamautonomie=17
+          this.teamcollaboration=18
+          this.teamconfiance=19
+          this.teamperformance=20
+          this.teamperseverance=21
+          this.teamproblemsolving=22
+          this.teamtransmission=23
+          this.userautonomie=this.datateam.actuelautonomie;
+          this.usercollaboration=this.datateam.actuelcollaboration;
+          this.userconfiance=this.datateam.actuelconfiance;
+          this.userperformance=this.datateam.actuelperformance;
+          this.userperseverance=this.datateam.actuelperseverance;
+          this.userproblemsolving=this.datateam.actuelproblemsolving;
+          this.usertransmission=this.datateam.actueltransmission;
+          this.general=this.datateam.actuelgeneral;
+
+          this.moyenneuserautonomie=this.datateam.passerautonomie;
+          this.moyenneusercollaboration=this.datateam.passercollaboration;
+          this.moyenneuserconfiance=this.datateam.passerconfiance;
+          this.moyenneuserperformance=this.datateam.passerperformance;
+          this.moyenneuserperseverance=this.datateam.passerperseverance;
+          this.moyenneuserproblemsolving=this.datateam.passerproblemsolving;
+          this.moyenneusertransmission=this.datateam.passertransmission;
+          this.moyennegeneral=this.datateam.passergeneral;
+        },
+        error=>{
+          console.log(error);
+          
+        }
+      )
       this.initialisationchart();
       let a={id:402}
-      this.admin.notesevenlastdays(a).subscribe(
+      this.admin.sevenlastevaluationteam(idteam).subscribe(
         res=>{
           this.datart=res.body;
            this.date=this.datart.date;
@@ -470,41 +515,55 @@ export class ListeamComponent implements OnInit {
         }
       )
     }
-    else if(this.id==4){
+    else if(this.id==108){
       this.nomteam="Team Tech";
-      this.moyennegeneral=0
-      this.moyenneteamautonomie=1
-      this.moyenneteamcollaboration=3
-      this.moyenneteamconfiance=4
-      this.moyenneteamperformance=5
-      this.moyenneteamperseverance=6
-      this.moyenneteamproblemsolving=7
-      this.moyenneteamtransmission=8
-      this.moyenneuserautonomie=10
-      this.moyenneusercollaboration=11
-      this.moyenneuserconfiance=12
-      this.moyenneuserperformance=13
-      this.moyenneuserperseverance=14
-      this.moyenneuserproblemsolving=15
-      this.moyenneusertransmission=16
-      this.teamautonomie=17
-      this.teamcollaboration=18
-      this.teamconfiance=19
-      this.teamperformance=20
-      this.teamperseverance=21
-      this.teamproblemsolving=22
-      this.teamtransmission=23
-      this.userautonomie=24
-      this.usercollaboration=25
-      this.userconfiance=26
-      this.userperformance=27
-      this.userperseverance=28
-      this.userproblemsolving=29
-      this.usertransmission=30
-      this.general=54
+      let idteam={id:this.id};
+      this.admin.datateam(idteam).subscribe(
+        res=>{
+          this.datateam=res.body;
+          console.log(this.datateam);
+          
+          
+          this.moyenneteamautonomie=1
+          this.moyenneteamcollaboration=3
+          this.moyenneteamconfiance=4
+          this.moyenneteamperformance=5
+          this.moyenneteamperseverance=6
+          this.moyenneteamproblemsolving=7
+          this.moyenneteamtransmission=8;
+          this.teamautonomie=17
+          this.teamcollaboration=18
+          this.teamconfiance=19
+          this.teamperformance=20
+          this.teamperseverance=21
+          this.teamproblemsolving=22
+          this.teamtransmission=23
+          this.userautonomie=this.datateam.actuelautonomie;
+          this.usercollaboration=this.datateam.actuelcollaboration;
+          this.userconfiance=this.datateam.actuelconfiance;
+          this.userperformance=this.datateam.actuelperformance;
+          this.userperseverance=this.datateam.actuelperseverance;
+          this.userproblemsolving=this.datateam.actuelproblemsolving;
+          this.usertransmission=this.datateam.actueltransmission;
+          this.general=this.datateam.actuelgeneral;
+
+          this.moyenneuserautonomie=this.datateam.passerautonomie;
+          this.moyenneusercollaboration=this.datateam.passercollaboration;
+          this.moyenneuserconfiance=this.datateam.passerconfiance;
+          this.moyenneuserperformance=this.datateam.passerperformance;
+          this.moyenneuserperseverance=this.datateam.passerperseverance;
+          this.moyenneuserproblemsolving=this.datateam.passerproblemsolving;
+          this.moyenneusertransmission=this.datateam.passertransmission;
+          this.moyennegeneral=this.datateam.passergeneral;
+        },
+        error=>{
+          console.log(error);
+          
+        }
+      )
       this.initialisationchart();
       let a={id:412}
-      this.admin.notesevenlastdays(a).subscribe(
+      this.admin.sevenlastevaluationteam(idteam).subscribe(
         res=>{
           this.datart=res.body;
            this.date=this.datart.date;
@@ -590,7 +649,7 @@ export class ListeamComponent implements OnInit {
     this.barChartLegendperseverance = true;
     this.barChartDataperseverance = [
      {data: this.perseverance, label: 'User',backgroundColor: "#FF4080"},
-     {data: this.teamperseverance, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"},
+     {data: this.teamperseverances, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"},
      
    ];
   }
@@ -601,7 +660,7 @@ export class ListeamComponent implements OnInit {
     this.barChartLegendconfiance = true;
     this.barChartDataconfiance = [
      {data: this.confiance, label: 'User',backgroundColor: "#FF4080"},
-     {data: this.teamconfiance, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
+     {data: this.teamconfiances, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
    ];
   }
  
@@ -611,7 +670,7 @@ export class ListeamComponent implements OnInit {
     this.barChartLegendcollaboration = true;
     this.barChartDatacollaboration = [
      {data: this.collaboration, label: 'User',backgroundColor: "#FF4080"},
-     {data: this.teamcollaboration, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
+     {data: this.teamcollaborations, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
    ];
  }
 
@@ -621,7 +680,7 @@ export class ListeamComponent implements OnInit {
   this.barChartLegendautonomie = true;
   this.barChartDataautonomie = [
    {data: this.autonomie, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamautonomie, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
+   {data: this.teamautonomies, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
  ];
  }
 
@@ -631,7 +690,7 @@ export class ListeamComponent implements OnInit {
   this.barChartLegendproblemsolving = true;
   this.barChartDataproblemsolving = [
    {data: this.problemsolving, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamproblemsolving, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
+   {data: this.teamproblemsolvings, label: 'Team',backgroundColor: "grey", hoverBackgroundColor:"grey"}
  ];
  }
 
@@ -641,7 +700,7 @@ export class ListeamComponent implements OnInit {
   this.barChartLegendtransmission = true;
   this.barChartDatatransmission = [
    {data: this.transmission, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamtransmission, label: 'Team',backgroundColor: "grey"}
+   {data: this.teamtransmissions, label: 'Team',backgroundColor: "grey"}
  ];
  }
  chartPerformance(){
@@ -650,7 +709,7 @@ export class ListeamComponent implements OnInit {
   this.barChartLegendperformance = true;
   this.barChartDataperformance = [
    {data: this.performance, label: 'User',backgroundColor: "#FF4080"},
-   {data: this.teamperformance, label: 'Team',backgroundColor: "grey",hoverBackgroundColor:"grey"}
+   {data: this.teamperformances, label: 'Team',backgroundColor: "grey",hoverBackgroundColor:"grey"}
  ];
   }
 
