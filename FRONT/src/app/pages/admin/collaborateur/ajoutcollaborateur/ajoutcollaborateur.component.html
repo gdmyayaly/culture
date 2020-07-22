@@ -43,7 +43,7 @@
                           <option value="">-- Sélectionnez --</option>
                           <option   *ngFor="let item of job" value="{{item.nom}}">{{item.nom}}</option>
                         </select>
-                        <div (click)="plusposte()" *ngIf="(nbrFichierpost)==i" class="col-1"><img src="assets/croix.png" width="40" height="40" alt=""></div>
+                        <div (click)="plusposte()" *ngIf="(nbrFichierpost)==i" class="col-1"><img src="assets/croix.png" width="30" height="40" alt=""></div>
 
                       </div>
                       <div class="row form_group"  *ngFor="let item of list; let i=index">
@@ -53,7 +53,7 @@
                           <option *ngFor="let item of team" value="{{item.nom}}">{{item.nom}}</option>
                         
                         </select>
-                        <div (click)="plusteam()" *ngIf="(nbrFichier)==i" class="col-1"><img src="assets/croix.png" width="40" height="40" alt=""></div>
+                        <div (click)="plusteam()" *ngIf="(nbrFichier)==i" class="col-1"><img src="assets/croix.png" width="30" height="40" alt=""></div>
 
                       </div>
                     <div class="boutton row">
