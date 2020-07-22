@@ -532,7 +532,7 @@ class SystemeController extends AbstractController
             }
             $id=$data['id'];
             $mois=date('m');
-            //$mois="05";
+            //$mois="03";
             $moispasser=(int)$mois;
             $moispasser--;
             $moispasser=(string)$moispasser;
@@ -718,8 +718,11 @@ class SystemeController extends AbstractController
             $moyennepasserproblemsolving=[];
             $moyennepassertransmission=[];
             $moyennepasserperformance=[];
+            //recuperation des 7 derniere sesion devaluation
             $lastevaluation=$allsessionRepository->sevenlastevaluation();
+            //recuperer la la liste des utilisateur appartenant a cet team
             $userteam=$userTeamRepository->findBy(['team'=>$id]);
+            //On parcour les 7 last evaluation
             for ($i=0; $i < count($lastevaluation); $i++) {
                 array_push($date,date_format($lastevaluation[$i]->getDate(),'j F'));
                 $actuelperseverance=0;
@@ -729,16 +732,16 @@ class SystemeController extends AbstractController
                 $actuelproblemsolving=0;
                 $actueltransmission=0;
                 $actuelperformance=0;
-                for ($j=0; $j <count($userteam) ; $j++) { 
+                for ($j=0; $j <count($userteam) ; $j++) { //yaya & mbacke
                     $a=$this->userdataday($userteam[$j]->getUser()->getId(),$lastevaluation[$i]->getDate());
                     if ($a['nbruser']==0) {
-                        $actuelperseverance=0;
-                        $actuelconfiance=0;
-                        $actuelcollaboration=0;
-                        $actuelautonomie=0;
-                        $actuelproblemsolving=0;
-                        $actueltransmission=0;
-                        $actuelperformance=0;
+                        $actuelperseverance=$actuelperseverance+0;
+                        $actuelconfiance=$actuelconfiance+0;
+                        $actuelcollaboration=$actuelcollaboration+0;
+                        $actuelautonomie=$actuelautonomie+0;
+                        $actuelproblemsolving=$actuelproblemsolving+0;
+                        $actueltransmission=$actueltransmission+0;
+                        $actuelperformance=$actuelperformance+0;
                     }
                     else{
                         $actuelperseverance=$actuelperseverance+($a['userperseverance']/$a['nbruser']);
