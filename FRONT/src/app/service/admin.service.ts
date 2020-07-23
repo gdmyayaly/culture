@@ -13,10 +13,10 @@ export class AdminService {
     {id:7,mois:'juillet',annee:2020,etat:false},
   ]
   public listteam=[
-    {id:1,nom:'Team Business'},
-    {id:2,nom:'grow academy'},
-    {id:3,nom:'Team Créa'},
-    {id:4,nom:'Team Tech&Digital'},
+    {id:105,nom:'Team Business'},
+    {id:106,nom:'grow academy'},
+    {id:107,nom:'Team Créa'},
+    {id:108,nom:'Team Tech&Digital'},
   ];
     public iduser={id:null};
     public userdetail:any;
@@ -30,6 +30,8 @@ export class AdminService {
     public urlnotesevenlastdays="notesevenlastdays";
     public urllastevaluationdumois="lastevaluationdumois";
     public urlperformaceteam="performaceteam";
+    public urldatateam="datateam";
+    public urlsevenlastevaluationteam="sevenlastevaluationteam";
     public donnerdatacarduser={moyennegeneral:0,moyenneteamautonomie:0,moyenneteamcollaboration:0,moyenneteamconfiance:0,
       moyenneteamperformance:0,moyenneteamperseverance:0,moyenneteamproblemsolving:0,moyenneteamtransmission:0,
       moyenneuserautonomie:0,moyenneusercollaboration:0,moyenneuserconfiance:0,moyenneuserperformance:0,moyenneuserperseverance:0,
@@ -57,5 +59,11 @@ export class AdminService {
     }
     public performaceteam(){
       return this.http.post(this.url + this.urlperformaceteam, { observe: 'response' })
+    }
+    public datateam(data): Observable<any>{
+      return this.http.post<any>(this.url + this.urldatateam,data, { observe: 'response' })
+    }
+    public sevenlastevaluationteam(data) : Observable<any> {
+      return this.http.post<any>(this.url + this.urlsevenlastevaluationteam,data, { observe: 'response' })
     }
 }

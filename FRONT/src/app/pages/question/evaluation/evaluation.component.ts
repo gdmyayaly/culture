@@ -66,19 +66,19 @@ export class EvaluationComponent implements OnInit {
   ngOnInit() {
     this.id=this.activeroute.snapshot.paramMap.get('id');
     console.log(this.id);
-    if (this.id==1) {
+    if (this.id==105) {
       this.teamevaluation=this.teambusiness;
       this.nomteam="Team Business";
     }
-    else if(this.id==2){
+    else if(this.id==106){
       this.teamevaluation=this.teamgrowacademy;
       this.nomteam="grow academy";
     }
-    else if(this.id==3){
+    else if(this.id==107){
       this.teamevaluation=this.teamcrea;
       this.nomteam="Team Créa";
     }
-    else if(this.id==4){
+    else if(this.id==108){
       this.teamevaluation=this.teamtech;
       this.nomteam="Team Tech";
     }
