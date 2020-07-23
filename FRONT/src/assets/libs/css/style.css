@@ -265,17 +265,13 @@ label {
 .form-control:focus {
     color: #71748d;
     background-color: #fff;
-    border-color: #a7a7f0;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(214, 214, 255, .75);
+    box-shadow: 0 0 0 0.2rem #dbdbdb;
 }
 
 input[type=file] {
-    color: #71748d;
     background-color: #fff;
-    border-color: #a7a7f0;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(214, 214, 255, .75);
 }
 
 .col-form-label {
@@ -1714,7 +1710,7 @@ Left Navigation Sidebar
     padding-left: 12px;
     padding-right: 12px;
     /* margin-top: 5px; */
-    background: #24274a;
+    background: #eeeeee;
 }
 
 .nav-left-sidebar .submenu .nav .nav-item .nav-link {

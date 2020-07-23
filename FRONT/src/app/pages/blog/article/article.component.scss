@@ -8,6 +8,10 @@ h1{
       margin-top: -10px;
   }
 
+  .imgmobile{
+      display: none;
+      padding-top: 0;
+  }
   .titre{
     border: 1px solid rgb(224, 224, 224);
     border-radius: 5px;
@@ -60,12 +64,23 @@ h1{
        font-size: 22px;
    }
    .date{
-       font-size: 13px;
+       font-size: 11px;
    }
    .button{
-   
     font-size: 15px;
-   
+  }
+
+  .imgmobile{
+      display: block;
+      margin-bottom: 20px;
+      margin-top: 20px;
+  }
+  .imageweb{
+    display: none;
+}
+  .img{
+      width: 250px;
+      height: 200px;
   }
 
    
