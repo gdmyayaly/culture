@@ -1,0 +1,73 @@
+h1{
+    border-bottom: 3px solid #FF4080;
+    border-radius: 5px;
+    margin-bottom:50px;
+  }
+
+  .date{
+      margin-top: -10px;
+  }
+
+  .titre{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #dbdbdb;
+    padding: 20px;
+  }
+
+  .article{
+    margin-top: 15px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #dbdbdb;
+    padding: 20px;
+  }
+
+  .article1{
+      text-align: justify;
+  }
+
+  .img{
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    box-shadow: 5px 10px 18px #dbdbdb;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .cadre{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 5px 10px 18px #dbdbdb;
+  }
+
+  .button{
+    background-color: #FF4080;
+    color: white;
+    border-color: #FF4080;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    float: right;
+  }
+
+
+  @media screen and (max-width: 640px){
+   h2{
+       font-size: 22px;
+   }
+   .date{
+       font-size: 13px;
+   }
+   .button{
+   
+    font-size: 15px;
+   
+  }
+
+   
+
+}

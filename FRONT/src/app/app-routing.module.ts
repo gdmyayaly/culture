@@ -28,10 +28,9 @@ const routes: Routes = [
   // {path:'login',component:LoginComponent}
   {path:'login',component:LoginComponent,canActivate: [AuthGuardService] },
   {path:'team/detail/:id',component:ListeamComponent,canActivate: [AuthGuardService] },
-  { path: '**', component: LoginComponent },
-  {path:'blog',component:ArticleComponent,canActivate: [AuthGuardService] },
+  {path:'blog',component:ArticleComponent,canActivate: [AuthGuardService]},
   {path:'createblog',component:CreateComponent,canActivate: [AuthGuardService] },
-
+  { path: '**', component: LoginComponent },
 
 
 
