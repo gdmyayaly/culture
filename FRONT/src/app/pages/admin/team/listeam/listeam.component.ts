@@ -282,22 +282,20 @@ export class ListeamComponent implements OnInit {
         res=>{
           this.datateam=res.body;
           console.log(this.datateam);
-          
-          
-          this.moyenneteamautonomie=1
-          this.moyenneteamcollaboration=3
-          this.moyenneteamconfiance=4
-          this.moyenneteamperformance=5
-          this.moyenneteamperseverance=6
-          this.moyenneteamproblemsolving=7
-          this.moyenneteamtransmission=8;
-          this.teamautonomie=17
-          this.teamcollaboration=18
-          this.teamconfiance=19
-          this.teamperformance=20
-          this.teamperseverance=21
-          this.teamproblemsolving=22
-          this.teamtransmission=23
+          this.moyenneteamautonomie=this.datateam.moyenneteamautonomie;
+          this.moyenneteamcollaboration=this.datateam.moyenneteamcollaboration;
+          this.moyenneteamconfiance=this.datateam.moyenneteamconfiance;
+          this.moyenneteamperformance=this.datateam.moyenneteamperformance;
+          this.moyenneteamperseverance=this.datateam.moyenneteamperseverance;
+          this.moyenneteamproblemsolving=this.datateam.moyenneteamproblemsolving;
+          this.moyenneteamtransmission=this.datateam.moyenneteamtransmission;
+          this.teamautonomie=this.datateam.teamautonomie;
+          this.teamcollaboration=this.datateam.teamcollaboration;
+          this.teamconfiance=this.datateam.teamconfiance;
+          this.teamperformance=this.datateam.teamperformance;
+          this.teamperseverance=this.datateam.teamperseverance;
+          this.teamproblemsolving=this.datateam.teamproblemsolving;
+          this.teamtransmission=this.datateam.teamtransmission;
           this.userautonomie=this.datateam.actuelautonomie;
           this.usercollaboration=this.datateam.actuelcollaboration;
           this.userconfiance=this.datateam.actuelconfiance;
@@ -364,20 +362,20 @@ export class ListeamComponent implements OnInit {
           console.log(this.datateam);
           
           
-          this.moyenneteamautonomie=1
-          this.moyenneteamcollaboration=3
-          this.moyenneteamconfiance=4
-          this.moyenneteamperformance=5
-          this.moyenneteamperseverance=6
-          this.moyenneteamproblemsolving=7
-          this.moyenneteamtransmission=8;
-          this.teamautonomie=17
-          this.teamcollaboration=18
-          this.teamconfiance=19
-          this.teamperformance=20
-          this.teamperseverance=21
-          this.teamproblemsolving=22
-          this.teamtransmission=23
+          this.moyenneteamautonomie=this.datateam.moyenneteamautonomie;
+          this.moyenneteamcollaboration=this.datateam.moyenneteamcollaboration;
+          this.moyenneteamconfiance=this.datateam.moyenneteamconfiance;
+          this.moyenneteamperformance=this.datateam.moyenneteamperformance;
+          this.moyenneteamperseverance=this.datateam.moyenneteamperseverance;
+          this.moyenneteamproblemsolving=this.datateam.moyenneteamproblemsolving;
+          this.moyenneteamtransmission=this.datateam.moyenneteamtransmission;
+          this.teamautonomie=this.datateam.teamautonomie;
+          this.teamcollaboration=this.datateam.teamcollaboration;
+          this.teamconfiance=this.datateam.teamconfiance;
+          this.teamperformance=this.datateam.teamperformance;
+          this.teamperseverance=this.datateam.teamperseverance;
+          this.teamproblemsolving=this.datateam.teamproblemsolving;
+          this.teamtransmission=this.datateam.teamtransmission;
           this.userautonomie=this.datateam.actuelautonomie;
           this.usercollaboration=this.datateam.actuelcollaboration;
           this.userconfiance=this.datateam.actuelconfiance;
@@ -445,20 +443,22 @@ export class ListeamComponent implements OnInit {
           console.log(this.datateam);
           
           
-          this.moyenneteamautonomie=1
-          this.moyenneteamcollaboration=3
-          this.moyenneteamconfiance=4
-          this.moyenneteamperformance=5
-          this.moyenneteamperseverance=6
-          this.moyenneteamproblemsolving=7
-          this.moyenneteamtransmission=8;
-          this.teamautonomie=17
-          this.teamcollaboration=18
-          this.teamconfiance=19
-          this.teamperformance=20
-          this.teamperseverance=21
-          this.teamproblemsolving=22
-          this.teamtransmission=23
+          this.moyenneteamautonomie=this.datateam.moyenneteamautonomie;
+          this.moyenneteamcollaboration=this.datateam.moyenneteamcollaboration;
+          this.moyenneteamconfiance=this.datateam.moyenneteamconfiance;
+          this.moyenneteamperformance=this.datateam.moyenneteamperformance;
+          this.moyenneteamperseverance=this.datateam.moyenneteamperseverance;
+          this.moyenneteamproblemsolving=this.datateam.moyenneteamproblemsolving;
+          this.moyenneteamtransmission=this.datateam.moyenneteamtransmission;
+          this.teamautonomie=this.datateam.teamautonomie;
+          this.teamcollaboration=this.datateam.teamcollaboration;
+          this.teamconfiance=this.datateam.teamconfiance;
+          this.teamperformance=this.datateam.teamperformance;
+          this.teamperseverance=this.datateam.teamperseverance;
+          this.teamproblemsolving=this.datateam.teamproblemsolving;
+          this.teamtransmission=this.datateam.teamtransmission;
+
+
           this.userautonomie=this.datateam.actuelautonomie;
           this.usercollaboration=this.datateam.actuelcollaboration;
           this.userconfiance=this.datateam.actuelconfiance;
@@ -524,20 +524,20 @@ export class ListeamComponent implements OnInit {
           console.log(this.datateam);
           
           
-          this.moyenneteamautonomie=1
-          this.moyenneteamcollaboration=3
-          this.moyenneteamconfiance=4
-          this.moyenneteamperformance=5
-          this.moyenneteamperseverance=6
-          this.moyenneteamproblemsolving=7
-          this.moyenneteamtransmission=8;
-          this.teamautonomie=17
-          this.teamcollaboration=18
-          this.teamconfiance=19
-          this.teamperformance=20
-          this.teamperseverance=21
-          this.teamproblemsolving=22
-          this.teamtransmission=23
+          this.moyenneteamautonomie=this.datateam.moyenneteamautonomie;
+          this.moyenneteamcollaboration=this.datateam.moyenneteamcollaboration;
+          this.moyenneteamconfiance=this.datateam.moyenneteamconfiance;
+          this.moyenneteamperformance=this.datateam.moyenneteamperformance;
+          this.moyenneteamperseverance=this.datateam.moyenneteamperseverance;
+          this.moyenneteamproblemsolving=this.datateam.moyenneteamproblemsolving;
+          this.moyenneteamtransmission=this.datateam.moyenneteamtransmission;
+          this.teamautonomie=this.datateam.teamautonomie;
+          this.teamcollaboration=this.datateam.teamcollaboration;
+          this.teamconfiance=this.datateam.teamconfiance;
+          this.teamperformance=this.datateam.teamperformance;
+          this.teamperseverance=this.datateam.teamperseverance;
+          this.teamproblemsolving=this.datateam.teamproblemsolving;
+          this.teamtransmission=this.datateam.teamtransmission;
           this.userautonomie=this.datateam.actuelautonomie;
           this.usercollaboration=this.datateam.actuelcollaboration;
           this.userconfiance=this.datateam.actuelconfiance;

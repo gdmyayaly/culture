@@ -39,6 +39,22 @@ export class AuthService {
     if (this.role === "ROLE_ADMIN") {
       this.isadmin = true;
       this.isuser = false;
+      this.route.navigate(['/collaborateur']);
+      this.loadutilisateur();
+    }
+    else if (this.role === "ROLE_COLLABORATEUR") {
+      this.route.navigate(['/question']);
+      this.isuser = true;
+      this.isadmin = false;
+      this.loadutilisateur();
+    }
+  }
+  loadredirection() {
+    this.role = localStorage.getItem('role');
+    this.connecter = true;
+    if (this.role === "ROLE_ADMIN") {
+      this.isadmin = true;
+      this.isuser = false;
       //this.route.navigate(['/collaborateur']);
       this.loadutilisateur();
     }
@@ -52,7 +68,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
-    localStorage.removeItem('user')
+    localStorage.removeItem('user');
     this.connecter = false;
     this.isuser = false;
     this.isadmin = false;
@@ -67,7 +83,7 @@ export class AuthService {
   }
   reloadpage() {
     if (localStorage.getItem('token')) {
-      this.redirection();
+      this.loadredirection();
     }
     else {
       this.logout();
