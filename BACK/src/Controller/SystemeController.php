@@ -532,13 +532,18 @@ class SystemeController extends AbstractController
             if(!$data){
                 $data=$request->request->all();
             }
+            //On récupere l'id du team
             $id=$data['id'];
+            //On récupere le mois actuel
             $mois=date('m');
             //$mois="03";
             $moispasser=(int)$mois;
             $moispasser--;
+            //On truve le mois passer
             $moispasser=(string)$moispasser;
+            //On récupere la liste des utilisateur appartenant à cette team
             $userteam=$userTeamRepository->findBy(['team'=>$id]);
+            //Initialisation des variable qui vont capture la moyenne des utilisateur suivant une session
             $actueluserperseverance=0;
             $actueluserconfiance=0;
             $actuelusercollaboration=0;
@@ -554,10 +559,12 @@ class SystemeController extends AbstractController
             $passeruserproblemsolving=0;
             $passerusertransmission=0;
             $passeruserperformance=0;
-
+            //On parcour pour chaque utilisateur
             for ($i=0; $i < count($userteam); $i++) {
+                //On verifie bien si l'utilisateur est bien actif
                 if ($userteam[$i]->getUser()->getStatut()=="actif") {
                     $dataactuel=$this->userdatamois($userteam[$i]->getUser()->getId(),$mois,2020);
+                    dump($dataactuel);
                     $datapasser=$this->userdatamois($userteam[$i]->getUser()->getId(),$moispasser,2020);
                     $actueluserperseverance=$actueluserperseverance+$dataactuel['moyenneuserperseverance'];
                     $actueluserconfiance=$actueluserconfiance+$dataactuel['moyenneuserconfiance'];
@@ -590,6 +597,7 @@ class SystemeController extends AbstractController
             (($actuelusertransmission*100)/(count($userteam)*5))-(($passerusertransmission*100)/(count($userteam)*5))+
             (($actueluserperformance*100)/(count($userteam)*5))-(($passeruserperformance*100)/(count($userteam)*5))
             )/7);
+            die();
            return $this->json([
             'actuelperseverance'=>(($actueluserperseverance*100)/(count($userteam)*5)),
             'actuelconfiance'=>(($actueluserconfiance*100)/(count($userteam)*5)),
