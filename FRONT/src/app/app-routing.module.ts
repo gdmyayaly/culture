@@ -12,7 +12,8 @@ import { EvaluationComponent } from './pages/question/evaluation/evaluation.comp
 import { LoginComponent } from './pages/login/login.component';
 import { ListeamComponent } from './pages/admin/team/listeam/listeam.component';
 import { AuthGuardService } from './service/auth-guard.service';
-
+import { ArticleComponent } from './pages/blog/article/article.component';
+import { CreateComponent } from './pages/blog/create/create.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -28,6 +29,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent,canActivate: [AuthGuardService] },
   {path:'team/detail/:id',component:ListeamComponent,canActivate: [AuthGuardService] },
   { path: '**', component: LoginComponent },
+  {path:'blog',component:ArticleComponent,canActivate: [AuthGuardService] },
+  {path:'createblog',component:CreateComponent,canActivate: [AuthGuardService] },
+
 
 
 

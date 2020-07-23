@@ -37,6 +37,8 @@ import { LoaderComponent } from './layout/loader/loader.component';
 import { AnneComponent } from './diagrammeteam/anne/anne.component';
 import { SevenComponent } from './diagrammeteam/seven/seven.component';
 import { ChoixdateComponent } from './modal/choixdate/choixdate.component';
+import { ArticleComponent } from './pages/blog/article/article.component';
+import { CreateComponent } from './pages/blog/create/create.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { ChoixdateComponent } from './modal/choixdate/choixdate.component';
     AnneComponent,
     SevenComponent,
     ChoixdateComponent,
+    ArticleComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,

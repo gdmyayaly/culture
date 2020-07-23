@@ -25,6 +25,9 @@
                     <li class="nav-divider" *ngIf="auth.isadmin">
                         <a class="nav-link "[routerLink]="['/session']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Session</a>
                     </li>
+                    <li class="nav-divider" *ngIf="auth.isadmin">
+                        <a class="nav-link "[routerLink]="['/blog']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Blog</a>
+                    </li>
                     <li class="nav-divider" *ngIf="auth.isuser">
                         <a class="nav-link "[routerLink]="['/question']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Evaluation</a>
                     </li>
