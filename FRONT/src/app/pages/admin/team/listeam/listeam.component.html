@@ -449,14 +449,14 @@
                      </thead>
                      <tbody>
   
-                         <tr>
-                             <td><span class="td">Tech</span></td>
-                             <td>54% </td>
+                         <tr *ngFor="let item of datatableau">
+                             <td><span class="td">{{item.nom}}</span></td>
+                             <td>{{item.general | number:'2.1-2'}}% </td>
                              <td>
-                                 <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">54%</span>
+                                 <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">{{item.progression | number:'2.1-2'}}%</span>
                              </td>
                          </tr>
-                         <tr>
+                         <!-- <tr>
                              <td><span class="td">Academy</span></td>
                              <td>65% </td>
                              <td>
@@ -477,7 +477,7 @@
                                  <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">40%</span>
 
                              </td>
-                         </tr>
+                         </tr> -->
                    
               
                      </tbody>

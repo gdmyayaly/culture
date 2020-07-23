@@ -8,6 +8,7 @@ import { AdminService } from 'src/app/service/admin.service';
   styleUrls: ['./listeam.component.scss']
 })
 export class ListeamComponent implements OnInit {
+  public datatableau:any;
   public id:any;
   public nomteam:any;
   public datateam:any;
@@ -594,6 +595,13 @@ export class ListeamComponent implements OnInit {
         }
       )
     }
+    this.admin.performaceallteamcompare().subscribe(
+      res=>{console.log(res);
+        this.datatableau=res
+      },
+      error=>{console.log(error);
+      }
+    )
   }
   // loadmoyenne(){
   //   this.moyenneperseverance=0;

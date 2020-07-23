@@ -20,10 +20,10 @@ export class AdminService {
   ];
     public iduser={id:null};
     public userdetail:any;
-    // private url = "http://127.0.0.1:8000/admin/";
-    // public urlimage:string="http://127.0.0.1:8000/";
-    private url = "http://www.culture.telectronsenegal.com/admin/";
-    public urlimage:string="http://www.culture.telectronsenegal.com/";
+    private url = "http://127.0.0.1:8000/admin/";
+    public urlimage:string="http://127.0.0.1:8000/";
+    // private url = "http://www.culture.telectronsenegal.com/admin/";
+    // public urlimage:string="http://www.culture.telectronsenegal.com/";
     private urlnote="note";
     private urldatacarduser="datacarduser";
     public loadcard=false;
@@ -32,6 +32,7 @@ export class AdminService {
     public urlperformaceteam="performaceteam";
     public urldatateam="datateam";
     public urlsevenlastevaluationteam="sevenlastevaluationteam";
+    public urlperformaceallteamcompare="performaceallteamcompare";
     public donnerdatacarduser={moyennegeneral:0,moyenneteamautonomie:0,moyenneteamcollaboration:0,moyenneteamconfiance:0,
       moyenneteamperformance:0,moyenneteamperseverance:0,moyenneteamproblemsolving:0,moyenneteamtransmission:0,
       moyenneuserautonomie:0,moyenneusercollaboration:0,moyenneuserconfiance:0,moyenneuserperformance:0,moyenneuserperseverance:0,
@@ -65,5 +66,8 @@ export class AdminService {
     }
     public sevenlastevaluationteam(data) : Observable<any> {
       return this.http.post<any>(this.url + this.urlsevenlastevaluationteam,data, { observe: 'response' })
+    }
+    public performaceallteamcompare(){
+      return this.http.post(this.url + this.urlperformaceallteamcompare, { observe: 'response' })
     }
 }
