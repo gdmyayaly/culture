@@ -1,9 +1,15 @@
 h1{
-    border-bottom: 3px solid #FF4080;
     border-radius: 5px;
     margin-bottom:50px;
   }
 
+  .h1{
+    border-bottom: 4px solid #FF4080;
+    width: 200px;
+    margin-top: -40px;
+    margin-bottom: 30px;
+
+  }
   .date{
       margin-top: -10px;
   }
@@ -13,17 +19,12 @@ h1{
       padding-top: 0;
   }
   .titre{
-    border: 1px solid rgb(224, 224, 224);
-    border-radius: 5px;
-    box-shadow: 5px 10px 18px #dbdbdb;
     padding: 20px;
   }
 
   .article{
     margin-top: 15px;
-    border: 1px solid rgb(224, 224, 224);
-    border-radius: 5px;
-    box-shadow: 5px 10px 18px #dbdbdb;
+   
     padding: 20px;
   }
 
@@ -32,19 +33,11 @@ h1{
   }
 
   .img{
-    border: 1px solid rgb(224, 224, 224);
     border-radius: 5px;
-    box-shadow: 5px 10px 18px #dbdbdb;
     max-width: 100%;
     max-height: 100%;
   }
 
-  .cadre{
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 5px 10px 18px #dbdbdb;
-  }
 
   .button{
     background-color: #FF4080;
