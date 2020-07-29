@@ -26,10 +26,15 @@ export class CreateComponent implements OnInit {
       $('.js-example-basic-multiple').select2({ tags: true });
     });
 
-    $(document).ready(function(){
-      $('#summernote').summernote();
+  
 
-    });
+    $(document).ready(function() {
+       $('#summernote').summernote({ 
+          tabsize: 4,
+           height: 200 });
+     });
+
+
   }
 
   valider() {
