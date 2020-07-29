@@ -12,5 +12,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  modifier(){
+    alert("modification")
+  }
 }

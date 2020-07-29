@@ -3,6 +3,8 @@ declare var $:any;
 import * as $ from 'jquery';
 
 import { FormControl, FormGroup } from '@angular/forms';
+import { AdminService } from 'src/app/service/admin.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -11,7 +13,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class CreateComponent implements OnInit {
   blogForm: FormGroup;
 
-  constructor( ){
+  constructor(private admin:AdminService,private router:Router){
   }
   ngOnInit() {
     this.blogForm = new FormGroup({
@@ -40,6 +42,8 @@ export class CreateComponent implements OnInit {
   valider() {
     var t = (document.getElementById('summernote')as HTMLTextAreaElement).value;
     console.log(t);
+    this.admin.datasummer=t;
+    this.router.navigate(['test'])
     console.log('Données du formulaire...', this.blogForm.value);
   }
 }

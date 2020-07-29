@@ -24,15 +24,39 @@ class SystemeController extends AbstractController
 {
     private $mois;
     private $moispasser;
-    // private $status;
-    // private $saTransfert;
-    // private $groups;
-    // private $envois;
-    // private $retraits;
-    // private $dateDebut;
-    // private $dateFin;
-    // private $listRetraits;
-    // private $listEnvois;
+
+    private $user_days_perseverance;
+    private $user_days_confiance;
+    private $user_days_collaboration;
+    private $user_days_autonomie;
+    private $user_days_problemsolving;
+    private $user_days_tatransmission;
+    private $user_days_performance;
+
+    private $team_days_perseverance;
+    private $team_days_confiance;
+    private $team_days_collaboration;
+    private $team_days_autonomie;
+    private $team_days_problemsolving;
+    private $team_days_tatransmission;
+    private $team_days_performance;
+
+    private $user_mois_perseverance;
+    private $user_mois_confiance;
+    private $user_mois_collaboration;
+    private $user_mois_autonomie;
+    private $user_mois_problemsolving;
+    private $user_mois_tatransmission;
+    private $user_mois_performance;
+
+    private $team_mois_perseverance;
+    private $team_mois_confiance;
+    private $team_mois_collaboration;
+    private $team_mois_autonomie;
+    private $team_mois_problemsolving;
+    private $team_mois_tatransmission;
+    private $team_mois_performance;
+
     public function __construct()
     {
         $this->mois=date('m');
@@ -41,16 +65,6 @@ class SystemeController extends AbstractController
         $moispasser--;
         $moispasser=(string)$moispasser;
         $this->moispasser=$moispasser;
-        // $this->message="message";
-        // $this->status="status";
-        // $this->saTransfert="SA Transfert";
-        // $this->groups='groups';
-        // $this->envois='envois';
-        // $this->retraits='retraits';
-        // $this->dateDebut='dateDebut';
-        // $this->dateFin='dateFin';
-        // $this->listRetraits='list-retraits';
-        // $this->listEnvois='list-envois';
     }
 
 
@@ -865,7 +879,7 @@ class SystemeController extends AbstractController
 
 
 
-            $user=$userRepository->testreq("ROLE_COLLABORATEUR");
+        $user=$userRepository->testreq("ROLE_COLLABORATEUR");
         $teamperseverance=[];
         $teamconfiance=[];
         $teamcollaboration=[];

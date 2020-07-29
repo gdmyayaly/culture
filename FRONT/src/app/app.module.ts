@@ -39,6 +39,7 @@ import { ChoixdateComponent } from './modal/choixdate/choixdate.component';
 import { ArticleComponent } from './pages/blog/article/article.component';
 import { CreateComponent } from './pages/blog/create/create.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { TestsummerComponent } from './testsummer/testsummer.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
     ArticleComponent,
     CreateComponent,
     CalendarComponent,
+    TestsummerComponent,
   ],
   imports: [
     BrowserModule,

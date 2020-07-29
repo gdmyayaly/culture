@@ -15,6 +15,7 @@ import { AuthGuardService } from './service/auth-guard.service';
 import { ArticleComponent } from './pages/blog/article/article.component';
 import { CreateComponent } from './pages/blog/create/create.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
+import { TestsummerComponent } from './testsummer/testsummer.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'blog',component:ArticleComponent,canActivate: [AuthGuardService]},
   {path:'createblog',component:CreateComponent,canActivate: [AuthGuardService] },
   {path:'calendar',component:CalendarComponent,canActivate: [AuthGuardService] },
+  {path:'test',component:TestsummerComponent,canActivate: [AuthGuardService] },
   { path: '**', component: LoginComponent },
 
 

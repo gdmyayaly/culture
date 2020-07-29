@@ -55,11 +55,9 @@ export class AuthService {
     if (this.role === "ROLE_ADMIN") {
       this.isadmin = true;
       this.isuser = false;
-      //this.route.navigate(['/collaborateur']);
       this.loadutilisateur();
     }
     else if (this.role === "ROLE_COLLABORATEUR") {
-      //this.route.navigate(['/question']);
       this.isuser = true;
       this.isadmin = false;
       this.loadutilisateur();
