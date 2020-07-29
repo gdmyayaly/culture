@@ -1,6 +1,5 @@
 <div [ngClass]="{'dashboard-main-wrapper': auth.connecter}">
   <app-header *ngIf="auth.connecter"></app-header>
-  <app-sidebar *ngIf="auth.connecter"></app-sidebar>
       <div  [ngClass]="{'dashboard-wrapper': auth.connecter}">
           <div  [ngClass]="{'dashboard-ecommerce': auth.connecter}">
               <div  [ngClass]="{'container-fluid dashboard-content': auth.connecter}">
