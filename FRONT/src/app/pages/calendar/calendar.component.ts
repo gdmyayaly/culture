@@ -172,7 +172,7 @@ this.mois[mois] == "Mai" || this.mois[mois] == "Juillet" ||
     }
   }
   choixdays(ladate){
-    alert(ladate)
+   // alert(ladate)
     //alert('dfdfdfs')
   }
   loadsession(){
