@@ -40,12 +40,14 @@ h1{
 
 
   .button{
+    float: right;
     background-color: #FF4080;
-    color: white;
     border-color: #FF4080;
     border-radius: 10px;
+
+    color: white;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 60px;
     margin-bottom: 30px;
     float: right;
@@ -60,7 +62,10 @@ h1{
        font-size: 11px;
    }
    .button{
-    font-size: 15px;
+    float: right;
+    background-color: #FF4080;
+    border-color: #FF4080;
+    border-radius: 5px;
   }
 
   .imgmobile{
@@ -81,8 +86,8 @@ h1{
 }
 .btnmodifier{
   float: right;
-  background-color: #FF4080;
-  border-color: #FF4080;
+  background-color: grey;
+  border-color: grey;
   border-radius: 10px;
 }
 

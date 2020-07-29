@@ -7,10 +7,10 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class AuthService {
-  public url: string = "http://127.0.0.1:8000/";
-  private urls="http://127.0.0.1:8000/admin/infos";
-//   public url:string="http://www.culture.telectronsenegal.com/";
-//  private urls="http://www.culture.telectronsenegal.com/admin/infos";
+  //public url: string = "http://127.0.0.1:8000/";
+  //private urls="http://127.0.0.1:8000/admin/infos";
+ public url:string="http://www.culture.telectronsenegal.com/";
+ private urls="http://www.culture.telectronsenegal.com/admin/infos";
   private urllogin: string = "login";
   public jwt: string;
   public role: any;
