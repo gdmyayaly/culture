@@ -13,19 +13,22 @@
                     </div>
                 </div>
             </div>
-            <div class="to cc">
+            <!-- <div class="to cc">
                 <div class="form-group row pt-2">
                     <label class="col-md-1 control-label">Date :</label>
                     <div class="col-md-5">
                         <input class="form-control" formControlName="date" type="date">
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="subject">
                 <div class="form-group row pt-2">
                     <label class="col-md-1 control-label">Image : </label>
                     <div class="col-md-5">
-                        <input class="form-control" formControlName="image" type="file">
+                        <div class="user-pic">
+                            <img [src]="image" class="photo"  alt="user-pic" (click)="pp.click()">
+                            <input  hidden #pp type="file" accept="image/*" (change)="handleFileInputPP($event.target.files)">
+                          </div>
                     </div>
                 </div>
             </div>

@@ -1,3 +1,3 @@
 git add .
-git commit -m "fgdfgds"
+git commit -m "blog"
 git push -u origin master

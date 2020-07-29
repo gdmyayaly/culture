@@ -12,14 +12,13 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   blogForm: FormGroup;
-
+  public image="assets/defaut.png";
+  public fileToUpload: File=null;
   constructor(private admin:AdminService,private router:Router){
   }
   ngOnInit() {
     this.blogForm = new FormGroup({
       titre: new FormControl(),
-      date: new FormControl(),
-      image: new FormControl(),
       description: new FormControl(),
     });
 
@@ -42,9 +41,25 @@ export class CreateComponent implements OnInit {
   valider() {
     var t = (document.getElementById('summernote')as HTMLTextAreaElement).value;
     console.log(t);
-    this.admin.datasummer=t;
-    this.router.navigate(['test'])
+    this.blogForm.get('description').setValue(t);
+    this.admin.createblog(this.blogForm.value,this.fileToUpload).subscribe(
+      res=>{console.log(res);
+      },
+      error=>{console.error(error);
+      }
+    )
+    // this.admin.datasummer=t;
+     this.router.navigate(['blog'])
     console.log('Données du formulaire...', this.blogForm.value);
+  }
+  handleFileInputPP(file: FileList) {
+    console.log(file);
+    this.fileToUpload=file.item(0)
+     var reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.image = event.target.result;
+    }
+    reader.readAsDataURL(this.fileToUpload);
   }
 }
  

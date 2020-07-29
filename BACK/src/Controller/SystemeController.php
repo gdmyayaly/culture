@@ -4,9 +4,11 @@ namespace App\Controller;
 
 use DateTime;
 use App\Entity\Allsession;
+use App\Entity\Blog;
 use App\Entity\Evaluation;
 use App\Repository\UserRepository;
 use App\Repository\AllsessionRepository;
+use App\Repository\BlogRepository;
 use App\Repository\TeamRepository;
 use App\Repository\UserTeamRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -1178,4 +1180,42 @@ class SystemeController extends AbstractController
             'nbruser'=>$nbruser,
         ];
     }
+    /**
+     * @Route("/createblog", methods={"POST"})
+     */
+    public function createblog(Request $request,EntityManagerInterface $entityManagerInterface){
+        $reception = json_decode($request->getContent(),true);
+        if(!$reception){
+            $reception=$request->request->all();
+        }
+        $blog= new Blog();
+        $blog->setDate(new DateTime());
+        $blog->setTitre($reception['titre']);
+        if ($requestFile=$request->files->all()) {
+            $file = $requestFile['image'];
+            $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+            $file->move($this->getParameter('chemin'), $fileName);
+            $blog->setImage($fileName);
+        }
+        $blog->setText($reception['description']);
+        $entityManagerInterface->persist($blog);
+        $entityManagerInterface->flush();
+        return $this->json(
+            [
+                'message'=>'parfait',
+                'statut'=>201
+            ]
+            );
+    }
+        /**
+     * @Route("/listblog", methods={"POST"})
+     */
+    public function listblog(BlogRepository $blogRepository,SerializerInterface $serializer){
+        $user=$blogRepository->findAll();
+            $data = $serializer->serialize($user, 'json');
+            return new Response($data, 200, [
+                'Content-Type' => 'application/json'
+            ]);
+    }
+    
 }

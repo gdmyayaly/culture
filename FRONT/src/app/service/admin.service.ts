@@ -21,10 +21,10 @@ export class AdminService {
   ];
     public iduser={id:null};
     public userdetail:any;
-    // private url = "http://127.0.0.1:8000/admin/";
-    // public urlimage:string="http://127.0.0.1:8000/";
-    private url = "http://www.culture.telectronsenegal.com/admin/";
-    public urlimage:string="http://www.culture.telectronsenegal.com/";
+    private url = "http://127.0.0.1:8000/admin/";
+    public urlimage:string="http://127.0.0.1:8000/uploads";
+    // private url = "http://www.culture.telectronsenegal.com/admin/";
+    // public urlimage:string="http://www.culture.telectronsenegal.com/upload";
     private urlnote="note";
     private urldatacarduser="datacarduser";
     public loadcard=false;
@@ -42,7 +42,9 @@ export class AdminService {
       usercollaboration:0,userconfiance:0,userperformance:0,userperseverance:0,userproblemsolving:0,usertransmission:0,general:0
     }
     public urlusergrow="usergrow";
-  constructor(private http: HttpClient) { }
+    public urlcreateblog="createblog";
+    public urllistblog="listblog";
+    constructor(private http: HttpClient) { }
     public note(data){
       return this.http.post(this.url + this.urlnote, data, { observe: 'response' })
     }
@@ -71,4 +73,15 @@ export class AdminService {
     public performaceallteamcompare(){
       return this.http.post(this.url + this.urlperformaceallteamcompare, { observe: 'response' })
     }
+    public createblog(data,fileToUpload): Observable<any>{
+      const formData: FormData= new FormData();
+      formData.append('titre', data.nom);
+      formData.append('description', data.id);
+      formData.append('image', fileToUpload);
+      return this.http.post<any>(this.url + this.urlcreateblog,data, { observe: 'response' })
+    }
+    public listblog():Observable<any>{
+      return this.http.post<any>(this.url + this.urllistblog, { observe: 'response' })
+    }
+
 }
