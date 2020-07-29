@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/service/admin.service';
 
 @Component({
   selector: 'app-article',
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent implements OnInit {
   public load=false;
-
-  constructor() { }
+  public publiction:any;
+  constructor(private admin:AdminService) { }
 
   ngOnInit() {
+    this.admin.listblog().subscribe(
+      res=>{console.log(res);
+        this.publiction=res;
+      },
+      eroor=>{console.log(eroor);
+      }
+    )
   }
   modifier(){
     alert("modification")

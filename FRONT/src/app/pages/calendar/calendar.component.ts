@@ -21,10 +21,12 @@ export class CalendarComponent implements OnInit {
   public bordel=0;
   public isevaluation=[
     {date:'29/6/2020',text:'Evaluation par Team'},
-    {date:'20/6/2020',text:'Evaluation par Team'},
-    {date:'25/6/2020',text:'Evaluation par Team'},
-    {date:'19/6/2020',text:'Evaluation par Team'},
+    {date:'22/6/2020',text:'Evaluation par Team'},
+    {date:'24/6/2020',text:'Evaluation par Team'},
+    {date:'17/6/2020',text:'Evaluation par Team'},
     {date:'15/6/2020',text:'Evaluation par Team'},
+    {date:'10/6/2020',text:'Evaluation par Team'},
+    {date:'8/6/2020',text:'Evaluation par Team'},
   ]
   constructor() { }
 
