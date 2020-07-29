@@ -1,49 +1,51 @@
-<div class="container">
-    <h1>Création d'articles</h1>
-    <form action="" method="post">
-
-    <div class="row ">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 form">
-            <div class="row">
-                <div class="col-md-2">
-                    <label for="">Titre</label>
-                </div>
-                <div class="col-md-9">
-                    <input id="inputPassword" type="text" placeholder="Titre de l'article" class="form-control">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <label for="">Date</label>
-                </div>
-                <div class="col-md-9">
-                    <input type="date" class="form-control" formControlName="date" id="inputPassword">
+            
+    <div class=" container">
+        <div class="email-head">
+            <div class="email-head-title">Ecrire un nouveau article<span class="icon mdi mdi-edit"></span></div>
+        </div>
+        <form [formGroup]="blogForm" >
+          <div class="email-compose-fields">
+            <div class="to">
+                <div class="form-group row pt-0">
+                    <label class="col-md-1 control-label">Titre:</label>
+                    <div class="col-md-5">
+                        <input class="form-control" formControlName="titre" type="text">
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <label for="">Atricle</label>
-                </div>
-                <div class="col-md-9">
-                    <textarea class="form-control" id="exampleFormControlTextarea1"  placeholder="Rédiger l'article" rows="3"></textarea>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-2">
-                    <label for="">Image</label>
-                </div>
-                <div class="col-md-9">
-                    <input type="file"  id="customFile">
+            <div class="to cc">
+                <div class="form-group row pt-2">
+                    <label class="col-md-1 control-label">Date :</label>
+                    <div class="col-md-5">
+                        <input class="form-control" formControlName="date" type="date">
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <button type="submit"  class="btn btn-primary" >Valider</button>
+            <div class="subject">
+                <div class="form-group row pt-2">
+                    <label class="col-md-1 control-label">Image : </label>
+                    <div class="col-md-5">
+                        <input class="form-control" formControlName="image" type="file">
+                    </div>
+                </div>
             </div>
         </div>
-
-
-    </div>
-
+        <div class="container email editor">
+            <div class="col-md-12 p-0">
+                <div class="form-group">
+                    <label class="control-label sr-only" for="summernote">Descriptions </label>
+                    <textarea class="form-control" formControlName="description" id="summernote"  rows="6" placeholder="Write Descriptions"></textarea>
+                </div>
+            </div>
+            <div class="email action-send">
+                <div class="col-md-12 ">
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-space" (click)="valider()" type="submit"><i class="icon s7-mail"></i> Send</button>
+                        <button class="btn btn-primary btn-space" type="button"><i class="icon s7-close"></i> Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         </form>
-  </div>
+        
+    </div>

@@ -22,7 +22,9 @@
                      <li class="nav-divider" *ngIf="auth.isadmin">
                         <a class="nav-link "[routerLink]="['/team']"  aria-expanded="false"><i class="fas fa-users"></i>Team</a>
                     </li>
-                   
+                    <li class="nav-divider" *ngIf="auth.isadmin">
+                        <a class="nav-link "[routerLink]="['/calendar']"  aria-expanded="false"><i class="fas fa-users"></i>Calendar</a>
+                    </li>
                     <li class="nav-divider" *ngIf="auth.isadmin">
                         <a class="nav-link "[routerLink]="['/session']"  aria-expanded="false"><i class="fa fa-fw fa-user-circle"></i>Session</a>
                     </li>
