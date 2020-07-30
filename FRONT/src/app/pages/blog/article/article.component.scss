@@ -52,12 +52,18 @@ h1{
     margin-bottom: 30px;
     float: right;
   }
-
+.articlemobile{
+display: none;
+}
 
   @media screen and (max-width: 640px){
+
    h2{
        font-size: 22px;
    }
+   h1{
+    font-size: 24px;
+}
    .date{
        font-size: 11px;
    }
@@ -72,16 +78,30 @@ h1{
       display: block;
       margin-bottom: 20px;
       margin-top: 20px;
+      width: 100%;
+
   }
+  .articlemobile{
+    display: block;
+    position: absolute;
+    }
+
+ 
+    .articleweb{
+      display: none;
+      }
   .imageweb{
     display: none;
 }
-  .img{
-      width: 250px;
-      height: 200px;
-  }
-
-   
+ 
+.col-md-8{
+  width: 80%;
+}
+   .icone{
+     margin-top: 10px;
+     position: relative;
+     float: right;
+   }
 
 }
 .btnmodifier{
