@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
   blogForm: FormGroup;
-  public image="assets/defaut.png";
+  public image="assets/avatarhomme.png";
   public fileToUpload: File=null;
   constructor(private admin:AdminService,private router:Router){
   }
