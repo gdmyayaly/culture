@@ -18,6 +18,8 @@ export class CalendarComponent implements OnInit {
   public maxdaypast = 0;
   public maxdaynext=0;
   public moisactuel=null;
+  public moisprecedant=null;
+  public moissuivant=null;
   public bordel=0;
   public isevaluation=[
     {date:'29/6/2020',text:'Evaluation par Team'},
@@ -32,6 +34,8 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.moisactuel=this.mois[this.date.getMonth()];
+    this.moisprecedant=this.mois[this.date.getMonth()-1];
+    this.moissuivant=this.mois[this.date.getMonth()+1];
     this.maxdaynow = this.maxdaymois(this.date.getMonth());
     this.maxdaypast = this.maxdaymois((this.date.getMonth() - 1));
     this.maxdaynext = this.maxdaymois((this.date.getMonth() + 1));
@@ -172,8 +176,6 @@ this.mois[mois] == "Mai" || this.mois[mois] == "Juillet" ||
     }
   }
   choixdays(ladate){
-   // alert(ladate)
-    //alert('dfdfdfs')
   }
   loadsession(){
     for (let index = 0; index < this.isevaluation.length; index++) {
@@ -186,5 +188,27 @@ this.mois[mois] == "Mai" || this.mois[mois] == "Juillet" ||
       }
     }
 
+  }
+  choixprecedant(donner){
+    this.maxdaynow = this.maxdaymois(this.mois.indexOf(donner));
+    this.maxdaypast = this.maxdaymois((this.mois.indexOf(donner) - 1));
+    this.maxdaynext = this.maxdaymois((this.mois.indexOf(donner) + 1));
+    this.rien=[];
+    this.loadcalendrier(2020, this.mois.indexOf(donner));
+    this.moisactuel=this.mois[this.mois.indexOf(donner)];
+    this.moisprecedant=this.mois[(this.mois.indexOf(donner))-1];
+    this.moissuivant=this.mois[(this.mois.indexOf(donner))+1];
+    this.loadsession();
+  }
+  choixsuivant(donner){
+    this.maxdaynow = this.maxdaymois(this.mois.indexOf(donner));
+    this.maxdaypast = this.maxdaymois((this.mois.indexOf(donner) - 1));
+    this.maxdaynext = this.maxdaymois((this.mois.indexOf(donner) + 1));
+    this.rien=[];
+    this.loadcalendrier(2020, this.mois.indexOf(donner));
+    this.moisactuel=this.mois[this.mois.indexOf(donner)];
+    this.moisprecedant=this.mois[(this.mois.indexOf(donner))-1];
+    this.moissuivant=this.mois[(this.mois.indexOf(donner))+1];
+    this.loadsession();
   }
 }

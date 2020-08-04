@@ -1217,5 +1217,42 @@ class SystemeController extends AbstractController
                 'Content-Type' => 'application/json'
             ]);
     }
-    
+
+            /**
+     * @Route("/createsession", methods={"POST"})
+     */
+    public function createsession(Request $request,EntityManagerInterface $entityManagerInterface){
+        $reception = json_decode($request->getContent(),true);
+        if(!$reception){
+            $reception=$request->request->all();
+        }
+        $session= new Allsession();
+        $dd=new DateTime($reception['date']);
+        $session->setConcerner($reception['concerner']);
+        $session->setDate($dd);
+        $session->setTeams($reception['team']);
+        $session->setNombre(10);
+        $session->setMois($reception['date'][5].$reception['date'][6]);
+        $session->setAnnee($reception['date'][0].$reception['date'][1].$reception['date'][2].$reception['date'][3]);
+        $entityManagerInterface->persist($session);
+        $entityManagerInterface->flush();
+        return $this->json(
+            [
+                'message'=>'parfait',
+                'statut'=>201
+            ]
+            );
+    }
+            /**
+     * @Route("/listsession", methods={"POST"})
+     */
+    public function listsession(AllsessionRepository $allsessionRepository,SerializerInterface $serializer){
+        $user=$allsessionRepository->findAll();
+            $data = $serializer->serialize($user, 'json', [
+                'groups' => ['grow']
+            ]);
+            return new Response($data, 200, [
+                'Content-Type' => 'application/json'
+            ]);
+    }
 }

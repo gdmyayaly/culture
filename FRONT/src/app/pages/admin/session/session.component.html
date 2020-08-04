@@ -7,13 +7,14 @@
     <div class="row">
         <div class="col-md-2"></div>
     <div class="col-md-8 checkform">
+        <form [formGroup]="session">
         <div class="form-group row">
             <label for="inputPassword" class="">Date</label>
             <div class="col-md-6">
               <input type="date" class="form-control" formControlName="date" id="inputPassword">
             </div>
-          </div>
-
+        </div>
+    </form>
 
           <div class="row">
               <div class="col-md-2 check" (click)="cochertout()">
@@ -24,18 +25,18 @@
                 <label for="vehicle1">  Créa</label><br> 
                 <input type="checkbox" id="vehicle1"  name="vehicle1" [checked]="crea"  class="inputcheck" value="Bike">
             </div>
-            <div class="col-md-2 check">
-                <label for="vehicle1" (click)="cocheonce('tech')">  Tech</label><br> 
+            <div class="col-md-2 check" (click)="cocheonce('tech')">
+                <label for="vehicle1">  Tech</label><br> 
                 <input type="checkbox" id="vehicle1" name="vehicle1"  [checked]="tech" class="inputcheck" value="Bike">
             </div>
             <div class="col-md-2 check" (click)="cocheonce('academy')">
                 <label for="vehicle1">  Academy</label><br> 
                 <input type="checkbox" id="vehicle1" name="vehicle1" [checked]="academy"  class="inputcheck" value="Bike">
             </div>
-            <div class="col-md-2 check" (click)="cocheonce('business')">
+            <!-- <div class="col-md-2 check" (click)="cocheonce('business')">
                 <label for="vehicle1">  Business</label><br> 
                 <input type="checkbox" id="vehicle1" name="vehicle1" [checked]="business"  class="inputcheck" value="Bike">
-            </div>
+            </div> -->
           </div>
        <button type="submit"  class="btn btn-primary" (click)="valid()">Valider</button>
     </div>

@@ -21,10 +21,10 @@ export class AdminService {
   ];
     public iduser={id:null};
     public userdetail:any;
-    //private url = "http://127.0.0.1:8000/admin/";
-    //public urlimage:string="http://127.0.0.1:8000/uploads";
-     private url = "http://www.culture.telectronsenegal.com/admin/";
-     public urlimage:string="http://www.culture.telectronsenegal.com/upload";
+    private url = "http://127.0.0.1:8000/admin/";
+    public urlimage:string="http://127.0.0.1:8000/uploads";
+    //  private url = "http://www.culture.telectronsenegal.com/admin/";
+    //  public urlimage:string="http://www.culture.telectronsenegal.com/upload";
     private urlnote="note";
     private urldatacarduser="datacarduser";
     public loadcard=false;
@@ -44,6 +44,7 @@ export class AdminService {
     public urlusergrow="usergrow";
     public urlcreateblog="createblog";
     public urllistblog="listblog";
+    public urlcreatesession="createsession";
     constructor(private http: HttpClient) { }
     public note(data){
       return this.http.post(this.url + this.urlnote, data, { observe: 'response' })
@@ -78,10 +79,12 @@ export class AdminService {
       formData.append('titre', data.nom);
       formData.append('description', data.id);
       formData.append('image', fileToUpload);
-      return this.http.post<any>(this.url + this.urlcreateblog,data, { observe: 'response' })
+      return this.http.post<any>(this.url + this.urlcreateblog,formData, { observe: 'response' })
     }
     public listblog():Observable<any>{
       return this.http.post<any>(this.url + this.urllistblog, { observe: 'response' })
     }
-
+    public createsession(data):Observable<any>{
+      return this.http.post<any>(this.url + this.urlcreatesession,data, { observe: 'response' })
+    }
 }

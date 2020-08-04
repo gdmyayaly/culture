@@ -12,8 +12,18 @@
 </div>
 <div class="calendar-container">
     <div class="calendar-header">
-        <h1 class="mois" (click)="choix()"> {{moisactuel}}<button>▾</button></h1>
-        <p class="annee">2020</p>
+<div class="row">
+  <div class="col-4 col-md-4">
+    <span class="mois" (click)="choixprecedant(moisprecedant)"> {{moisprecedant}}</span>
+  </div>
+  <div class="col-4 col-md-4">
+    <span class="mois"> {{moisactuel}}</span>
+    <p class="annee">2020</p>
+  </div>
+  <div class="col-4 col-md-4">
+    <span class="mois" (click)="choixsuivant(moissuivant)"> {{moissuivant}}</span>
+  </div>
+</div>
     </div>
     <div class="calendar">
         <span class="day-name">Mon</span>
